@@ -11,12 +11,24 @@
   max-width: 60rem;
 }
 
+.custom-carousel {
+  background-color: black
+  /* background-color: lightsteelblue */
+}
+
 .carousel {
   margin-bottom: 6rem;
 }
 
 .carousel-item {
   height: 20rem;
+}
+
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 @media (min-width: 576px) {
@@ -28,6 +40,15 @@
 @media (min-width: 768px) {
   .carousel-item {
     height: 39rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
   }
 }
 

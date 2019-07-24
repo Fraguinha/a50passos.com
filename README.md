@@ -1,2 +1,2 @@
-# A50Passos.com
+# A50Passos
 Website

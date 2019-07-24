@@ -1,0 +1,123 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <!-- Logout -->
+            <form class="form-signin" action="/login/logout" method="POST">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+            </form>
+        </div>
+        <!-- Database -->
+        <div class="row">
+            <div class="col-md-3">
+                <hr>
+                <!-- Add photo 1 -->
+                <form class="form-control-file" action="/dashboard/addPhoto1" method="POST"
+                    enctype="multipart/form-data">
+                    <h2 class="text-center">Upload foto 1</h2>
+                    <hr>
+                    <input type="file" name="photo1" multiple required>
+                    <hr>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Upload foto</button>
+                    <hr>
+                    <img src="uploads/photo1.jpg" height="200" width="100%">
+                </form>
+            </div>
+            <div class="col-md-3">
+                <hr>
+                <!-- Add photo 2 -->
+                <form class="form-control-file" action="/dashboard/addPhoto2" method="POST"
+                    enctype="multipart/form-data">
+                    <h2 class="text-center">Upload foto 2</h2>
+                    <hr>
+                    <input type="file" name="photo2" multiple required>
+                    <hr>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Upload foto</button>
+                    <hr>
+                    <img src="uploads/photo2.jpg" height="200" width="100%">
+                </form>
+            </div>
+            <div class="col-md-3">
+                <hr>
+                <!-- Add photo 3 -->
+                <form class="form-control-file" action="/dashboard/addPhoto3" method="POST"
+                    enctype="multipart/form-data">
+                    <h2 class="text-center">Upload foto 3</h2>
+                    <hr>
+                    <input type="file" name="photo3" multiple required>
+                    <hr>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Upload foto</button>
+                    <hr>
+                    <img src="uploads/photo3.jpg" height="200" width="100%">
+                </form>
+            </div>
+            <div class="col-md-3">
+                <hr>
+                <!-- Add photo 4 -->
+                <form class="form-control-file" action="/dashboard/addPhoto4" method="POST"
+                    enctype="multipart/form-data">
+                    <h2 class="text-center">Upload foto 4</h2>
+                    <hr>
+                    <input type="file" name="photo4" multiple required>
+                    <hr>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Upload foto</button>
+                    <hr>
+                    <img src="uploads/photo4.jpg" height="200" width="100%">
+                </form>
+            </div>
+            <div class="col-md-4">
+                <hr>
+                <!-- Add house -->
+                <form class="" action="/dashboard/addHouse" method="POST">
+                    <h2 class="text-center">Adicionar casa</h2>
+                    <hr>
+                    <input name="id" type="text" class="form-control" placeholder="ID a adicionar (optional)">
+                    <hr>
+                    <input name="title" type="text" class="form-control" placeholder="Titulo" required>
+                    <input name="address" type="text" class="form-control" placeholder="Morada" required>
+                    <textarea name="description" type="text" class="form-control" placeholder="Descrição"
+                        required></textarea>
+                    <input name="tip" type="text" class="form-control" placeholder="Info" required>
+                    <hr>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Adicionar casa</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <hr>
+                <!-- Remove house -->
+                <form class="" action="/dashboard/toggleHouse" method="POST">
+                    <h2 class="text-center">Alternar casa</h2>
+                    <hr>
+                    <input name="id" type="text" class="form-control" placeholder="ID a remover" required>
+                    <hr>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Alternar casa</button>
+                </form>
+                <hr>
+                <form class="" action="/dashboard/removeHouse" method="POST">
+                    <h2 class="text-center">Remover casa</h2>
+                    <hr>
+                    <input name="id" type="text" class="form-control" placeholder="ID a remover" required>
+                    <hr>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Remover casa</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <hr>
+                <!-- Edit house -->
+                <form class="" action="/dashboard/editHouse" method="POST">
+                    <h2 class="text-center">Editar casa</h2>
+                    <hr>
+                    <input name="id" type="text" class="form-control" placeholder="ID a editar" required>
+                    <hr>
+                    <input name="title" type="text" class="form-control" placeholder="Titulo (optional)">
+                    <input name="address" type="text" class="form-control" placeholder="Morada (optional)">
+                    <textarea name="description" type="text" class="form-control"
+                        placeholder="Descrição (optional)"></textarea>
+                    <input name="tip" type="text" class="form-control" placeholder="Info (optional)">
+                    <hr>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Editar casa</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+    </div>
+</main>

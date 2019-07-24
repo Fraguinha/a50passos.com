@@ -6,6 +6,7 @@ const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 const passport = require("passport")
 const bcrypt = require("bcryptjs")
+const fs = require("fs")
 
 const User = require("./models/user")
 

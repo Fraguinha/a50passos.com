@@ -11,9 +11,8 @@
   max-width: 60rem;
 }
 
-.custom-carousel {
+.carousel-custom {
   background-color: black
-  /* background-color: lightsteelblue */
 }
 
 .carousel {
@@ -22,6 +21,14 @@
 
 .carousel-item {
   height: 20rem;
+}
+
+.carousel .carousel-indicators li {
+  background-color: rgba(64, 64, 64, 0.25);
+}
+
+.carousel .carousel-indicators .active {
+  background-color: rgba(64, 64, 64, 0.25);
 }
 
 .center-img {
@@ -49,6 +56,15 @@
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+  }
+
+  .carousel .carousel-control-prev {
+    background-color: rgb(192, 192, 192);
+
+  }
+
+  .carousel .carousel-control-next {
+    background-color: rgb(192, 192, 192);
   }
 }
 

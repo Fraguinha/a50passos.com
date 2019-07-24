@@ -16,12 +16,12 @@
 }
 
 .carousel-item {
-  height: 25rem;
+  height: 20rem;
 }
 
 @media (min-width: 576px) {
   .carousel-item {
-    height: 30rem;
+    height: 25rem;
   }
 }
 

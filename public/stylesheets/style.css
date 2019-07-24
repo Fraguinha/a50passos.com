@@ -16,7 +16,19 @@
 }
 
 .carousel-item {
-  height: 39rem;
+  height: 25rem;
+}
+
+@media (min-width: 576px) {
+  .carousel-item {
+    height: 30rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    height: 38rem;
+  }
 }
 
 .site-header a {

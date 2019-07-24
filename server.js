@@ -6,6 +6,7 @@ const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 const passport = require("passport")
 const bcrypt = require("bcryptjs")
+
 const User = require("./models/user")
 
 // Dotenv config
@@ -50,7 +51,7 @@ db.on('open', () => {
     // Setup default admin
     User.find((err, result) => {
         if (err) console.error(err)
-        if (result.length == 0) {
+        if (result === []) {
             const default_admin = new User({
                 email: "admin@admin",
                 password: "admin"
@@ -66,6 +67,9 @@ db.on('open', () => {
         }
     })
 })
+
+// Filesystem
+
 
 // Routers
 app.use("/", require("./routes/index"))

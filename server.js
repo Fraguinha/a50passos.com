@@ -69,6 +69,9 @@ db.on('open', () => {
 })
 
 // Filesystem
+if (!fs.existsSync("public/uploads/")) {
+    fs.mkdirSync("public/uploads/")
+}
 
 
 // Routers

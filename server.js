@@ -3,6 +3,7 @@ const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const session = require("express-session")
 const mongoose = require("mongoose")
+const bodyParser = require('body-parser')
 const passport = require("passport")
 const bcrypt = require("bcryptjs")
 const fs = require("fs")
@@ -17,6 +18,10 @@ require("./config/passport")(passport)
 
 // Application
 const app = express()
+
+// Express bodyParser
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // Express session
 secret = process.env.SESSION_SECRET || "secret"

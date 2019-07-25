@@ -43,6 +43,22 @@ router.post("/addPhoto4", ensureAuthenticated, upload.single('photo4'), async (r
     res.status(201).redirect("/dashboard")
 })
 
+// Dashboard clearImages
+router.post("/clearImages", ensureAuthenticated, async (req, res) => {
+    if (await fs.existsSync(base + "/public/uploads/photo1.jpg")) {
+        await fs.unlinkSync(base + "/public/uploads/photo1.jpg")
+    }
+    if (await fs.existsSync(base + "/public/uploads/photo2.jpg")) {
+        await fs.unlinkSync(base + "/public/uploads/photo2.jpg")
+    }
+    if (await fs.existsSync(base + "/public/uploads/photo3.jpg")) {
+        await fs.unlinkSync(base + "/public/uploads/photo3.jpg")
+    }
+    if (await fs.existsSync(base + "/public/uploads/photo4.jpg")) {
+        await fs.unlinkSync(base + "/public/uploads/photo4.jpg")
+    }
+    res.redirect("/dashboard")
+})
 
 // Dashboard addHouse
 router.post("/addHouse", ensureAuthenticated, async (req, res) => {

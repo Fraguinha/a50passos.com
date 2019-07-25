@@ -1,12 +1,12 @@
 <main>
     <div class="container">
+        <!-- Logout -->
         <div class="row">
-            <!-- Logout -->
             <form class="form-signin" action="/login/logout" method="POST">
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
+                <button class="btn btn-lg btn-danger btn-block" type="submit">Logout</button>
             </form>
         </div>
-        <!-- Database -->
+        <!-- Images -->
         <div class="row">
             <div class="col-md-3">
                 <hr>
@@ -64,8 +64,17 @@
                     <img src="uploads/photo4.jpg" height="200" width="100%">
                 </form>
             </div>
+        </div>
+        <!-- Clear -->
+        <div class="row">
+            <form class="form-signin" action="/dashboard/clearImages" method="POST">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Clear</button>
+            </form>
+        </div>
+        <hr>
+        <!-- Fields -->
+        <div class="row">
             <div class="col-md-4">
-                <hr>
                 <!-- Add house -->
                 <form class="" action="/dashboard/addHouse" method="POST">
                     <h2 class="text-center">Adicionar casa</h2>
@@ -82,14 +91,13 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <hr>
-                <!-- Remove house -->
+                <!-- Toggle house -->
                 <form class="" action="/dashboard/toggleHouse" method="POST">
-                    <h2 class="text-center">Alternar casa</h2>
+                    <h2 class="text-center">Toggle casa</h2>
                     <hr>
-                    <input name="id" type="text" class="form-control" placeholder="ID a alternar" required>
+                    <input name="id" type="text" class="form-control" placeholder="ID a toggle" required>
                     <hr>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Alternar casa</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Toggle casa</button>
                 </form>
                 <hr>
                 <form class="" action="/dashboard/removeHouse" method="POST">
@@ -101,7 +109,6 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <hr>
                 <!-- Edit house -->
                 <form class="" action="/dashboard/editHouse" method="POST">
                     <h2 class="text-center">Editar casa</h2>

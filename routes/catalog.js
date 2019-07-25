@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
             houses: houses
         })
     } catch (err) {
-        return res.status(500).json({ message: err.message })
+        res.redirect("/index")
     }
 })
 

@@ -50,9 +50,9 @@ const db = mongoose.connection
 db.on('open', () => {
     console.log("Connected to database")
     // Setup default admin
-    User.find((err, result) => {
-        if (err) console.error(err)
-        if (result === []) {
+    User.find((err, res) => {
+        if (err) return console.log(err)
+        if (res.length == 0) {
             const default_admin = new User({
                 email: "admin@admin",
                 password: "admin"
@@ -62,9 +62,9 @@ db.on('open', () => {
                 bcrypt.hash(default_admin.password, salt, (err, hash) => {
                     if (err) return console.error(err)
                     default_admin.password = hash
+                    default_admin.save()
                 })
             })
-            default_admin.save()
         }
     })
 })
@@ -73,7 +73,6 @@ db.on('open', () => {
 if (!fs.existsSync("public/uploads/")) {
     fs.mkdirSync("public/uploads/")
 }
-
 
 // Routers
 app.use("/", require("./routes/index"))

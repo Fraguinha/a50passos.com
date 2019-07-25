@@ -3,7 +3,6 @@ const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const session = require("express-session")
 const mongoose = require("mongoose")
-const bodyParser = require("body-parser")
 const passport = require("passport")
 const bcrypt = require("bcryptjs")
 const fs = require("fs")
@@ -30,10 +29,6 @@ app.use(session({
 // Passport
 app.use(passport.initialize())
 app.use(passport.session())
-
-// Body parser
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // Views
 app.use(express.static("public"))

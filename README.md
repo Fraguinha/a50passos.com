@@ -2,4 +2,4 @@
 
 https://www.a50passos.com
 
-![showcase](https://imgur.com/drtSxXo)
+![showcase](https://i.imgur.com/drtSxXo.png)

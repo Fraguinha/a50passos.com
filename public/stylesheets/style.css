@@ -40,12 +40,12 @@
   }
 
   .carousel .carousel-control-prev {
-    background-color: rgb(192, 192, 192);
+    background-color: rgba(192, 192, 192,0.25);
 
   }
 
   .carousel .carousel-control-next {
-    background-color: rgb(192, 192, 192);
+    background-color: rgba(192, 192, 192,0.25);
   }
 }
 

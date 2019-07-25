@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const house_schema = new mongoose.Schema({
     id: {
@@ -41,6 +41,6 @@ const house_schema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+});
 
-module.exports = mongoose.model("House", house_schema)
+module.exports = mongoose.model("House", house_schema);

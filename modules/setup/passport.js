@@ -1,9 +1,17 @@
+// Requires
+const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+const session = require("express-session");
 const bcrypt = require("bcryptjs");
 
-const User = require("../models/user");
+// Models
+const User = require("../../models/user");
 
-const configure = (passport) => {
+// Env variables
+secret = process.env.SESSION_SECRET || "secret";
+
+// Functions
+const setup = (passport) => {
     passport.use(
         new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
             // Match user
@@ -34,6 +42,15 @@ const configure = (passport) => {
             done(err, user);
         });
     });
+}
+
+const configure = (app) => {
+    // Express session
+    app.use(session({ secret: secret, resave: true, saveUninitialized: true }));
+    // Passport
+    setup(passport);
+    app.use(passport.initialize());
+    app.use(passport.session());
 }
 
 module.exports = { configure: configure }

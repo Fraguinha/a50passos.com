@@ -1,79 +1,34 @@
 // Requires
 const express = require("express");
-const expressLayouts = require("express-ejs-layouts");
-const session = require("express-session");
 const bodyParser = require('body-parser');
-const mongoose = require("mongoose");
-const passport = require("passport");
-const bcrypt = require("bcryptjs");
 const dotenv = require("dotenv");
-const fs = require("fs");
-
-// Models
-const User = require("./models/user");
-
-// Application
-const app = express();
 
 // Dotenv config
 dotenv.config();
+
+// Modules
+const passport = require("./modules/setup/passport")
+const database = require("./modules/setup/database")
+const viewengine = require("./modules/setup/viewengine")
+
+// Application
+const app = express();
 
 // Express bodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Express session
-secret = process.env.SESSION_SECRET || "secret";
-app.use(session({
-    secret: secret,
-    resave: true,
-    saveUninitialized: true
-}));
-
 // Passport config
-require("./modules/passport").configure(passport);
-app.use(passport.initialize());
-app.use(passport.session());
+passport.configure(app);
 
 // Database
-database = process.env.DATABASE || "mongodb://localhost/a50passos";
-mongoose.connect(database, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }).catch(err => console.error(err));
-const db = mongoose.connection;
-db.on('open', () => {
-    console.log("Connected to database");
-    // Setup default admin
-    User.find((err, res) => {
-        if (res.length == 0) {
-            const default_admin = new User({
-                email: "admin@admin",
-                password: "admin"
-            });
-            bcrypt.genSalt(10, (err, salt) => {
-                if (err) return console.error(err);
-                bcrypt.hash(default_admin.password, salt, (err, hash) => {
-                    if (err) return console.error(err)
-                    default_admin.password = hash
-                    default_admin.save()
-                });
-            });
-        }
-    });
-});
-
-// Filesystem
-if (!fs.existsSync("public/uploads/")) {
-    fs.mkdirSync("public/uploads/");
-}
+database.startup();
 
 // Views
-app.use(express.static("public"));
-app.use(expressLayouts);
-
-app.set("layout", "layouts/default");
-app.set("view engine", "ejs");
+viewengine.configure(app);
 
 // Routers
-app.use("/", require("./routes/index"));
+app.use("/", require("./routes/root"));
 
 app.use("/catalog", require("./routes/catalog"));
 app.use("/house", require("./routes/house"));

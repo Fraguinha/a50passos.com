@@ -11,7 +11,7 @@ router.get("/:id", async (req, res) => {
             house: house[0]
         });
     } catch (err) {
-        res.redirect("/index");
+        res.redirect("/");
     }
 });
 

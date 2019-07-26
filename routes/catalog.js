@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
             houses: houses
         });
     } catch (err) {
-        res.redirect("/index");
+        res.redirect("/");
     }
 });
 

@@ -5,7 +5,6 @@ const path = require("path");
 const fs = require("fs");
 
 const House = require("../models/house");
-const User = require("../models/user");
 
 const { ensureAuthentication } = require("../modules/authentication");
 

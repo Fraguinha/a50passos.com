@@ -1,17 +1,17 @@
-const express = require("express");
-const router = express.Router();
-const House = require("../models/house");
+const express = require('express')
+const router = express.Router()
+const House = require('../models/house')
 
 // Show catalog
-router.get("/", async (req, res) => {
-    try {
-        const houses = await House.find();
-        res.render("catalog.ejs", {
-            houses: houses
-        });
-    } catch (err) {
-        res.redirect("/");
-    }
-});
+router.get('/', async (req, res) => {
+  try {
+    const houses = await House.find()
+    res.render('catalog.ejs', {
+      houses: houses
+    })
+  } catch (err) {
+    res.redirect('/')
+  }
+})
 
-module.exports = router;
+module.exports = router

@@ -23,7 +23,7 @@ const base = path.resolve(__dirname, '..');
 
 // Show dashboard
 router.get("/", ensureAuthenticated, (req, res) => {
-    res.render("dashboard/dashboard.ejs");
+    res.render("dashboard.ejs");
 });
 
 // Dashboard addPhotos

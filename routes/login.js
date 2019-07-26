@@ -4,7 +4,7 @@ const passport = require("passport");
 
 // Show login
 router.get("/", (req, res) => {
-    res.render("login/login.ejs");
+    res.render("login.ejs");
 });
 
 // Handle login

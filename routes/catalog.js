@@ -6,7 +6,7 @@ const House = require("../models/house");
 router.get("/", async (req, res) => {
     try {
         const houses = await House.find();
-        res.render("catalog/catalog.ejs", {
+        res.render("catalog.ejs", {
             houses: houses
         });
     } catch (err) {

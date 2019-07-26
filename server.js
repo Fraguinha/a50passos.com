@@ -50,7 +50,6 @@ db.on('open', () => {
     console.log("Connected to database");
     // Setup default admin
     User.find((err, res) => {
-        if (err) return console.log(err)
         if (res.length == 0) {
             const default_admin = new User({
                 email: "admin@admin",

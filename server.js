@@ -2,22 +2,26 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
-const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
+const mongoose = require("mongoose");
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
+const dotenv = require("dotenv");
 const fs = require("fs");
 
+// Models
 const User = require("./models/user");
-
-// Dotenv config
-require("dotenv").config();
-
-// Passport config
-require("./config/passport")(passport);
 
 // Application
 const app = express();
+
+// Dotenv config
+dotenv.config();
+
+// Passport config
+require("./config/passport")(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Express bodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,17 +34,6 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
-
-// Passport
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Views
-app.use(express.static("public"));
-app.use(expressLayouts);
-
-app.set("view engine", "ejs");
-app.set("layout", "layouts/default");
 
 // Database
 database = process.env.DATABASE || "mongodb://localhost/a50passos";
@@ -71,6 +64,13 @@ db.on('open', () => {
 if (!fs.existsSync("public/uploads/")) {
     fs.mkdirSync("public/uploads/");
 }
+
+// Views
+app.use(express.static("public"));
+app.use(expressLayouts);
+
+app.set("layout", "layouts/default");
+app.set("view engine", "ejs");
 
 // Routers
 app.use("/", require("./routes/index"));

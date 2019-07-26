@@ -6,7 +6,8 @@ const bcrypt = require("bcryptjs");
 const User = require("../../models/user");
 
 // Env variables
-database = process.env.DATABASE || "mongodb://localhost/a50passos";
+appname = process.env.APPNAME || "app"
+database = process.env.DATABASE || `mongodb://localhost/${appname}`;
 
 // Functions
 const setupDefaultAdmin = () => {

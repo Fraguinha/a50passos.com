@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require('body-parser');
 const dotenv = require("dotenv");
+const fs = require("fs");
 
 // Dotenv config
 dotenv.config();
@@ -20,6 +21,11 @@ app.use(bodyParser.json());
 
 // Passport config
 passport.configure(app);
+
+// Filesystem
+if (!fs.existsSync("public/uploads/")) {
+    fs.mkdirSync("public/uploads/");
+}
 
 // Database
 database.startup();

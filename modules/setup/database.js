@@ -1,7 +1,6 @@
 // Requires
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const fs = require("fs");
 
 // Models
 const User = require("../../models/user");
@@ -29,16 +28,17 @@ const setupDefaultAdmin = () => {
     });
 }
 
-const startup = () => {
+const setupDatabase = () => {
     mongoose.connect(database, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }).catch(err => console.error(err));
     const db = mongoose.connection;
     db.on('open', () => {
         console.log("Connected to database");
         setupDefaultAdmin();
     });
-    if (!fs.existsSync("public/uploads/")) {
-        fs.mkdirSync("public/uploads/");
-    }
+}
+
+const startup = () => {
+    setupDatabase();
 }
 
 module.exports = { startup: startup }

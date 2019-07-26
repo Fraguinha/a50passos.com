@@ -62,40 +62,48 @@ router.post("/clearImages", ensureAuthentication, async (req, res) => {
 // Dashboard addHouse
 router.post("/addHouse", ensureAuthentication, async (req, res) => {
     try {
-        let id = req.body.id;
-        if (!id) {
-            id = Date.now();
+        if (fs.existsSync(base + "/public/uploads/photo1.jpg") &&
+            fs.existsSync(base + "/public/uploads/photo2.jpg") &&
+            fs.existsSync(base + "/public/uploads/photo3.jpg") &&
+            fs.existsSync(base + "/public/uploads/photo4.jpg")
+        ) {
+            let id = req.body.id;
+            if (!id) {
+                id = Date.now();
+            }
+            const suite = req.body.suite ? true : false
+            const elevator = req.body.elevator ? true : false
+            const dinningroom = req.body.dinningroom ? true : false
+            const balcony = req.body.balcony ? true : false
+            const gardin = req.body.gardin ? true : false
+            const house = new House({
+                id: id,
+                available: true,
+                tip: req.body.tip ? req.body.tip : "",
+                title: req.body.title,
+                address: req.body.address,
+                description: req.body.description ? req.body.description : "",
+                wc: req.body.wc,
+                suite: req.body.suite ? true : false,
+                elevator: req.body.elevator ? true : false,
+                dinningroom: req.body.dinningroom ? true : false,
+                balcony: req.body.balcony ? true : false,
+                gardin: req.body.gardin ? true : false,
+                photo1: "/images/" + id + "/photo1.jpg",
+                photo2: "/images/" + id + "/photo2.jpg",
+                photo3: "/images/" + id + "/photo3.jpg",
+                photo4: "/images/" + id + "/photo4.jpg"
+            });
+            await fs.mkdirSync(base + "/public/images/" + id);
+            await fs.renameSync(base + "/public/uploads/photo1.jpg", base + "/public/images/" + id + "/photo1.jpg");
+            await fs.renameSync(base + "/public/uploads/photo2.jpg", base + "/public/images/" + id + "/photo2.jpg");
+            await fs.renameSync(base + "/public/uploads/photo3.jpg", base + "/public/images/" + id + "/photo3.jpg");
+            await fs.renameSync(base + "/public/uploads/photo4.jpg", base + "/public/images/" + id + "/photo4.jpg");
+            await house.save();
+            res.redirect("/dashboard");
+        } else {
+            res.redirect("/dashboard");
         }
-        const suite = req.body.suite ? true : false
-        const elevator = req.body.elevator ? true : false
-        const dinningroom = req.body.dinningroom ? true : false
-        const balcony = req.body.balcony ? true : false
-        const gardin = req.body.gardin ? true : false
-        const house = new House({
-            id: id,
-            available: true,
-            tip: req.body.tip,
-            title: req.body.title,
-            address: req.body.address,
-            description: req.body.description,
-            wc: req.body.wc,
-            suite: req.body.suite ? true : false,
-            elevator: req.body.elevator ? true : false,
-            dinningroom: req.body.dinningroom ? true : false,
-            balcony: req.body.balcony ? true : false,
-            gardin: req.body.gardin ? true : false,
-            photo1: "/images/" + id + "/photo1.jpg",
-            photo2: "/images/" + id + "/photo2.jpg",
-            photo3: "/images/" + id + "/photo3.jpg",
-            photo4: "/images/" + id + "/photo4.jpg"
-        });
-        await fs.mkdirSync(base + "/public/images/" + id);
-        await fs.renameSync(base + "/public/uploads/photo1.jpg", base + "/public/images/" + id + "/photo1.jpg");
-        await fs.renameSync(base + "/public/uploads/photo2.jpg", base + "/public/images/" + id + "/photo2.jpg");
-        await fs.renameSync(base + "/public/uploads/photo3.jpg", base + "/public/images/" + id + "/photo3.jpg");
-        await fs.renameSync(base + "/public/uploads/photo4.jpg", base + "/public/images/" + id + "/photo4.jpg");
-        await house.save();
-        res.redirect("/dashboard");
     } catch (err) {
         res.redirect("/dashboard");
     }

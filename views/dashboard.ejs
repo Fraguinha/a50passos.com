@@ -68,7 +68,8 @@
         <!-- Clear -->
         <div class="row">
             <form class="form-signin" action="/dashboard/clearImages" method="POST">
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Clear</button>
+                <small class="form-text text-muted text-center">Limpa todas as imagens uploaded</small>
+                <button class="btn btn-lg btn-warning btn-block" type="submit">Clear</button>
             </form>
         </div>
         <hr>
@@ -82,29 +83,31 @@
                     <div class="form-group">
                         <label for="id">ID</label>
                         <input name="id" type="text" class="form-control" placeholder="ID a adicionar (optional)">
+                        <small class="form-text text-muted">Disponivel apenas para a conveniência do utilizador</small>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <label for="title">Titulo</label>
+                        <label for="title">Titulo *</label>
                         <input name="title" type="text" class="form-control" placeholder="Titulo" required>
                     </div>
                     <div class="form-group">
-                        <label for="address">Morada</label>
+                        <label for="address">Morada *</label>
                         <input name="address" type="text" class="form-control" placeholder="Morada" required>
                     </div>
                     <div class="form-group">
                         <label for="description">Descrição</label>
-                        <textarea name="description" type="text" class="form-control" placeholder="Descrição"
-                            required></textarea>
+                        <textarea name="description" type="text" class="form-control"
+                            placeholder="Descrição"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="tip">Info</label>
-                        <input name="tip" type="text" class="form-control" placeholder="Info" required>
+                        <label for="tip">Tooltip</label>
+                        <input name="tip" type="text" class="form-control" placeholder="Tooltip">
                     </div>
                     <div class="form-group">
-                        <label for="wc">WC</label>
+                        <label for="wc">WC *</label>
                         <input name="wc" type="number" min="1" class="form-control" placeholder="Nr" required>
                     </div>
+                    <small class="form-text text-muted">* Campos obrigatórios</small>
                     <hr>
                     <div class="form-group form-check">
                         <input id="suite" name="suite" type="checkbox" class="form-check-input">
@@ -129,6 +132,8 @@
                     <small class="form-text text-muted">Selecione os que se aplicam</small>
                     <hr>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Adicionar casa</button>
+                    <small class="form-text text-muted text-center">A casa apenas será adicionada se tiverem sido
+                        adicionadas 4 fotos</small>
                 </form>
             </div>
             <div class="col-md-4">
@@ -137,10 +142,12 @@
                     <h2 class="text-center">Toggle casa</h2>
                     <hr>
                     <div class="form-group">
-                        <label for="id">ID</label>
+                        <label for="id">ID *</label>
                         <input name="id" type="text" class="form-control" placeholder="ID a toggle" required>
+                        <small class="form-text text-muted">* Campo obrigatório</small>
                     </div>
                     <hr>
+                    <small class="form-text text-muted text-center">Muda entre disponivel e indisponivel</small>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Toggle casa</button>
                 </form>
                 <hr>
@@ -148,11 +155,14 @@
                     <h2 class="text-center">Remover casa</h2>
                     <hr>
                     <div class="form-group">
-                        <label for="id">ID</label>
+                        <label for="id">ID *</label>
                         <input name="id" type="text" class="form-control" placeholder="ID a remover" required>
+                        <small class="form-text text-muted">* Campo obrigatório</small>
                     </div>
                     <hr>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Remover casa</button>
+                    <small class="form-text text-muted text-center">Elimina a casa permanentemente</small>
+                    <button class="btn btn-lg btn-warning btn-block" type="submit">Remover casa</button>
+                    <small class="form-text text-muted text-center">(terá que ser recriada se necessário)</small>
                 </form>
             </div>
             <div class="col-md-4">
@@ -161,8 +171,9 @@
                     <h2 class="text-center">Editar casa</h2>
                     <hr>
                     <div class="form-group">
-                        <label for="id">ID</label>
-                        <input name="id" type="text" class="form-control" placeholder="ID a adicionar (optional)">
+                        <label for="id">ID *</label>
+                        <input name="id" type="text" class="form-control" placeholder="ID a editar">
+                        <small class="form-text text-muted">* Campo obrigatório</small>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -179,14 +190,16 @@
                             required></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="tip">Info</label>
-                        <input name="tip" type="text" class="form-control" placeholder="Info (optional)" required>
+                        <label for="tip">Tooltip</label>
+                        <input name="tip" type="text" class="form-control" placeholder="Tooltip (optional)" required>
                     </div>
                     <div class="form-group">
                         <label for="wc">WC</label>
                         <input name="wc" type="number" min="1" class="form-control" placeholder="Nr (optional)"
                             required>
                     </div>
+                    <small class="form-text text-muted">Todos estes campos são opcionais, apenas os que alterar serão
+                        actualizados</small>
                     <hr>
                     <div class="form-group form-check">
                         <input id="suite" name="suite" type="checkbox" class="form-check-input">
@@ -218,6 +231,8 @@
                     </div>
                     <hr>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Editar casa</button>
+                    <small class="form-text text-muted text-center">A casa será actualizada com os novos parametros e
+                        fotos especificados</small>
                 </form>
             </div>
         </div>

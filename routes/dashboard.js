@@ -90,9 +90,7 @@ router.post("/addHouse", ensureAuthenticated, async (req, res) => {
             photo3: "/images/" + id + "/photo3.jpg",
             photo4: "/images/" + id + "/photo4.jpg"
         });
-        console.log(house)
         await fs.mkdirSync(base + "/public/images/" + id);
-        console.log("")
         await fs.renameSync(base + "/public/uploads/photo1.jpg", base + "/public/images/" + id + "/photo1.jpg");
         await fs.renameSync(base + "/public/uploads/photo2.jpg", base + "/public/images/" + id + "/photo2.jpg");
         await fs.renameSync(base + "/public/uploads/photo3.jpg", base + "/public/images/" + id + "/photo3.jpg");

@@ -44,7 +44,7 @@ app.set("layout", "layouts/default");
 
 // Database
 database = process.env.DATABASE || "mongodb://localhost/a50passos";
-mongoose.connect(database, { useNewUrlParser: true }).catch(err => console.error(err));
+mongoose.connect(database, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }).catch(err => console.error(err));
 const db = mongoose.connection;
 db.on('open', () => {
     console.log("Connected to database");

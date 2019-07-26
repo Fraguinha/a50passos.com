@@ -5,10 +5,6 @@ const house_schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    available: {
-        type: Boolean,
-        required: true
-    },
     tip: {
         type: String,
         required: true
@@ -23,6 +19,34 @@ const house_schema = new mongoose.Schema({
     },
     description: {
         type: String,
+        required: true
+    },
+    wc: {
+        type: Number,
+        required: true
+    },
+    available: {
+        type: Boolean,
+        required: true
+    },
+    suite: {
+        type: Boolean,
+        required: true
+    },
+    elevator: {
+        type: Boolean,
+        required: true
+    },
+    dinningroom: {
+        type: Boolean,
+        required: true
+    },
+    balcony: {
+        type: Boolean,
+        required: true
+    },
+    gardin: {
+        type: Boolean,
         required: true
     },
     photo1: {

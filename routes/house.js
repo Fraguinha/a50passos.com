@@ -5,7 +5,8 @@ const House = require("../models/house");
 // Show house
 router.get("/:id", async (req, res) => {
     try {
-        const house = await House.find({ id: req.params.id }, "id available tip title address description photo1 photo2 photo3 photo4");
+        const house = await House.find({ id: req.params.id }, "id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4");
+
         res.render("house/house.ejs", {
             house: house[0]
         });

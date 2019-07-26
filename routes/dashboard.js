@@ -74,6 +74,12 @@ router.post("/addHouse", ensureAuthenticated, async (req, res) => {
             title: req.body.title,
             address: req.body.address,
             description: req.body.description,
+            wc: req.body.wc,
+            suite: req.body.suite ? true : false,
+            elevator: req.body.elevator ? true : false,
+            dinningroom: req.body.dinningroom ? true : false,
+            balcony: req.body.balcony ? true : false,
+            gardin: req.body.gardin ? true : false,
             photo1: "/images/" + id + "/photo1.jpg",
             photo2: "/images/" + id + "/photo2.jpg",
             photo3: "/images/" + id + "/photo3.jpg",
@@ -137,6 +143,16 @@ router.post("/editHouse", ensureAuthenticated, async (req, res) => {
         }
         if (req.body.description) {
             await House.findOneAndUpdate({ id: req.body.id }, { description: req.body.description }, { upsert: true }, (err) => console.error(err));
+        }
+        if (req.body.wc) {
+            await House.findOneAndUpdate({ id: req.body.id }, { wc: req.body.wc }, { upsert: true }, (err) => console.error(err));
+        }
+        if (req.body.checkbox) {
+            await House.findOneAndUpdate({ id: req.body.id }, { suite: req.body.suite ? true : false }, { upsert: true }, (err) => console.error(err));
+            await House.findOneAndUpdate({ id: req.body.id }, { elevator: req.body.elevator ? true : false }, { upsert: true }, (err) => console.error(err));
+            await House.findOneAndUpdate({ id: req.body.id }, { dinningroom: req.body.dinningroom ? true : false }, { upsert: true }, (err) => console.error(err));
+            await House.findOneAndUpdate({ id: req.body.id }, { balcony: req.body.balcony ? true : false }, { upsert: true }, (err) => console.error(err));
+            await House.findOneAndUpdate({ id: req.body.id }, { gardin: req.body.gardin ? true : false }, { upsert: true }, (err) => console.error(err));
         }
         if (await fs.existsSync(base + "/public/uploads/photo1.jpg")) {
             await fs.unlinkSync(base + "/public/images/" + req.body.id + "/photo1.jpg");

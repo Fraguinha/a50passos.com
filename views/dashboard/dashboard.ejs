@@ -76,77 +76,146 @@
         <div class="row">
             <div class="col-md-4">
                 <!-- Add house -->
-                <form class="" action="/dashboard/addHouse" method="POST">
+                <form action="/dashboard/addHouse" method="POST">
                     <h2 class="text-center">Adicionar casa</h2>
                     <hr>
-                    <input name="id" type="text" class="form-control" placeholder="ID a adicionar (optional)">
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input name="id" type="text" class="form-control" placeholder="ID a adicionar (optional)">
+                    </div>
                     <hr>
-                    <input name="title" type="text" class="form-control" placeholder="Titulo" required>
-                    <input name="address" type="text" class="form-control" placeholder="Morada" required>
-                    <textarea name="description" type="text" class="form-control" placeholder="Descrição"
-                        required></textarea>
-                    <input name="tip" type="text" class="form-control" placeholder="Info" required>
-                    <input name="wc" type="number" min="1" class="form-control" placeholder="Wc" required>
+                    <div class="form-group">
+                        <label for="title">Titulo</label>
+                        <input name="title" type="text" class="form-control" placeholder="Titulo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Morada</label>
+                        <input name="address" type="text" class="form-control" placeholder="Morada" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descrição</label>
+                        <textarea name="description" type="text" class="form-control" placeholder="Descrição"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tip">Info</label>
+                        <input name="tip" type="text" class="form-control" placeholder="Info" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wc">WC</label>
+                        <input name="wc" type="number" min="1" class="form-control" placeholder="Nr" required>
+                    </div>
                     <hr>
-                    <label for="suite">Suite:</label>
-                    <input id="suite" name="suite" type="checkbox" class="form-control" value="suite">
-                    <label for="elevator">Elevador:</label>
-                    <input id="elevator" name="elevator" type="checkbox" class="form-control" value="suite">
-                    <label for="dinningroom">Sala de jantar:</label>
-                    <input id="dinningroom" name="dinningroom" type="checkbox" class="form-control" value="suite">
-                    <label for="balcony">Varanda:</label>
-                    <input id="balcony" name="balcony" type="checkbox" class="form-control" value="suite">
-                    <label for="gardin">Jardim:</label>
-                    <input id="gardin" name="gardin" type="checkbox" class="form-control" value="suite">
+                    <div class="form-group form-check">
+                        <input id="suite" name="suite" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="suite">Suite</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input id="elevator" name="elevator" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="elevator">Elevador</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input id="dinningroom" name="dinningroom" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="dinningroom">Sala de jantar</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input id="balcony" name="balcony" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="balcony">Varanda</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input id="gardin" name="gardin" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="gardin">Jardim</label>
+                    </div>
+                    <small class="form-text text-muted">Selecione os que se aplicam</small>
                     <hr>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Adicionar casa</button>
                 </form>
             </div>
             <div class="col-md-4">
                 <!-- Toggle house -->
-                <form class="" action="/dashboard/toggleHouse" method="POST">
+                <form action="/dashboard/toggleHouse" method="POST">
                     <h2 class="text-center">Toggle casa</h2>
                     <hr>
-                    <input name="id" type="text" class="form-control" placeholder="ID a toggle" required>
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input name="id" type="text" class="form-control" placeholder="ID a toggle" required>
+                    </div>
                     <hr>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Toggle casa</button>
                 </form>
                 <hr>
-                <form class="" action="/dashboard/removeHouse" method="POST">
+                <form action="/dashboard/removeHouse" method="POST">
                     <h2 class="text-center">Remover casa</h2>
                     <hr>
-                    <input name="id" type="text" class="form-control" placeholder="ID a remover" required>
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input name="id" type="text" class="form-control" placeholder="ID a remover" required>
+                    </div>
                     <hr>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Remover casa</button>
                 </form>
             </div>
             <div class="col-md-4">
                 <!-- Edit house -->
-                <form class="" action="/dashboard/editHouse" method="POST">
+                <form action="/dashboard/editHouse" method="POST">
                     <h2 class="text-center">Editar casa</h2>
                     <hr>
-                    <input name="id" type="text" class="form-control" placeholder="ID a editar" required>
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input name="id" type="text" class="form-control" placeholder="ID a adicionar (optional)">
+                    </div>
                     <hr>
-                    <input name="title" type="text" class="form-control" placeholder="Titulo (optional)">
-                    <input name="address" type="text" class="form-control" placeholder="Morada (optional)">
-                    <textarea name="description" type="text" class="form-control"
-                        placeholder="Descrição (optional)"></textarea>
-                    <input name="tip" type="text" class="form-control" placeholder="Info (optional)">
-                    <input id="wc" name="wc" type="number" min="1" class="form-control" placeholder="Wc">
+                    <div class="form-group">
+                        <label for="title">Titulo</label>
+                        <input name="title" type="text" class="form-control" placeholder="Titulo (optional)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Morada</label>
+                        <input name="address" type="text" class="form-control" placeholder="Morada (optional)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descrição</label>
+                        <textarea name="description" type="text" class="form-control" placeholder="Descrição (optional)"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tip">Info</label>
+                        <input name="tip" type="text" class="form-control" placeholder="Info (optional)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wc">WC</label>
+                        <input name="wc" type="number" min="1" class="form-control" placeholder="Nr (optional)"
+                            required>
+                    </div>
                     <hr>
-                    <label for="checkbox">Update checkboxes?</label>
-                    <input id="checkbox" name="checkbox" type="checkbox" class="form-control">
+                    <div class="form-group form-check">
+                        <input id="suite" name="suite" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="suite">Suite</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input id="elevator" name="elevator" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="elevator">Elevador</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input id="dinningroom" name="dinningroom" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="dinningroom">Sala de jantar</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input id="balcony" name="balcony" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="balcony">Varanda</label>
+                    </div>
+                    <div class="form-group form-check">
+                        <input id="gardin" name="gardin" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="gardin">Jardim</label>
+                    </div>
+                    <small class="form-text text-muted">Selecione os que se aplicam</small>
                     <hr>
-                    <label for="suite">Suite:</label>
-                    <input id="suite" name="suite" type="checkbox" class="form-control">
-                    <label for="elevator">Elevador:</label>
-                    <input id="elevator" name="elevator" type="checkbox" class="form-control">
-                    <label for="dinningroom">Sala de jantar:</label>
-                    <input id="dinningroom" name="dinningroom" type="checkbox" class="form-control">
-                    <label for="balcony">Varanda:</label>
-                    <input id="balcony" name="balcony" type="checkbox" class="form-control">
-                    <label for="gardin">Jardim:</label>
-                    <input id="gardin" name="gardin" type="checkbox" class="form-control">
+                    <div class="form-group form-check">
+                        <input id="checkbox" name="checkbox" type="checkbox" class="form-check-input">
+                        <label class="form-check-label" for="checkbox">Actualizar checkboxes?</label>
+                        <small class="form-text text-muted">se estiver selecionado, a casa será actualizada com os
+                            valores das checkboxes em cima</small>
+                    </div>
                     <hr>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Editar casa</button>
                 </form>

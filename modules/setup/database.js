@@ -28,17 +28,13 @@ const setupDefaultAdmin = () => {
     });
 }
 
-const setupDatabase = () => {
+const startup = () => {
     mongoose.connect(database, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }).catch(err => console.error(err));
     const db = mongoose.connection;
     db.on('open', () => {
         console.log("Connected to database");
         setupDefaultAdmin();
     });
-}
-
-const startup = () => {
-    setupDatabase();
 }
 
 module.exports = { startup: startup }

@@ -67,6 +67,11 @@ router.post("/addHouse", ensureAuthenticated, async (req, res) => {
         if (!id) {
             id = Date.now();
         }
+        const suite = req.body.suite ? true : false
+        const elevator = req.body.elevator ? true : false
+        const dinningroom = req.body.dinningroom ? true : false
+        const balcony = req.body.balcony ? true : false
+        const gardin = req.body.gardin ? true : false
         const house = new House({
             id: id,
             available: true,
@@ -85,7 +90,9 @@ router.post("/addHouse", ensureAuthenticated, async (req, res) => {
             photo3: "/images/" + id + "/photo3.jpg",
             photo4: "/images/" + id + "/photo4.jpg"
         });
+        console.log(house)
         await fs.mkdirSync(base + "/public/images/" + id);
+        console.log("")
         await fs.renameSync(base + "/public/uploads/photo1.jpg", base + "/public/images/" + id + "/photo1.jpg");
         await fs.renameSync(base + "/public/uploads/photo2.jpg", base + "/public/images/" + id + "/photo2.jpg");
         await fs.renameSync(base + "/public/uploads/photo3.jpg", base + "/public/images/" + id + "/photo3.jpg");

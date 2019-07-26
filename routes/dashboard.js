@@ -7,7 +7,7 @@ const fs = require("fs");
 const House = require("../models/house");
 const User = require("../models/user");
 
-const { ensureAuthenticated } = require("../config/auth");
+const { ensureAuthentication } = require("../modules/authentication");
 
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -22,29 +22,29 @@ const upload = multer({ storage: storage });
 const base = path.resolve(__dirname, '..');
 
 // Show dashboard
-router.get("/", ensureAuthenticated, (req, res) => {
+router.get("/", ensureAuthentication, (req, res) => {
     res.render("dashboard.ejs");
 });
 
 // Dashboard addPhotos
-router.post("/addPhoto1", ensureAuthenticated, upload.single('photo1'), async (req, res) => {
+router.post("/addPhoto1", ensureAuthentication, upload.single('photo1'), async (req, res) => {
     res.status(201).redirect("/dashboard");
 });
 
-router.post("/addPhoto2", ensureAuthenticated, upload.single('photo2'), async (req, res) => {
+router.post("/addPhoto2", ensureAuthentication, upload.single('photo2'), async (req, res) => {
     res.status(201).redirect("/dashboard");
 });
 
-router.post("/addPhoto3", ensureAuthenticated, upload.single('photo3'), async (req, res) => {
+router.post("/addPhoto3", ensureAuthentication, upload.single('photo3'), async (req, res) => {
     res.status(201).redirect("/dashboard");
 });
 
-router.post("/addPhoto4", ensureAuthenticated, upload.single('photo4'), async (req, res) => {
+router.post("/addPhoto4", ensureAuthentication, upload.single('photo4'), async (req, res) => {
     res.status(201).redirect("/dashboard");
 });
 
 // Dashboard clearImages
-router.post("/clearImages", ensureAuthenticated, async (req, res) => {
+router.post("/clearImages", ensureAuthentication, async (req, res) => {
     if (await fs.existsSync(base + "/public/uploads/photo1.jpg")) {
         await fs.unlinkSync(base + "/public/uploads/photo1.jpg");
     }
@@ -61,7 +61,7 @@ router.post("/clearImages", ensureAuthenticated, async (req, res) => {
 });
 
 // Dashboard addHouse
-router.post("/addHouse", ensureAuthenticated, async (req, res) => {
+router.post("/addHouse", ensureAuthentication, async (req, res) => {
     try {
         let id = req.body.id;
         if (!id) {
@@ -103,7 +103,7 @@ router.post("/addHouse", ensureAuthenticated, async (req, res) => {
 });
 
 // Dashboard toggleHouse
-router.post("/toggleHouse", ensureAuthenticated, async (req, res) => {
+router.post("/toggleHouse", ensureAuthentication, async (req, res) => {
     try {
         const house = await House.findOne({ id: req.body.id });
         if (house.available) {
@@ -119,7 +119,7 @@ router.post("/toggleHouse", ensureAuthenticated, async (req, res) => {
 });
 
 // Dashboard removeHouse
-router.post("/removeHouse", ensureAuthenticated, async (req, res) => {
+router.post("/removeHouse", ensureAuthentication, async (req, res) => {
     try {
         await House.deleteOne({ id: req.body.id });
         await fs.unlinkSync(base + "/public/images/" + req.body.id + "/photo1.jpg");
@@ -134,7 +134,7 @@ router.post("/removeHouse", ensureAuthenticated, async (req, res) => {
 });
 
 // Dashboard editHouse
-router.post("/editHouse", ensureAuthenticated, async (req, res) => {
+router.post("/editHouse", ensureAuthentication, async (req, res) => {
     try {
         const house = await House.findOne();
         if (req.body.tip) {

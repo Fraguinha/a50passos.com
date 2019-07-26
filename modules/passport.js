@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 
 const User = require("../models/user");
 
-module.exports = function (passport) {
+const configure = (passport) => {
     passport.use(
         new LocalStrategy({ usernameField: "email" }, (email, password, done) => {
             // Match user
@@ -35,3 +35,5 @@ module.exports = function (passport) {
         });
     });
 }
+
+module.exports = { configure: configure }

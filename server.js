@@ -18,11 +18,6 @@ const app = express();
 // Dotenv config
 dotenv.config();
 
-// Passport config
-require("./config/passport")(passport);
-app.use(passport.initialize());
-app.use(passport.session());
-
 // Express bodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -34,6 +29,11 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+// Passport config
+require("./modules/passport").configure(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Database
 database = process.env.DATABASE || "mongodb://localhost/a50passos";

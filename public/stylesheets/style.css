@@ -36,14 +36,6 @@
   bottom: initial;
 }
 
-.banner {
-  position: absolute;
-  width: 100%;
-  top: 59%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -92,13 +84,21 @@
   margin-bottom: 0 !important;
 }
 
+.sliding-text {
+  padding-top: 2rem;
+}
+
+.banner {
+  position: absolute;
+  width: 100%;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .gone {
   margin-left: 2.5%;
   width: 95%;
-}
-
-.sliding-text {
-  padding-top: 2rem;
 }
 
 h1 {

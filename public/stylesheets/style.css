@@ -1,3 +1,13 @@
+.site-header a {
+  color: #999;
+  transition: ease-in-out color .15s;
+}
+
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 .jumbotron {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -18,16 +28,6 @@
 
 .carousel-item {
   height: auto;
-}
-
-.site-header a {
-  color: #999;
-  transition: ease-in-out color .15s;
-}
-
-.site-header a:hover {
-  color: #fff;
-  text-decoration: none;
 }
 
 .form-signin {
@@ -65,6 +65,15 @@
   border-top-right-radius: 0;
 }
 
+.display-3 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.fade-up {
+  padding-bottom: 5rem;
+}
+
 h1 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -81,6 +90,6 @@ h3 {
 }
 
 footer {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }

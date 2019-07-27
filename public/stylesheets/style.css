@@ -101,6 +101,11 @@
   width: 95%;
 }
 
+.gone-house {
+  width: 100%;
+  font-size: 2.5rem;
+}
+
 h1 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;

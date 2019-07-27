@@ -36,14 +36,13 @@
   bottom: initial;
 }
 
-.centered {
+.banner {
   position: absolute;
   width: 100%;
   top: 59%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 .form-signin {
   width: 100%;
@@ -85,6 +84,18 @@
   padding-bottom: 3rem;
 }
 
+.toast {
+  position: fixed;
+  min-width: 100%;
+  bottom: 0; left: 0;
+  text-align: center;
+  margin-bottom: 0 !important;
+}
+
+.sliding-text {
+  padding-top: 2rem;
+}
+
 h1 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -103,12 +114,4 @@ h3 {
 footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-}
-
-.toast {
-  position: fixed;
-  min-width: 100%;
-  bottom: 0; left: 0;
-  text-align: center;
-  margin-bottom: 0 !important;
 }

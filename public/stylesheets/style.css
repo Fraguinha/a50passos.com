@@ -66,12 +66,8 @@
 }
 
 .display-3 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.fade-up {
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 h1 {
@@ -90,6 +86,14 @@ h3 {
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.toast {
+  position: fixed;
+  min-width: 100%;
+  bottom: 0; left: 0;
+  text-align: center;
+  margin-bottom: 0 !important;
 }

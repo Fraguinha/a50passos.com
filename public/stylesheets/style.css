@@ -30,6 +30,21 @@
   height: auto;
 }
 
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
+}
+
+.centered {
+  position: absolute;
+  width: 100%;
+  top: 59%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 .form-signin {
   width: 100%;
   max-width: 330px;

@@ -156,6 +156,8 @@
 
 <%- include("partials/_footer.ejs") %>
 
+<% if (house.available) { %>
 <%- include("partials/_toast.ejs") %>
+<% } %>
 
 <% } %>

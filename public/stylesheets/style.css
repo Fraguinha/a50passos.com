@@ -92,6 +92,11 @@
   margin-bottom: 0 !important;
 }
 
+.gone {
+  margin-left: 2.5%;
+  width: 95%;
+}
+
 .sliding-text {
   padding-top: 2rem;
 }

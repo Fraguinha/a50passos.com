@@ -40,32 +40,32 @@
       <div class="carousel-item active text-center">
         <img class="img-fluid img-center" src="<%= house.photo1 %>" max-width="100%" height="auto">
         <div class="carousel-caption">
-          <div class="banner">
-            <h1 class="text-center text-white btn bg-danger gone-house"><strong>Já Foi!</strong></h1>
+          <div class="banner-house">
+            <h1 class="text-center text-white badge badge-house badge-danger gone-house">Já Foi!</h1>
           </div>
         </div>
       </div>
       <div class="carousel-item text-center">
         <img class="img-fluid img-center" src="<%= house.photo2 %>" max-width="100%" height="auto">
         <div class="carousel-caption">
-          <div class="banner">
-            <h1 class="text-center text-white btn bg-danger gone-house"><strong>Já Foi!</strong></h1>
+          <div class="banner-house">
+            <h1 class="text-center text-white badge badge-house badge-danger gone-house">Já Foi!</h1>
           </div>
         </div>
       </div>
       <div class="carousel-item text-center">
         <img class="img-fluid img-center" src="<%= house.photo3 %>" max-width="100%" height="auto">
         <div class="carousel-caption">
-          <div class="banner">
-            <h1 class="text-center text-white btn bg-danger gone-house"><strong>Já Foi!</strong></h1>
+          <div class="banner-house">
+            <h1 class="text-center text-white badge badge-house badge-danger gone-house">Já Foi!</h1>
           </div>
         </div>
       </div>
       <div class="carousel-item text-center">
         <img class="img-fluid img-center" src="<%= house.photo4 %>" max-width="100%" height="auto">
         <div class="carousel-caption">
-          <div class="banner">
-            <h1 class="text-center text-white btn bg-danger gone-house"><strong>Já Foi!</strong></h1>
+          <div class="banner-house">
+            <h1 class="text-center text-white badge badge-house badge-danger gone-house">Já Foi!</h1>
           </div>
         </div>
       </div>
@@ -84,9 +84,9 @@
     <div class="row">
       <div class="col-md-12">
         <% if (house.available) { %>
-        <h1><%= house.title %></h1>
+        <h1><%= house.title %> <small class="badge badge-success">Disponível</small></h1>
         <% } else { %>
-        <h1><%= house.title %> <small class="text-danger">(Arrendado)</small></h1>
+        <h1><%= house.title %> <small class="badge badge-danger">Arrendado</small></h1>
         <% } %>
         <h2 class="text-muted"><%= house.address %></h2>
         <hr>

@@ -71,11 +71,6 @@
   border-top-right-radius: 0;
 }
 
-.display-3 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
 .toast {
   position: fixed;
   min-width: 100%;
@@ -84,11 +79,7 @@
   margin-bottom: 0 !important;
 }
 
-.sliding-text {
-  padding-top: 2rem;
-}
-
-.banner {
+.banner-catalog {
   position: absolute;
   width: 100%;
   top: 59%;
@@ -96,32 +87,21 @@
   transform: translate(-50%, -50%);
 }
 
-.gone {
-  margin-left: 2.5%;
-  width: 95%;
-}
-
-.gone-house {
+.banner-house {
+  position: absolute;
   width: 100%;
-  font-size: 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-h1 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.badge-catalog {
+  width: 95%;
+  margin-left: 2.5%;
+  font-size: 2rem;
 }
 
-h2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-h3 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.badge-house {
+  width: 100%;
+  font-size: 3rem;
 }

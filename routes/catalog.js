@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     const houses = await House.find()
     res.render('catalog.ejs', {
-      houses: houses
+      data: houses
     })
   } catch (err) {
     res.redirect('/')

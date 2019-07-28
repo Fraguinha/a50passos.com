@@ -139,27 +139,27 @@ router.post('/removeHouse', ensureAuthentication, async (req, res) => {
 router.post('/editHouse', ensureAuthentication, async (req, res) => {
   try {
     const house = await House.findOne()
-    if (req.body.tip) {
-      await House.findOneAndUpdate({ id: req.body.id }, { tip: req.body.tip }, { upsert: true }, (err) => console.error(err))
-    }
     if (req.body.title) {
-      await House.findOneAndUpdate({ id: req.body.id }, { title: req.body.title }, { upsert: true }, (err) => console.error(err))
+      await House.findOneAndUpdate({ id: req.body.id }, { title: req.body.title }, { upsert: true })
     }
     if (req.body.address) {
-      await House.findOneAndUpdate({ id: req.body.id }, { address: req.body.address }, { upsert: true }, (err) => console.error(err))
+      await House.findOneAndUpdate({ id: req.body.id }, { address: req.body.address }, { upsert: true })
     }
     if (req.body.description) {
-      await House.findOneAndUpdate({ id: req.body.id }, { description: req.body.description }, { upsert: true }, (err) => console.error(err))
+      await House.findOneAndUpdate({ id: req.body.id }, { description: req.body.description }, { upsert: true })
+    }
+    if (req.body.tip) {
+      await House.findOneAndUpdate({ id: req.body.id }, { tip: req.body.tip }, { upsert: true })
     }
     if (req.body.wc) {
-      await House.findOneAndUpdate({ id: req.body.id }, { wc: req.body.wc }, { upsert: true }, (err) => console.error(err))
+      await House.findOneAndUpdate({ id: req.body.id }, { wc: req.body.wc }, { upsert: true })
     }
     if (req.body.checkbox) {
-      await House.findOneAndUpdate({ id: req.body.id }, { suite: !!req.body.suite }, { upsert: true }, (err) => console.error(err))
-      await House.findOneAndUpdate({ id: req.body.id }, { elevator: !!req.body.elevator }, { upsert: true }, (err) => console.error(err))
-      await House.findOneAndUpdate({ id: req.body.id }, { dinningroom: !!req.body.dinningroom }, { upsert: true }, (err) => console.error(err))
-      await House.findOneAndUpdate({ id: req.body.id }, { balcony: !!req.body.balcony }, { upsert: true }, (err) => console.error(err))
-      await House.findOneAndUpdate({ id: req.body.id }, { gardin: !!req.body.gardin }, { upsert: true }, (err) => console.error(err))
+      await House.findOneAndUpdate({ id: req.body.id }, { suite: !!req.body.suite }, { upsert: true })
+      await House.findOneAndUpdate({ id: req.body.id }, { elevator: !!req.body.elevator }, { upsert: true })
+      await House.findOneAndUpdate({ id: req.body.id }, { dinningroom: !!req.body.dinningroom }, { upsert: true })
+      await House.findOneAndUpdate({ id: req.body.id }, { balcony: !!req.body.balcony }, { upsert: true })
+      await House.findOneAndUpdate({ id: req.body.id }, { gardin: !!req.body.gardin }, { upsert: true })
     }
     if (await fs.existsSync(base + '/public/uploads/photo1.jpg')) {
       await fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo1.jpg')

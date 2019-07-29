@@ -1,21 +1,21 @@
-const express = require('express')
-const router = express.Router()
-const House = require('../models/house')
+const express = require("express");
+const router = express.Router();
+const House = require("../models/house");
 
 // Show house
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const house = await House.find(
       { id: req.params.id },
-      'id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4'
-    )
+      "id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4"
+    );
 
-    res.render('house.ejs', {
+    res.render("house.ejs", {
       data: house[0]
-    })
+    });
   } catch (err) {
-    res.redirect('/')
+    res.redirect("/");
   }
-})
+});
 
-module.exports = router
+module.exports = router;

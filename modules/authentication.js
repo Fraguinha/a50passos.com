@@ -1,9 +1,9 @@
 // Functions
 const ensureAuthentication = (req, res, next) => {
   if (req.isAuthenticated()) {
-    return next()
+    return next();
   }
-  res.redirect('/login')
-}
+  res.redirect("/login");
+};
 
-module.exports = { ensureAuthentication: ensureAuthentication }
+module.exports = { ensureAuthentication: ensureAuthentication };

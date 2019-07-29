@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const houseSchema = new mongoose.Schema({
   id: {
@@ -65,6 +65,6 @@ const houseSchema = new mongoose.Schema({
     type: String,
     required: true
   }
-})
+});
 
-module.exports = mongoose.model('House', houseSchema)
+module.exports = mongoose.model("House", houseSchema);

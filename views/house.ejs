@@ -4,7 +4,7 @@
 
 <main role="main">
   <div class="bg-light">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide shadow" data-ride="carousel">
       <ol class="carousel-indicators ">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -91,6 +91,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <hr />
         <% if (data.available) { %>
         <h1>
           <%= data.title %>
@@ -107,25 +108,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-7">
-        <h3>Localização</h3>
-        <div class="embed-responsive embed-responsive-4by3">
-          <iframe class="embed-responsive-item" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqjz4i7Y9I0CW2QWNmshmA7JFseTzzkgg&q=<%= data.address %>&zoom=16"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <h3>Descrição</h3>
+      <div class="col-md-5 my-4">
+        <h3 class="text-center pb-4">Descrição</h3>
         <p><%= data.description %></p>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Informação adicional</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
+        <h4 class="text-center pt-4">Informação adicional</h4>
+        <table class="table table-bordered table-striped">
           <tbody>
             <tr>
               <td>Casas de banho</td>
@@ -173,6 +160,15 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <div class="col-md-7 my-4">
+        <h3 class="text-center pb-4">Localização</h3>
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqjz4i7Y9I0CW2QWNmshmA7JFseTzzkgg&q=<%= data.address %>&zoom=16"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
   </div>

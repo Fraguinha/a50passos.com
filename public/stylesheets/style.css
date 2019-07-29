@@ -9,7 +9,9 @@
 }
 
 .jumbotron {
+  margin-top: 0;
   padding-top: 3rem;
+  margin-bottom: 0;
   padding-bottom: 3rem;
 }
 
@@ -105,4 +107,8 @@
 .badge-house {
   width: 100%;
   font-size: 3rem;
+}
+
+.background-white {
+  background-color: white;
 }

@@ -1,3 +1,4 @@
+<!-- Looping variable -->
 <% let i = 0 %>
 
 <%- include("partials/_header.ejs") %>
@@ -5,8 +6,11 @@
 <main>
   <div class="album py-5 bg-light">
     <div class="container">
+      <!-- Loop through houses -->
       <% data.forEach((house) => { %>
+      <!-- If it should be left -->
       <% if (i % 3 === 0 ) { %>
+      <!-- Increment loop variable -->
       <% i++ %>
       <div class="row">
         <div class="col-md-4">
@@ -29,7 +33,7 @@
               <p class="card-text"><%= house.title %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <!-- <a href="/house/<%= house.id %>" class="btn btn-sm btn-outline-secondary">Ver mais</a> -->
+                  <a href="/house/<%= house.id %>" class="btn btn-sm btn-outline-secondary">Ver mais</a>
                 </div>
                 <% if (house.available) { %>
                 <small class=" site-header"><%= house.tip %></small>
@@ -40,7 +44,9 @@
             </div>
           </div>
         </div>
+        <!-- If it should be mid -->
         <% } else if (i % 3 === 1 ) { %>
+        <!-- Increment loop variable -->
         <% i++ %>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
@@ -73,7 +79,9 @@
             </div>
           </div>
         </div>
+        <!-- If it should be right -->
         <% } else if (i % 3 === 2 ) { %>
+        <!-- Increment loop variable -->
         <% i++ %>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">

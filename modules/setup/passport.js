@@ -21,7 +21,7 @@ const setup = passport => {
         }
         // Match password
         bcrypt.compare(password, user.password, (err, isMatch) => {
-          if (err) console.error(err);
+          if (err) throw err;
           if (isMatch) {
             return done(null, user);
           } else {

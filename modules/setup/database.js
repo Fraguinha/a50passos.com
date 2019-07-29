@@ -12,16 +12,16 @@ const database = process.env.DATABASE || `mongodb://localhost/${appname}`;
 // Functions
 const setupDefaultAdmin = () => {
   User.find((err, res) => {
-    if (err) console.err(err);
+    if (err) throw err;
     if (res.length === 0) {
       const defaultAdmin = new User({
         email: "admin@admin",
         password: "admin"
       });
       bcrypt.genSalt(10, (err, salt) => {
-        if (err) return console.error(err);
+        if (err) throw err;
         bcrypt.hash(defaultAdmin.password, salt, (err, hash) => {
-          if (err) return console.error(err);
+          if (err) throw err;
           defaultAdmin.password = hash;
           defaultAdmin.save();
         });

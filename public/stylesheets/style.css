@@ -1,13 +1,3 @@
-.site-header a {
-  color: #999;
-  transition: ease-in-out color 0.15s;
-}
-
-.site-header a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
 .jumbotron {
   margin-top: 0;
   padding-top: 3rem;
@@ -38,41 +28,6 @@
   bottom: initial;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-
-.form-signin .checkbox {
-  font-weight: 400;
-}
-
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-}
-
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
 .toast {
   position: fixed;
   min-width: 100%;
@@ -82,7 +37,21 @@
   margin-bottom: 0 !important;
 }
 
-.banner-catalog {
+.background-white {
+  background-color: white;
+}
+
+.nav-style a {
+  color: #999;
+  transition: ease-in-out color 0.15s;
+}
+
+.nav-style a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.banner-style-catalog {
   position: absolute;
   width: 100%;
   top: 59%;
@@ -90,7 +59,7 @@
   transform: translate(-50%, -50%);
 }
 
-.banner-house {
+.banner-style-house {
   position: absolute;
   width: 100%;
   top: 50%;
@@ -98,17 +67,18 @@
   transform: translate(-50%, -50%);
 }
 
-.badge-catalog {
+.badge-style-catalog {
   width: 95%;
   margin-left: 2.5%;
   font-size: 2rem;
 }
 
-.badge-house {
+.badge-style-house {
   width: 100%;
   font-size: 3rem;
 }
 
-.background-white {
-  background-color: white;
+.form-style {
+  max-width: 330px;
+  margin: auto;
 }

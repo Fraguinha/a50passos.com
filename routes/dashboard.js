@@ -28,21 +28,41 @@ router.get('/', ensureAuthentication, (req, res) => {
 })
 
 // Dashboard addPhotos
-router.post('/addPhoto1', ensureAuthentication, upload.single('photo1'), async (req, res) => {
-  res.status(201).redirect('/dashboard')
-})
+router.post(
+  '/addPhoto1',
+  ensureAuthentication,
+  upload.single('photo1'),
+  async (req, res) => {
+    res.status(201).redirect('/dashboard')
+  }
+)
 
-router.post('/addPhoto2', ensureAuthentication, upload.single('photo2'), async (req, res) => {
-  res.status(201).redirect('/dashboard')
-})
+router.post(
+  '/addPhoto2',
+  ensureAuthentication,
+  upload.single('photo2'),
+  async (req, res) => {
+    res.status(201).redirect('/dashboard')
+  }
+)
 
-router.post('/addPhoto3', ensureAuthentication, upload.single('photo3'), async (req, res) => {
-  res.status(201).redirect('/dashboard')
-})
+router.post(
+  '/addPhoto3',
+  ensureAuthentication,
+  upload.single('photo3'),
+  async (req, res) => {
+    res.status(201).redirect('/dashboard')
+  }
+)
 
-router.post('/addPhoto4', ensureAuthentication, upload.single('photo4'), async (req, res) => {
-  res.status(201).redirect('/dashboard')
-})
+router.post(
+  '/addPhoto4',
+  ensureAuthentication,
+  upload.single('photo4'),
+  async (req, res) => {
+    res.status(201).redirect('/dashboard')
+  }
+)
 
 // Dashboard clearImages
 router.post('/clearImages', ensureAuthentication, async (req, res) => {
@@ -64,7 +84,8 @@ router.post('/clearImages', ensureAuthentication, async (req, res) => {
 // Dashboard addHouse
 router.post('/addHouse', ensureAuthentication, async (req, res) => {
   try {
-    if (fs.existsSync(base + '/public/uploads/photo1.jpg') &&
+    if (
+      fs.existsSync(base + '/public/uploads/photo1.jpg') &&
       fs.existsSync(base + '/public/uploads/photo2.jpg') &&
       fs.existsSync(base + '/public/uploads/photo3.jpg') &&
       fs.existsSync(base + '/public/uploads/photo4.jpg')
@@ -92,10 +113,22 @@ router.post('/addHouse', ensureAuthentication, async (req, res) => {
         photo4: '/images/' + id + '/photo4.jpg'
       })
       await fs.mkdirSync(base + '/public/images/' + id)
-      await fs.renameSync(base + '/public/uploads/photo1.jpg', base + '/public/images/' + id + '/photo1.jpg')
-      await fs.renameSync(base + '/public/uploads/photo2.jpg', base + '/public/images/' + id + '/photo2.jpg')
-      await fs.renameSync(base + '/public/uploads/photo3.jpg', base + '/public/images/' + id + '/photo3.jpg')
-      await fs.renameSync(base + '/public/uploads/photo4.jpg', base + '/public/images/' + id + '/photo4.jpg')
+      await fs.renameSync(
+        base + '/public/uploads/photo1.jpg',
+        base + '/public/images/' + id + '/photo1.jpg'
+      )
+      await fs.renameSync(
+        base + '/public/uploads/photo2.jpg',
+        base + '/public/images/' + id + '/photo2.jpg'
+      )
+      await fs.renameSync(
+        base + '/public/uploads/photo3.jpg',
+        base + '/public/images/' + id + '/photo3.jpg'
+      )
+      await fs.renameSync(
+        base + '/public/uploads/photo4.jpg',
+        base + '/public/images/' + id + '/photo4.jpg'
+      )
       await house.save()
       res.redirect('/dashboard')
     } else {
@@ -111,9 +144,19 @@ router.post('/toggleHouse', ensureAuthentication, async (req, res) => {
   try {
     const house = await House.findOne({ id: req.body.id })
     if (house.available) {
-      await House.findOneAndUpdate({ id: req.body.id }, { available: false }, { upsert: true }, (err) => console.error(err))
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { available: false },
+        { upsert: true },
+        err => console.error(err)
+      )
     } else {
-      await House.findOneAndUpdate({ id: req.body.id }, { available: true }, { upsert: true }, (err) => console.error(err))
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { available: true },
+        { upsert: true },
+        err => console.error(err)
+      )
     }
     await house.save()
     res.redirect('/dashboard')
@@ -142,42 +185,102 @@ router.post('/editHouse', ensureAuthentication, async (req, res) => {
   try {
     const house = await House.findOne()
     if (req.body.title) {
-      await House.findOneAndUpdate({ id: req.body.id }, { title: req.body.title }, { upsert: true })
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { title: req.body.title },
+        { upsert: true }
+      )
     }
     if (req.body.address) {
-      await House.findOneAndUpdate({ id: req.body.id }, { address: req.body.address }, { upsert: true })
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { address: req.body.address },
+        { upsert: true }
+      )
     }
     if (req.body.description) {
-      await House.findOneAndUpdate({ id: req.body.id }, { description: req.body.description }, { upsert: true })
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { description: req.body.description },
+        { upsert: true }
+      )
     }
     if (req.body.tip) {
-      await House.findOneAndUpdate({ id: req.body.id }, { tip: req.body.tip }, { upsert: true })
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { tip: req.body.tip },
+        { upsert: true }
+      )
     }
     if (req.body.wc) {
-      await House.findOneAndUpdate({ id: req.body.id }, { wc: req.body.wc }, { upsert: true })
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { wc: req.body.wc },
+        { upsert: true }
+      )
     }
     if (req.body.checkbox) {
-      await House.findOneAndUpdate({ id: req.body.id }, { suite: !!req.body.suite }, { upsert: true })
-      await House.findOneAndUpdate({ id: req.body.id }, { elevator: !!req.body.elevator }, { upsert: true })
-      await House.findOneAndUpdate({ id: req.body.id }, { dinningroom: !!req.body.dinningroom }, { upsert: true })
-      await House.findOneAndUpdate({ id: req.body.id }, { balcony: !!req.body.balcony }, { upsert: true })
-      await House.findOneAndUpdate({ id: req.body.id }, { gardin: !!req.body.gardin }, { upsert: true })
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { suite: !!req.body.suite },
+        { upsert: true }
+      )
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { elevator: !!req.body.elevator },
+        { upsert: true }
+      )
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { dinningroom: !!req.body.dinningroom },
+        { upsert: true }
+      )
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { balcony: !!req.body.balcony },
+        { upsert: true }
+      )
+      await House.findOneAndUpdate(
+        { id: req.body.id },
+        { gardin: !!req.body.gardin },
+        { upsert: true }
+      )
     }
     if (await fs.existsSync(base + '/public/uploads/photo1.jpg')) {
-      await fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo1.jpg')
-      await fs.renameSync(base + '/public/uploads/photo1.jpg', base + '/public/images/' + req.body.id + '/photo1.jpg')
+      await fs.unlinkSync(
+        base + '/public/images/' + req.body.id + '/photo1.jpg'
+      )
+      await fs.renameSync(
+        base + '/public/uploads/photo1.jpg',
+        base + '/public/images/' + req.body.id + '/photo1.jpg'
+      )
     }
     if (await fs.existsSync(base + '/public/uploads/photo2.jpg')) {
-      await fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo2.jpg')
-      await fs.renameSync(base + '/public/uploads/photo2.jpg', base + '/public/images/' + req.body.id + '/photo2.jpg')
+      await fs.unlinkSync(
+        base + '/public/images/' + req.body.id + '/photo2.jpg'
+      )
+      await fs.renameSync(
+        base + '/public/uploads/photo2.jpg',
+        base + '/public/images/' + req.body.id + '/photo2.jpg'
+      )
     }
     if (await fs.existsSync(base + '/public/uploads/photo3.jpg')) {
-      await fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo3.jpg')
-      await fs.renameSync(base + '/public/uploads/photo3.jpg', base + '/public/images/' + req.body.id + '/photo3.jpg')
+      await fs.unlinkSync(
+        base + '/public/images/' + req.body.id + '/photo3.jpg'
+      )
+      await fs.renameSync(
+        base + '/public/uploads/photo3.jpg',
+        base + '/public/images/' + req.body.id + '/photo3.jpg'
+      )
     }
     if (await fs.existsSync(base + '/public/uploads/photo4.jpg')) {
-      await fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo4.jpg')
-      await fs.renameSync(base + '/public/uploads/photo4.jpg', base + '/public/images/' + req.body.id + '/photo4.jpg')
+      await fs.unlinkSync(
+        base + '/public/images/' + req.body.id + '/photo4.jpg'
+      )
+      await fs.renameSync(
+        base + '/public/uploads/photo4.jpg',
+        base + '/public/images/' + req.body.id + '/photo4.jpg'
+      )
     }
     await house.save()
     res.redirect('/dashboard')

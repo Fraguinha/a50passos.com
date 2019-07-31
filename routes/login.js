@@ -4,7 +4,7 @@ const passport = require("passport");
 
 // Show login
 router.get("/", (req, res) => {
-  res.render("login.ejs", {
+  res.render("main/login.ejs", {
     data: []
   });
 });

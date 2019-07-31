@@ -6,7 +6,7 @@ const House = require("../models/house");
 router.get("/", async (req, res) => {
   try {
     const houses = await House.find();
-    res.render("catalog.ejs", {
+    res.render("main/catalog.ejs", {
       data: houses
     });
   } catch (err) {
@@ -20,7 +20,7 @@ router.get("/rooms", async (req, res) => {
       { type: 1 },
       "id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4"
     );
-    res.render("catalog.ejs", {
+    res.render("main/catalog.ejs", {
       data: houses
     });
   } catch (err) {
@@ -34,7 +34,7 @@ router.get("/apartments", async (req, res) => {
       { type: 2 },
       "id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4"
     );
-    res.render("catalog.ejs", {
+    res.render("main/catalog.ejs", {
       data: houses
     });
   } catch (err) {

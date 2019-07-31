@@ -22,7 +22,7 @@ const base = path.resolve(__dirname, "..");
 
 // Show dashboard
 router.get("/", ensureAuthentication, (req, res) => {
-  res.render("dashboard.ejs", {
+  res.render("main/dashboard.ejs", {
     data: []
   });
 });

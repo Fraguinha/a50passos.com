@@ -5,12 +5,12 @@
   padding-bottom: 3rem;
 }
 
-.jumbotron-heading {
-  font-weight: 300;
-}
-
 .jumbotron .container {
   max-width: 60rem;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
 }
 
 .carousel {
@@ -45,9 +45,8 @@
   transition: ease-in-out color 0.15s;
 }
 
-.nav-style a:hover {
-  color: #fff;
-  text-decoration: none;
+.dropdown-style:hover {
+  color: white;
 }
 
 .banner-style-catalog {
@@ -80,4 +79,20 @@
 .form-style {
   max-width: 330px;
   margin: auto;
+}
+
+/* Landscape phone */
+@media (min-width: 576px) {
+}
+
+/* ⁄⁄Tablets */
+@media (min-width: 768px) {
+}
+
+/* Desktops */
+@media (min-width: 992px) {
+}
+
+/* ⁄Large Desktops */
+@media (min-width: 1200px) {
 }

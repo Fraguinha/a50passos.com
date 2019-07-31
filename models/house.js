@@ -5,6 +5,10 @@ const houseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  type: {
+    type: Number,
+    required: true
+  },
   tip: {
     type: String,
     required: true

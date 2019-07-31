@@ -25,11 +25,20 @@
   </div>
   <div class="navbar navbar-dark bg-dark nav-style shadow-sm">
     <div class="navbar-expand-sm">
-      <div class="container d-flex justify-content-between">
-        <a href="/" class="navbar-brand d-flex align-items-center" style="font-family: 'Averia Sans Libre', cursive;">
+      <div class="container d-flex justify-content-between ">
+        <a href="/" class="navbar-brand d-flex align-items-center" style="font-family: 'Averia Sans Libre';">
           <strong>A 50 Passos</strong>
         </a>
-        <a class="nav-link" href="/catalog">Catálogo</a>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle dropdown-style" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Catálogo</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/catalog/apartments">Apartamentos</a>
+            <a class="dropdown-item" href="/catalog/rooms">Quartos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/catalog">Âmbos</a>
+          </div>
+        </div>
       </div>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"

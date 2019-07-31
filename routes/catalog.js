@@ -14,4 +14,32 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/rooms", async (req, res) => {
+  try {
+    const houses = await House.find(
+      { type: 1 },
+      "id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4"
+    );
+    res.render("catalog.ejs", {
+      data: houses
+    });
+  } catch (err) {
+    res.redirect("/");
+  }
+});
+
+router.get("/apartments", async (req, res) => {
+  try {
+    const houses = await House.find(
+      { type: 2 },
+      "id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4"
+    );
+    res.render("catalog.ejs", {
+      data: houses
+    });
+  } catch (err) {
+    res.redirect("/");
+  }
+});
+
 module.exports = router;

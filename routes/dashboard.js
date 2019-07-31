@@ -97,6 +97,7 @@ router.post("/addHouse", ensureAuthentication, async (req, res) => {
       const house = new House({
         id: id,
         available: true,
+        type: req.body.type,
         tip: req.body.tip ? req.body.tip : "",
         title: req.body.title,
         address: req.body.address,

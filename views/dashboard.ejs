@@ -1,272 +1,283 @@
 <main>
-  <div class="container">
-    <!-- Logout -->
-    <div class="row">
-      <form class="form-style mt-4" action="/login/logout" method="POST">
-        <button class="btn btn-lg btn-danger btn-block" type="submit">
-          Logout
-        </button>
-      </form>
-    </div>
-    <!-- Images -->
-    <div class="row">
-      <div class="col-md-3">
-        <hr />
-        <!-- Add photo 1 -->
-        <form class="form-control-file" action="/dashboard/addPhoto1" method="POST" enctype="multipart/form-data">
-          <h2 class="text-center">Upload foto 1</h2>
-          <hr />
-          <input type="file" name="photo1" multiple required />
-          <hr />
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
-            Upload foto
+  <div class="bg-light">
+    <div class="container">
+      <!-- Logout -->
+      <div class="row">
+        <form class="form-style mt-4" action="/login/logout" method="POST">
+          <button class="btn btn-lg btn-danger btn-block" type="submit">
+            Logout
           </button>
-          <hr />
-          <img src="uploads/photo1.jpg" height="200" width="100%" />
         </form>
       </div>
-      <div class="col-md-3">
-        <hr />
-        <!-- Add photo 2 -->
-        <form class="form-control-file" action="/dashboard/addPhoto2" method="POST" enctype="multipart/form-data">
-          <h2 class="text-center">Upload foto 2</h2>
+      <!-- Images -->
+      <div class="row">
+        <div class="col-md-3">
           <hr />
-          <input type="file" name="photo2" multiple required />
+          <!-- Add photo 1 -->
+          <form class="form-control-file" action="/dashboard/addPhoto1" method="POST" enctype="multipart/form-data">
+            <h2 class="text-center">Upload foto 1</h2>
+            <hr />
+            <input type="file" name="photo1" multiple required />
+            <hr />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Upload foto
+            </button>
+            <hr />
+            <div class="background-white">
+              <img src="uploads/photo1.jpg" height="200" width="100%" />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3">
           <hr />
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
-            Upload foto
-          </button>
+          <!-- Add photo 2 -->
+          <form class="form-control-file" action="/dashboard/addPhoto2" method="POST" enctype="multipart/form-data">
+            <h2 class="text-center">Upload foto 2</h2>
+            <hr />
+            <input type="file" name="photo2" multiple required />
+            <hr />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Upload foto
+            </button>
+            <hr />
+            <div class="background-white">
+              <img src="uploads/photo2.jpg" height="200" width="100%" />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3">
           <hr />
-          <img src="uploads/photo2.jpg" height="200" width="100%" />
-        </form>
+          <!-- Add photo 3 -->
+          <form class="form-control-file" action="/dashboard/addPhoto3" method="POST" enctype="multipart/form-data">
+            <h2 class="text-center">Upload foto 3</h2>
+            <hr />
+            <input type="file" name="photo3" multiple required />
+            <hr />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Upload foto
+            </button>
+            <hr />
+            <div class="background-white">
+              <img src="uploads/photo3.jpg" height="200" width="100%" />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3">
+          <hr />
+          <!-- Add photo 4 -->
+          <form class="form-control-file" action="/dashboard/addPhoto4" method="POST" enctype="multipart/form-data">
+            <h2 class="text-center">Upload foto 4</h2>
+            <hr />
+            <input type="file" name="photo4" multiple required />
+            <hr />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Upload foto
+            </button>
+            <hr />
+            <div class="background-white">
+              <img src="uploads/photo4.jpg" height="200" width="100%" />
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="col-md-3">
-        <hr />
-        <!-- Add photo 3 -->
-        <form class="form-control-file" action="/dashboard/addPhoto3" method="POST" enctype="multipart/form-data">
-          <h2 class="text-center">Upload foto 3</h2>
-          <hr />
-          <input type="file" name="photo3" multiple required />
-          <hr />
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
-            Upload foto
-          </button>
-          <hr />
-          <img src="uploads/photo3.jpg" height="200" width="100%" />
-        </form>
-      </div>
-      <div class="col-md-3">
-        <hr />
-        <!-- Add photo 4 -->
-        <form class="form-control-file" action="/dashboard/addPhoto4" method="POST" enctype="multipart/form-data">
-          <h2 class="text-center">Upload foto 4</h2>
-          <hr />
-          <input type="file" name="photo4" multiple required />
-          <hr />
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
-            Upload foto
-          </button>
-          <hr />
-          <img src="uploads/photo4.jpg" height="200" width="100%" />
-        </form>
-      </div>
-    </div>
-    <!-- Clear -->
-    <div class="row">
-      <form class="form-style" action="/dashboard/clearImages" method="POST">
-        <small class="form-text text-muted text-center">Limpa todas as imagens uploaded</small>
-        <button class="btn btn-lg btn-warning btn-block" type="submit">
-          Clear
-        </button>
-      </form>
-    </div>
-    <hr />
-    <!-- Fields -->
-    <div class="row">
-      <div class="col-md-4">
-        <!-- Add house -->
-        <form action="/dashboard/addHouse" method="POST">
-          <h2 class="text-center">Adicionar casa</h2>
-          <p class="pt-3 text-center">
-            <strong>INSTRUÇÕES:<br /></strong>1º upload de 4 fotos .jpg<br />2º
-            selecionar ID<br />3º preencher todos os campos
-          </p>
-          <hr />
-          <div class="form-group">
-            <label for="id">ID</label>
-            <input name="id" type="text" class="form-control" placeholder="ID a adicionar (optional)" />
-            <small class="form-text text-muted">Disponivel apenas para a conveniência do utilizador</small>
-          </div>
-          <hr />
-          <div class="form-group">
-            <label for="title">Titulo *</label>
-            <input name="title" type="text" class="form-control" placeholder="Titulo" required />
-          </div>
-          <div class="form-group">
-            <label for="address">Morada *</label>
-            <input name="address" type="text" class="form-control" placeholder="Morada" required />
-          </div>
-          <div class="form-group">
-            <label for="description">Descrição</label>
-            <textarea name="description" type="text" class="form-control" placeholder="Descrição"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="tip">Tooltip</label>
-            <input name="tip" type="text" class="form-control" placeholder="Tooltip" />
-          </div>
-          <div class="form-group">
-            <label for="wc">WC *</label>
-            <input name="wc" type="number" min="1" class="form-control" placeholder="Nr" required />
-          </div>
-          <div class="form-group">
-            <label for="type">Tipo *</label>
-            <input name="type" type="number" min="1" class="form-control" placeholder="Tipo" required />
-            <small>1 - Quarto<br />2 - Apartamento</small>
-          </div>
-          <small class="form-text text-muted">* Campos obrigatórios</small>
-          <hr />
-          <div class="form-group form-check">
-            <input id="suite" name="suite" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="suite">Suite</label>
-          </div>
-          <div class="form-group form-check">
-            <input id="elevator" name="elevator" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="elevator">Elevador</label>
-          </div>
-          <div class="form-group form-check">
-            <input id="dinningroom" name="dinningroom" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="dinningroom">Sala de jantar</label>
-          </div>
-          <div class="form-group form-check">
-            <input id="balcony" name="balcony" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="balcony">Varanda</label>
-          </div>
-          <div class="form-group form-check">
-            <input id="gardin" name="gardin" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="gardin">Jardim</label>
-          </div>
-          <small class="form-text text-muted">Selecione os que se aplicam</small>
-          <hr />
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
-            Adicionar casa
-          </button>
-          <small class="form-text text-muted text-center">A casa apenas será adicionada se tiverem sido adicionadas 4
-            fotos</small>
-        </form>
-      </div>
-      <div class="col-md-4">
-        <!-- Toggle house -->
-        <form action="/dashboard/toggleHouse" method="POST">
-          <h2 class="text-center">Toggle casa</h2>
-          <hr />
-          <div class="form-group">
-            <label for="id">ID *</label>
-            <input name="id" type="text" class="form-control" placeholder="ID a toggle" required />
-            <small class="form-text text-muted">* Campo obrigatório</small>
-          </div>
-          <hr />
-          <small class="form-text text-muted text-center">Muda entre disponivel e indisponivel</small>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
-            Toggle casa
-          </button>
-        </form>
-        <hr />
-        <form action="/dashboard/removeHouse" method="POST">
-          <h2 class="text-center">Remover casa</h2>
-          <hr />
-          <div class="form-group">
-            <label for="id">ID *</label>
-            <input name="id" type="text" class="form-control" placeholder="ID a remover" required />
-            <small class="form-text text-muted">* Campo obrigatório</small>
-          </div>
-          <hr />
-          <small class="form-text text-muted text-center">Elimina a casa permanentemente</small>
+      <!-- Clear -->
+      <div class="row">
+        <form class="form-style" action="/dashboard/clearImages" method="POST">
+          <small class="form-text text-muted text-center">Limpa todas as imagens uploaded</small>
           <button class="btn btn-lg btn-warning btn-block" type="submit">
-            Remover casa
+            Clear
           </button>
-          <small class="form-text text-muted text-center">(terá que ser recriada se necessário)</small>
         </form>
       </div>
-      <div class="col-md-4">
-        <!-- Edit house -->
-        <form action="/dashboard/editHouse" method="POST">
-          <h2 class="text-center">Editar casa</h2>
-          <p class="pt-3 text-center">
-            <strong>INSTRUÇÕES:<br /></strong>1º upload de até 4 fotos .jpg a
-            alterar<br />2º selecionar ID<br />3º preencher os campos a alterar
-          </p>
+      <hr />
+      <!-- Fields -->
+      <div class="row">
+        <div class="col-md-4">
+          <!-- Add house -->
+          <form action="/dashboard/addHouse" method="POST">
+            <h2 class="text-center">Adicionar casa</h2>
+            <p class="pt-3 text-center">
+              <strong>INSTRUÇÕES:<br /></strong>1º upload de 4 fotos .jpg<br />2º
+              selecionar ID<br />3º preencher todos os campos
+            </p>
+            <hr />
+            <div class="form-group">
+              <label for="id">ID</label>
+              <input name="id" type="text" class="form-control" placeholder="ID a adicionar (optional)" />
+              <small class="form-text text-muted">Disponivel apenas para a conveniência do utilizador</small>
+            </div>
+            <hr />
+            <div class="form-group">
+              <label for="title">Titulo *</label>
+              <input name="title" type="text" class="form-control" placeholder="Titulo" required />
+            </div>
+            <div class="form-group">
+              <label for="address">Morada *</label>
+              <input name="address" type="text" class="form-control" placeholder="Morada" required />
+            </div>
+            <div class="form-group">
+              <label for="description">Descrição</label>
+              <textarea name="description" type="text" class="form-control" placeholder="Descrição"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="tip">Tooltip</label>
+              <input name="tip" type="text" class="form-control" placeholder="Tooltip" />
+            </div>
+            <div class="form-group">
+              <label for="wc">WC *</label>
+              <input name="wc" type="number" min="1" class="form-control" placeholder="Nr" required />
+            </div>
+            <div class="form-group">
+              <label for="type">Tipo *</label>
+              <input name="type" type="number" min="1" class="form-control" placeholder="Tipo" required />
+              <small class="form-text text-muted">1 - Quarto<br />2 - Apartamento</small>
+            </div>
+            <small class="form-text text-muted">* Campos obrigatórios</small>
+            <hr />
+            <div class="form-group form-check">
+              <input id="suite" name="suite" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="suite">Suite</label>
+            </div>
+            <div class="form-group form-check">
+              <input id="elevator" name="elevator" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="elevator">Elevador</label>
+            </div>
+            <div class="form-group form-check">
+              <input id="dinningroom" name="dinningroom" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="dinningroom">Sala de jantar</label>
+            </div>
+            <div class="form-group form-check">
+              <input id="balcony" name="balcony" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="balcony">Varanda</label>
+            </div>
+            <div class="form-group form-check">
+              <input id="gardin" name="gardin" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="gardin">Jardim</label>
+            </div>
+            <small class="form-text text-muted">Selecione os que se aplicam</small>
+            <hr />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Adicionar casa
+            </button>
+            <small class="form-text text-muted text-center">A casa apenas será adicionada se tiverem sido adicionadas 4
+              fotos</small>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <!-- Toggle house -->
+          <form action="/dashboard/toggleHouse" method="POST">
+            <h2 class="text-center">Toggle casa</h2>
+            <hr />
+            <div class="form-group">
+              <label for="id">ID *</label>
+              <input name="id" type="text" class="form-control" placeholder="ID a toggle" required />
+              <small class="form-text text-muted">* Campo obrigatório</small>
+            </div>
+            <hr />
+            <small class="form-text text-muted text-center">Muda entre disponivel e indisponivel</small>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Toggle casa
+            </button>
+          </form>
           <hr />
-          <div class="form-group">
-            <label for="id">ID *</label>
-            <input name="id" type="text" class="form-control" placeholder="ID a editar" />
-            <small class="form-text text-muted">* Campo obrigatório</small>
-          </div>
-          <hr />
-          <div class="form-group">
-            <label for="title">Titulo</label>
-            <input name="title" type="text" class="form-control" placeholder="Titulo (optional)" />
-          </div>
-          <div class="form-group">
-            <label for="address">Morada</label>
-            <input name="address" type="text" class="form-control" placeholder="Morada (optional)" />
-          </div>
-          <div class="form-group">
-            <label for="description">Descrição</label>
-            <textarea name="description" type="text" class="form-control" placeholder="Descrição (optional)"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="tip">Tooltip</label>
-            <input name="tip" type="text" class="form-control" placeholder="Tooltip (optional)" />
-          </div>
-          <div class="form-group">
-            <label for="wc">WC</label>
-            <input name="wc" type="number" min="1" class="form-control" placeholder="Nr (optional)" />
-          </div>
-          <small class="form-text text-muted">Todos estes campos são opcionais, apenas os que alterar serão
-            actualizados</small>
-          <hr />
-          <div class="form-group form-check">
-            <input id="suite" name="suite" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="suite">Suite<small class="text-muted text-center">
-                (Opcional)</small></label>
-          </div>
-          <div class="form-group form-check">
-            <input id="elevator" name="elevator" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="elevator">Elevador<small class="text-muted text-center">
-                (Opcional)</small></label>
-          </div>
-          <div class="form-group form-check">
-            <input id="dinningroom" name="dinningroom" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="dinningroom">Sala de jantar<small class="text-muted text-center">
-                (Opcional)</small></label>
-          </div>
-          <div class="form-group form-check">
-            <input id="balcony" name="balcony" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="balcony">Varanda<small class="text-muted text-center">
-                (Opcional)</small></label>
-          </div>
-          <div class="form-group form-check">
-            <input id="gardin" name="gardin" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="gardin">Jardim<small class="text-muted text-center">
-                (Opcional)</small></label>
-          </div>
-          <small class="form-text text-muted">Selecione os que se aplicam</small>
-          <hr />
-          <div class="form-group form-check">
-            <input id="checkbox" name="checkbox" type="checkbox" class="form-check-input" />
-            <label class="form-check-label" for="checkbox">Actualizar checkboxes?</label>
-            <small class="form-text text-muted">Se estiver selecionado, a casa será actualizada com os valores
-              das checkboxes em cima</small>
-          </div>
-          <hr />
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
-            Editar casa
-          </button>
-          <small class="form-text text-muted text-center">A casa será actualizada com os novos parametros e fotos
-            especificados</small>
-        </form>
+          <form action="/dashboard/removeHouse" method="POST">
+            <h2 class="text-center">Remover casa</h2>
+            <hr />
+            <div class="form-group">
+              <label for="id">ID *</label>
+              <input name="id" type="text" class="form-control" placeholder="ID a remover" required />
+              <small class="form-text text-muted">* Campo obrigatório</small>
+            </div>
+            <hr />
+            <small class="form-text text-muted text-center">Elimina a casa permanentemente</small>
+            <button class="btn btn-lg btn-warning btn-block" type="submit">
+              Remover casa
+            </button>
+            <small class="form-text text-muted text-center">(terá que ser recriada se necessário)</small>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <!-- Edit house -->
+          <form action="/dashboard/editHouse" method="POST">
+            <h2 class="text-center">Editar casa</h2>
+            <p class="pt-3 text-center">
+              <strong>INSTRUÇÕES:<br /></strong>1º upload de até 4 fotos .jpg a
+              alterar<br />2º selecionar ID<br />3º preencher os campos a alterar
+            </p>
+            <hr />
+            <div class="form-group">
+              <label for="id">ID *</label>
+              <input name="id" type="text" class="form-control" placeholder="ID a editar" />
+              <small class="form-text text-muted">* Campo obrigatório</small>
+            </div>
+            <hr />
+            <div class="form-group">
+              <label for="title">Titulo</label>
+              <input name="title" type="text" class="form-control" placeholder="Titulo (optional)" />
+            </div>
+            <div class="form-group">
+              <label for="address">Morada</label>
+              <input name="address" type="text" class="form-control" placeholder="Morada (optional)" />
+            </div>
+            <div class="form-group">
+              <label for="description">Descrição</label>
+              <textarea name="description" type="text" class="form-control"
+                placeholder="Descrição (optional)"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="tip">Tooltip</label>
+              <input name="tip" type="text" class="form-control" placeholder="Tooltip (optional)" />
+            </div>
+            <div class="form-group">
+              <label for="wc">WC</label>
+              <input name="wc" type="number" min="1" class="form-control" placeholder="Nr (optional)" />
+            </div>
+            <small class="form-text text-muted">Todos estes campos são opcionais, apenas os que alterar serão
+              actualizados</small>
+            <hr />
+            <div class="form-group form-check">
+              <input id="suite" name="suite" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="suite">Suite<small class="text-muted text-center">
+                  (Opcional)</small></label>
+            </div>
+            <div class="form-group form-check">
+              <input id="elevator" name="elevator" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="elevator">Elevador<small class="text-muted text-center">
+                  (Opcional)</small></label>
+            </div>
+            <div class="form-group form-check">
+              <input id="dinningroom" name="dinningroom" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="dinningroom">Sala de jantar<small class="text-muted text-center">
+                  (Opcional)</small></label>
+            </div>
+            <div class="form-group form-check">
+              <input id="balcony" name="balcony" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="balcony">Varanda<small class="text-muted text-center">
+                  (Opcional)</small></label>
+            </div>
+            <div class="form-group form-check">
+              <input id="gardin" name="gardin" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="gardin">Jardim<small class="text-muted text-center">
+                  (Opcional)</small></label>
+            </div>
+            <small class="form-text text-muted">Selecione os que se aplicam</small>
+            <hr />
+            <div class="form-group form-check">
+              <input id="checkbox" name="checkbox" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="checkbox">Actualizar checkboxes?</label>
+              <small class="form-text text-muted">Se estiver selecionado, a casa será actualizada com os valores
+                das checkboxes em cima</small>
+            </div>
+            <hr />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Editar casa
+            </button>
+            <small class="form-text text-muted text-center">A casa será actualizada com os novos parametros e fotos
+              especificados</small>
+          </form>
+        </div>
       </div>
+      <hr />
     </div>
-    <hr />
   </div>
 </main>

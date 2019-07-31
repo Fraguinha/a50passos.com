@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
 // Models
-const User = require("../../models/user");
+const User = require("../../models/user-model");
 
 // Env variables
 const appname = process.env.APPNAME || "app";

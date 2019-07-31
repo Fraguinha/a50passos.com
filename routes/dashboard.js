@@ -4,7 +4,7 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
-const House = require("../models/house");
+const House = require("../models/house-model");
 
 const { ensureAuthentication } = require("../modules/authentication");
 

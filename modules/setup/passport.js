@@ -5,7 +5,7 @@ const session = require("express-session");
 const bcrypt = require("bcryptjs");
 
 // Models
-const User = require("../../models/user");
+const User = require("../../models/user-model");
 
 // Env variables
 const secret = process.env.SESSION_SECRET || "secret";

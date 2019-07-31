@@ -132,7 +132,7 @@
         <% } %>
         <% for (; j <= (Number(current) + 4) && j <= pages; j++) { %>
         <% if (j - 1 == current) { %>
-        <li class="page-item active"><a class="page-link"><%= j %></a></li>
+        <li class="page-item active"><a class="page-link text-white"><%= j %></a></li>
         <% } else { %>
         <li class="page-item"><a class="page-link" href="<%= url %>/<%= j - 1 %>"><%= j %></a></li>
         <% } %>

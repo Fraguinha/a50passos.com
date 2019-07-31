@@ -118,7 +118,36 @@
       <% } %>
       <% }) %>
     </div>
-  </div>
+    <div class="container">
+      <% if (pages > 0) { %>
+      <ul class="pagination text-center">
+        <% if (current == 0) { %>
+        <li class="page-item disabled"><a class="page-link">Inicio</a></li>
+        <% } else { %>
+        <li class="page-item"><a class="page-link" href="<%= url %>/0">Inicio</a></li>
+        <% } %>
+        <% let j = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+        <% if (j !== 1) { %>
+        <li class="page-item disabled"><a class="page-link">...</a></li>
+        <% } %>
+        <% for (; j <= (Number(current) + 4) && j <= pages; j++) { %>
+        <% if (j - 1 == current) { %>
+        <li class="page-item active"><a class="page-link"><%= j %></a></li>
+        <% } else { %>
+        <li class="page-item"><a class="page-link" href="<%= url %>/<%= j - 1 %>"><%= j %></a></li>
+        <% } %>
+        <% if (j == Number(current) + 4 && j < pages) { %>
+        <li class="page-item disabled"><a class="page-link">...</a></li>
+        <% } %>
+        <% } %>
+        <% if (current == pages - 1) { %>
+        <li class="page-item disabled"><a class="page-link">Fim</a></li>
+        <% } else { %>
+        <li class="page-item"><a class="page-link" href="<%= url %>/<%= pages - 1 %>">Fim</a></li>
+        <% } %>
+      </ul>
+      <% } %>
+    </div>
 </main>
 
 <%- include("../partials/_footer.ejs") %>

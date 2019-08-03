@@ -149,14 +149,18 @@ router.post("/toggleHouse", ensureAuthentication, async (req, res) => {
         { id: req.body.id },
         { available: false },
         { upsert: true },
-        err => console.error(err)
+        err => {
+          throw err;
+        }
       );
     } else {
       await House.findOneAndUpdate(
         { id: req.body.id },
         { available: true },
         { upsert: true },
-        err => console.error(err)
+        err => {
+          throw err;
+        }
       );
     }
     await house.save();

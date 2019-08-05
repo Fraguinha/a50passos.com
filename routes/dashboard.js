@@ -150,7 +150,7 @@ router.post("/toggleHouse", ensureAuthentication, async (req, res) => {
         { available: false },
         { upsert: true },
         err => {
-          throw err;
+          console.error(err);
         }
       );
     } else {
@@ -159,7 +159,7 @@ router.post("/toggleHouse", ensureAuthentication, async (req, res) => {
         { available: true },
         { upsert: true },
         err => {
-          throw err;
+          console.error(err);
         }
       );
     }

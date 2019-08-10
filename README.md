@@ -2,4 +2,5 @@
 
 https://www.a50passos.com
 
-![showcase](https://i.imgur.com/drtSxXo.png)
+![Homepage](https://i.imgur.com/NOO9eUB.png)
+![Catalog](https://i.imgur.com/ZXiZRTi.png)

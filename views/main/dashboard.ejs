@@ -286,6 +286,31 @@
             </button>
           </form>
           <hr />
+          <!-- Number houses -->
+          <form action="/dashboard/setNumber" method="POST">
+            <h2 class="text-center">Numero casas</h2>
+            <hr />
+            <div class="form-group">
+              <label for="number">Numero *</label>
+              <input
+                name="number"
+                type="number"
+                min="1"
+                class="form-control"
+                placeholder="Novo numero"
+                required
+              />
+              <small class="form-text text-muted">* Campo obrigatório</small>
+            </div>
+            <hr />
+            <small class="form-text text-muted text-center"
+              >Altera o numero de casas controladas</small
+            >
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Alterar numero
+            </button>
+            >
+          </form>
           <!-- Remove house -->
           <form action="/dashboard/removeHouse" method="POST">
             <h2 class="text-center">Remover casa</h2>

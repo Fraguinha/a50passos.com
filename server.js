@@ -34,7 +34,7 @@ database.startup();
 viewengine.configure(app);
 
 // Routers
-app.use("/", require("./routes/root"));
+app.use("/", require("./routes/index"));
 
 app.use("/catalog", require("./routes/catalog"));
 app.use("/house", require("./routes/house"));

@@ -5,6 +5,7 @@ const path = require("path");
 const fs = require("fs");
 
 const House = require("../models/house-model");
+const Meta = require("../models/meta-model");
 
 const { ensureAuthentication } = require("../modules/authentication");
 
@@ -158,6 +159,22 @@ router.post("/toggleHouse", ensureAuthentication, async (req, res) => {
       );
     }
     await house.save();
+    res.redirect("/dashboard");
+  } catch (err) {
+    res.redirect("/dashboard");
+  }
+});
+
+// Dashboard setNumer
+router.post("/setNumber", ensureAuthentication, async (req, res) => {
+  try {
+    const meta = await Meta.find();
+    await Meta.findOneAndUpdate(
+      {},
+      { managed: req.body.number },
+      { upsert: true }
+    );
+    await meta.save();
     res.redirect("/dashboard");
   } catch (err) {
     res.redirect("/dashboard");

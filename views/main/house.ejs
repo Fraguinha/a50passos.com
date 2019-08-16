@@ -160,13 +160,13 @@
         <hr />
         <% if (data.available) { %>
         <h1>
+          <small class="badge badge-success float-right">Disponível</small>
           <%= data.title %>
-          <small class="badge badge-success">Disponível</small>
         </h1>
         <% } else { %>
         <h1>
+          <small class="badge badge-danger float-right">Arrendado</small>
           <%= data.title %>
-          <small class="badge badge-danger">Arrendado</small>
         </h1>
         <% } %>
         <h2 class="text-muted"><%= data.address %></h2>

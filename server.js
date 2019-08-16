@@ -8,9 +8,9 @@ const fs = require("fs");
 dotenv.config();
 
 // Modules
-const passport = require("./modules/setup/passport");
-const database = require("./modules/setup/database");
-const viewengine = require("./modules/setup/viewengine");
+const passport = require("./library/setup/passport");
+const database = require("./library/setup/database");
+const viewengine = require("./library/setup/viewengine");
 
 // Application
 const app = express();
@@ -23,8 +23,8 @@ app.use(bodyParser.json());
 passport.configure(app);
 
 // Filesystem
-if (!fs.existsSync("public/uploads/")) {
-  fs.mkdirSync("public/uploads/");
+if (!fs.existsSync("./public/uploads/")) {
+  fs.mkdirSync("./public/uploads/");
 }
 
 // Database

@@ -7,7 +7,7 @@ const fs = require("fs");
 const House = require("../models/house-model");
 const Meta = require("../models/meta-model");
 
-const { ensureAuthentication } = require("../modules/authentication");
+const { ensureAuthentication } = require("../library/authentication");
 
 const storage = multer.diskStorage({
   destination: function(req, file, callback) {

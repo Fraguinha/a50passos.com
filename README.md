@@ -2,5 +2,5 @@
 
 https://www.a50passos.com
 
-![Homepage](https://i.imgur.com/NOO9eUB.png)
-![Catalog](https://i.imgur.com/ZXiZRTi.png)
+![Homepage](https://i.imgur.com/aDQRXgX.png)
+![Catalog](https://i.imgur.com/pcll3CX.png)

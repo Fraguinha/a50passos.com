@@ -56,8 +56,15 @@
 .banner-style-catalog {
   position: absolute;
   width: 100%;
-  top: 59%;
-  left: 50%;
+  top: 58%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-style-catalog-new {
+  position: absolute;
+  top: 10%;
+  left: 13%;
   transform: translate(-50%, -50%);
 }
 
@@ -70,9 +77,13 @@
 }
 
 .badge-style-catalog {
-  width: 95%;
-  margin-left: 2.5%;
+  width: 96%;
   font-size: 2rem;
+}
+
+.badge-style-catalog-new {
+  width: 100%;
+  font-size: 1.25rem;
 }
 
 .badge-style-house {

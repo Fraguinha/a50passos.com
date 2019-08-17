@@ -68,6 +68,11 @@ const houseSchema = new mongoose.Schema({
   photo4: {
     type: String,
     required: true
+  },
+  date: {
+    type: Number,
+    required: true,
+    default: Date.now()
   }
 });
 

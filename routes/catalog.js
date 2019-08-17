@@ -8,6 +8,7 @@ router.get("/:page", async (req, res) => {
     const number = 9;
     const page = req.params.page;
     const houses = await House.find()
+      .sort({ date: -1 })
       .skip(number * page)
       .limit(number);
     const count = await House.countDocuments();
@@ -30,6 +31,7 @@ router.get("/rooms/:page", async (req, res) => {
       { type: 1 },
       "id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4"
     )
+      .sort({ date: -1 })
       .skip(number * page)
       .limit(number);
     const count = await House.countDocuments({ type: 1 });
@@ -52,6 +54,7 @@ router.get("/apartments/:page", async (req, res) => {
       { type: 2 },
       "id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4"
     )
+      .sort({ date: -1 })
       .skip(number * page)
       .limit(number);
     const count = await House.countDocuments({ type: 2 });

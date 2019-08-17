@@ -42,11 +42,14 @@
 
 .nav-style a {
   color: #999;
-  transition: ease-in-out color 0.15s;
 }
 
 .dropdown-style:hover {
   color: white;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .banner-style-catalog {

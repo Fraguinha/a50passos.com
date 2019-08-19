@@ -1,16 +1,27 @@
 .jumbotron {
   margin-top: 0;
-  padding-top: 3rem;
   margin-bottom: 0;
+  padding-top: 3rem;
   padding-bottom: 3rem;
+  background-image: url("../images/misc/porto.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .jumbotron .container {
-  max-width: 60rem;
+  max-width: 35rem;
 }
 
 .jumbotron-heading {
-  font-weight: 300;
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 350;
+}
+
+.jumbotron p {
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
 .carousel {

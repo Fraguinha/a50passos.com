@@ -10,7 +10,8 @@
 }
 
 .jumbotron .container {
-  max-width: 35rem;
+  max-width: 50rem;
+  background-color: rgba(192, 192, 192, 0.25);
 }
 
 .jumbotron-heading {

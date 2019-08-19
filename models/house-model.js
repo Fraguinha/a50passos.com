@@ -71,8 +71,7 @@ const houseSchema = new mongoose.Schema({
   },
   date: {
     type: Number,
-    required: true,
-    default: Date.now()
+    required: true
   }
 });
 

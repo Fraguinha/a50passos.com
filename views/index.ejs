@@ -1,51 +1,52 @@
 <%- include("partials/_header.ejs") %>
 
-<main role="main">
+<main role="main" class="homepage-main">
   <div class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">
         És estudante?<br />Estás à procura de arrendamento?
       </h1>
       <div class="btn-group my-5">
-        <a href="/catalog/rooms/0" class="btn btn-primary shadow"
+        <a href="/catalog/rooms/0" class="btn shadow homepage-button"
           >Quartos</a
         >
       </div>
       <div class="btn-group my-5">
-        <a href="/catalog/apartments/0" class="btn btn-primary shadow"
+        <a href="/catalog/apartments/0" class="btn shadow homepage-button"
           >Apartamentos</a
         >
       </div>
       <p class="lead">
         <strong>
-        Seja qual for a Universidade,<br />temos um espaço a 50 passos!
+          Seja qual for a Universidade,<br />temos um espaço a 50 passos!
         </strong>
       </p>
-      </div>
     </div>
   </div>
-  <div class="text-center background-white shadow">
+  <div class="text-center background-white shadow background-white">
     <br />
     <h1 class="display-5 py-2" style="font-family: 'Averia Sans Libre';">
       <strong>a50passos.com</strong>
     </h1>
-    <h5 class="text-muted">
+    <h5 class="text-dark">
       Fazemos a gestão de
-      <strong class="text-dark"><%= meta.managed %></strong> quartos. <br />
+      <strong class="homepage-strip-em"><%= meta.managed %></strong> quartos.
+      <br />
       Podemos cuidar dos seus?
     </h5>
     <img
-      class="logo img-fluid img-center"
+      class="homepage-logo img-fluid img-center"
       src="images/logo/50passos.png"
       width="50%"
     />
-    <p class="text-muted">
-      Contacte-nos: <a href="tel:912333314">912333314</a>
+    <p class="text-dark">
+      Contacte-nos:
+      <a class="link-style-light" href="tel:912333314">912333314</a>
     </p>
     <br />
   </div>
   <div
-    class="background-white container my-5 p-2 shadow"
+    class="background-white container my-5 p-1 shadow homepage-video"
     data-aos="fade-up"
     data-aos-anchor-placement="top-bottom"
     data-aos-easing="ease-in-cubic"
@@ -144,7 +145,32 @@
       </div>
     </div>
   </div>
-  <br />
+  <div class="homepage-partnerships text-center shadow mb-5">
+    <div class="container">
+      <br />
+      <h1 class="display-5 py-2">
+        <strong>Parcerias</strong>
+      </h1>
+      <div class="row py-2">
+        <div class="offset-md-4 col-md-4">
+          <img
+            class="img-fluid img-center py-2"
+            src="images/misc/galaxia.jpg"
+            width="80%"
+          />
+          <p>
+            <a
+              href="https://www.facebook.com/galaxiainvestimentos/"
+              target="_blank"
+              class="homepage-partnerships-link"
+              >Saber mais
+            </a>
+          </p>
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
 </main>
 
 <%- include("partials/_footer.ejs") %>

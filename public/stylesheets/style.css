@@ -51,12 +51,42 @@
   background-color: white;
 }
 
-.nav-style a {
-  color: #999;
+.navbar-link-style {
+  color: rgb(94, 197, 199);
 }
 
-.dropdown-style:hover {
+.navbar-link-style:hover {
   color: white;
+}
+
+.nav-style-background {
+  background-color: rgb(37, 58, 83);
+}
+
+.nav-style-background-bar {
+  background-color: rgb(27, 48, 73);
+}
+
+.dropdown-style {
+  background-color: rgb(27, 48, 73);
+}
+
+.link-style-light {
+  color: rgb(94, 197, 199);
+}
+
+.link-style-light:hover {
+  color: rgb(27, 48, 73);
+  text-decoration: none;
+}
+
+.link-style-dark {
+  color: white;
+}
+
+.link-style-dark:hover {
+  color: rgb(94, 197, 199);
+  text-decoration: none;
 }
 
 .card:hover {
@@ -107,8 +137,58 @@
   margin: auto;
 }
 
-.logo {
+.homepage-main {
+  background-color: rgb(200, 215, 215);
+}
+
+.homepage-button {
+  color: white;
+  background-color: rgb(27, 48, 73);
+}
+
+.homepage-button:hover {
+  color: white;
+  background-color: rgb(94, 197, 199);
+}
+
+.homepage-logo {
   width: 220px;
+}
+
+.homepage-video {
+  background-color: rgb(27, 48, 73);
+}
+
+.homepage-strip {
+  color: white;
+  background-color: rgb(27, 48, 73);
+}
+
+.homepage-strip-em {
+  color: rgb(94, 197, 199);
+}
+
+.homepage-strip-link {
+  color: rgb(94, 197, 199);
+}
+
+.homepage-strip-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.homepage-partnerships {
+  color: white;
+  background-color: rgb(27, 48, 73);
+}
+
+.homepage-partnerships-link {
+  color: white;
+}
+
+.homepage-partnerships-link:hover {
+  color: rgb(94, 197, 199);
+  text-decoration: none;
 }
 
 /* Landscape phone */

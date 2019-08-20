@@ -1,180 +1,182 @@
-<%- include("partials/_header.ejs") %>
+<div class="homepage-main">
+  <%- include("partials/_header.ejs") %>
 
-<main role="main" class="homepage-main">
-  <div class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">
-        És estudante?<br />Estás à procura de arrendamento?
+  <main role="main">
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">
+          És estudante?<br />Estás à procura de arrendamento?
+        </h1>
+        <div class="btn-group my-5">
+          <a href="/catalog/rooms/0" class="btn shadow homepage-button"
+            >Quartos</a
+          >
+        </div>
+        <div class="btn-group my-5">
+          <a href="/catalog/apartments/0" class="btn shadow homepage-button"
+            >Apartamentos</a
+          >
+        </div>
+        <p class="lead">
+          <strong>
+            Seja qual for a Universidade,<br />temos um espaço a 50 passos!
+          </strong>
+        </p>
+      </div>
+    </div>
+    <div class="text-center background-white shadow background-white">
+      <br />
+      <h1 class="display-5 py-2" style="font-family: 'Poiret One';">
+        <strong>a50passos.com</strong>
       </h1>
-      <div class="btn-group my-5">
-        <a href="/catalog/rooms/0" class="btn shadow homepage-button"
-          >Quartos</a
+      <h5 class="text-dark">
+        Fazemos a gestão de
+        <strong class="homepage-strip-em"><%= meta.managed %></strong> quartos.
+        <br />
+        Podemos cuidar dos seus?
+      </h5>
+      <img
+        class="homepage-logo img-fluid img-center"
+        src="images/logo/50passos.png"
+        width="50%"
+      />
+      <p class="text-dark">
+        Contacte-nos:
+        <a class="link-style-light" href="tel:912333314"
+          ><span style="font-size: 120%;">912333314</span></a
         >
-      </div>
-      <div class="btn-group my-5">
-        <a href="/catalog/apartments/0" class="btn shadow homepage-button"
-          >Apartamentos</a
-        >
-      </div>
-      <p class="lead">
-        <strong>
-          Seja qual for a Universidade,<br />temos um espaço a 50 passos!
-        </strong>
       </p>
-    </div>
-  </div>
-  <div class="text-center background-white shadow background-white">
-    <br />
-    <h1 class="display-5 py-2" style="font-family: 'Poiret One';">
-      <strong>a50passos.com</strong>
-    </h1>
-    <h5 class="text-dark">
-      Fazemos a gestão de
-      <strong class="homepage-strip-em"><%= meta.managed %></strong> quartos.
       <br />
-      Podemos cuidar dos seus?
-    </h5>
-    <img
-      class="homepage-logo img-fluid img-center"
-      src="images/logo/50passos.png"
-      width="50%"
-    />
-    <p class="text-dark">
-      Contacte-nos:
-      <a class="link-style-light" href="tel:912333314"
-        ><span style="font-size: 120%;">912333314</span></a
-      >
-    </p>
-    <br />
-  </div>
-  <div
-    class="background-white container my-5 p-1 shadow homepage-video"
-    data-aos="fade-up"
-    data-aos-anchor-placement="top-bottom"
-    data-aos-easing="ease-in-cubic"
-    data-aos-duration="750"
-  >
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe
-        class="embed-responsive-item"
-        src="https://www.youtube.com/embed/"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
     </div>
-  </div>
-  <div
-    class="container my-5 pt-5"
-    data-aos="fade-up"
-    data-aos-anchor-placement="center-bottom"
-    data-aos-easing="ease-in-cubic"
-    data-aos-duration="750"
-  >
-    <div class="row">
-      <div class="col-md-5 background-white rounded shadow offset-md-1">
-        <h2 class="homepage-header py-4">Internet</h2>
-        <p class="lead text-muted">
-          <em>Todos os quartos vêm com internet incluída</em>
-        </p>
-        <p>
-          Internet ilimitada e está incluída no teu quarto! Não gastes os teus
-          dados móveis nem te preocupes com contratos de fidelização!
-        </p>
+    <div
+      class="background-white container my-5 p-1 shadow homepage-video"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-easing="ease-in-cubic"
+      data-aos-duration="750"
+    >
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          class="embed-responsive-item"
+          src="https://www.youtube.com/embed/"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
-  </div>
-  <div
-    class="container my-5 pt-4"
-    data-aos="fade-up"
-    data-aos-anchor-placement="center-bottom"
-    data-aos-easing="ease-in-cubic"
-    data-aos-duration="750"
-  >
-    <div class="row">
-      <div
-        class="col-md-5 background-white rounded shadow offset-md-7 text-right"
-      >
-        <h2 class="homepage-header py-4">Limpeza</h2>
-        <p class="lead text-muted">
-          <em>Serviços de limpeza das áreas comuns incluída</em>
-        </p>
-        <p>
-          Não te preocupes com nada, quando arrendas um quarto, a limpeza dos
-          wc, cozinha e áreas comuns são por nossa conta!
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    class="container my-5 pt-4"
-    data-aos="fade-up"
-    data-aos-anchor-placement="center-bottom"
-    data-aos-easing="ease-in-cubic"
-    data-aos-duration="750"
-  >
-    <div class="row">
-      <div class="col-md-5 background-white rounded shadow">
-        <h2 class="homepage-header py-4">Lavandaria</h2>
-        <p class="lead text-muted"><em>Serviço de lavandaria opcional</em></p>
-        <p>
-          Não queres andar carregado com malas de roupa para trás e para a
-          frente? Temos disponíveis serviços de troca de lençóis de cama e banho
-          e até lavamos a tua roupa...
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    class="container my-5 pt-4 pb-5"
-    data-aos="fade-up"
-    data-aos-anchor-placement="center-bottom"
-    data-aos-easing="ease-in-cubic"
-    data-aos-duration="750"
-  >
-    <div class="row">
-      <div
-        class="col-md-5 background-white rounded shadow offset-md-6 text-right"
-      >
-        <h2 class="homepage-header py-4">Duvidas?</h2>
-        <p class="lead text-muted"><em>Estamos aqui para ajudar</em></p>
-        <p>
-          Não ficaste esclarecido sobre os nossos serviços? Queres visitar os
-          nossos quartos? Fala connosco, estamos disponíveis para te esclarecer
-          e apoiar no que precisares:
-          <a class="lead link-style-light" href="tel:912333314">912333314</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="homepage-partnerships text-center shadow mb-5">
-    <div class="container">
-      <br />
-      <h1 class="display-5 py-2">
-        <strong>Parceria</strong>
-      </h1>
-      <div class="row py-2">
-        <div class="offset-md-4 col-md-4">
-          <img
-            class="img-fluid img-center mb-3"
-            src="images/misc/galaxia.jpg"
-          />
-          <div class="btn-group">
-            <a
-              href="https://www.facebook.com/galaxiainvestimentos/"
-              target="_blank"
-              class="btn btn-sm btn-outline-info"
-              >Saber mais
-            </a>
-          </div>
+    <div
+      class="container my-5 pt-5"
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
+      data-aos-easing="ease-in-cubic"
+      data-aos-duration="750"
+    >
+      <div class="row">
+        <div class="col-md-5 background-white rounded shadow offset-md-1">
+          <h2 class="homepage-header py-4">Internet</h2>
+          <p class="lead text-muted">
+            <em>Todos os quartos vêm com internet incluída</em>
+          </p>
+          <p>
+            Internet ilimitada e está incluída no teu quarto! Não gastes os teus
+            dados móveis nem te preocupes com contratos de fidelização!
+          </p>
         </div>
       </div>
-      <br />
     </div>
-  </div>
-</main>
+    <div
+      class="container my-5 pt-4"
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
+      data-aos-easing="ease-in-cubic"
+      data-aos-duration="750"
+    >
+      <div class="row">
+        <div
+          class="col-md-5 background-white rounded shadow offset-md-7 text-right"
+        >
+          <h2 class="homepage-header py-4">Limpeza</h2>
+          <p class="lead text-muted">
+            <em>Serviços de limpeza das áreas comuns incluída</em>
+          </p>
+          <p>
+            Não te preocupes com nada, quando arrendas um quarto, a limpeza dos
+            wc, cozinha e áreas comuns são por nossa conta!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container my-5 pt-4"
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
+      data-aos-easing="ease-in-cubic"
+      data-aos-duration="750"
+    >
+      <div class="row">
+        <div class="col-md-5 background-white rounded shadow">
+          <h2 class="homepage-header py-4">Lavandaria</h2>
+          <p class="lead text-muted"><em>Serviço de lavandaria opcional</em></p>
+          <p>
+            Não queres andar carregado com malas de roupa para trás e para a
+            frente? Temos disponíveis serviços de troca de lençóis de cama e
+            banho e até lavamos a tua roupa...
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container my-5 pt-4 pb-5"
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
+      data-aos-easing="ease-in-cubic"
+      data-aos-duration="750"
+    >
+      <div class="row">
+        <div
+          class="col-md-5 background-white rounded shadow offset-md-6 text-right"
+        >
+          <h2 class="homepage-header py-4">Duvidas?</h2>
+          <p class="lead text-muted"><em>Estamos aqui para ajudar</em></p>
+          <p>
+            Não ficaste esclarecido sobre os nossos serviços? Queres visitar os
+            nossos quartos? Fala connosco, estamos disponíveis para te
+            esclarecer e apoiar no que precisares:
+            <a class="lead link-style-light" href="tel:912333314">912333314</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="homepage-partnerships text-center shadow mb-5">
+      <div class="container">
+        <br />
+        <h1 class="display-5 py-2">
+          <strong>Parceria</strong>
+        </h1>
+        <div class="row py-2">
+          <div class="offset-md-4 col-md-4">
+            <img
+              class="img-fluid img-center mb-3"
+              src="images/misc/galaxia.jpg"
+            />
+            <div class="btn-group">
+              <a
+                href="https://www.facebook.com/galaxiainvestimentos/"
+                target="_blank"
+                class="btn btn-sm btn-outline-info"
+                >Saber mais
+              </a>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </main>
 
-<%- include("partials/_footer.ejs") %>
+  <%- include("partials/_footer.ejs") %>
+</div>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

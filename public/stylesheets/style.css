@@ -210,6 +210,16 @@
   color: white !important;
 }
 
+.btn-outline-blue {
+  border: 1px solid rgb(27, 48, 73);
+  color: rgb(27, 48, 73);
+}
+
+.btn-outline-blue:hover {
+  background-color: rgb(27, 48, 73);
+  color: white;
+}
+
 /* Landscape phone */
 @media (min-width: 576px) {
   .logo {

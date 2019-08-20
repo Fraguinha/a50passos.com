@@ -52,11 +52,11 @@
 }
 
 .navbar-link-style {
-  color: rgb(94, 197, 199);
+  color: white;
 }
 
 .navbar-link-style:hover {
-  color: white;
+  color: rgb(94, 197, 199);
 }
 
 .nav-style-background {
@@ -68,6 +68,11 @@
 }
 
 .dropdown-style {
+  background-color: rgb(27, 48, 73);
+}
+
+.navbar-dropdown-style:hover {
+  color: white;
   background-color: rgb(27, 48, 73);
 }
 

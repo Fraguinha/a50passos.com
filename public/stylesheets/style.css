@@ -182,6 +182,10 @@
   text-decoration: none;
 }
 
+.homepage-header {
+  color: rgb(27, 48, 73);
+}
+
 .homepage-partnerships {
   color: white;
   background-color: rgb(27, 48, 73);

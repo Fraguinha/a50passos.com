@@ -200,6 +200,16 @@
   text-decoration: none;
 }
 
+.pagination > li > a,
+.pagination > li > span {
+  color: rgb(27, 48, 73) !important;
+}
+.pagination > li.active > a {
+  border: 1px solid rgb(27, 48, 73) !important;
+  background: rgb(27, 48, 73) !important;
+  color: white !important;
+}
+
 /* Landscape phone */
 @media (min-width: 576px) {
   .logo {

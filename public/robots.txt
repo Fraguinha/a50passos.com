@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.a50passos.com/sitemap.xml

@@ -50,12 +50,9 @@
                     >Ver mais</a
                   >
                 </div>
-                <% if (house.available) { %> <% if (Date.now() - house.date <
-                1000 * 60 * 60 * 24 * 5) { %>
-                <small class="text-info">Recente</small>
-                <%} else { %>
+                <% if (house.available) { %>
                 <small class="text-secondary"><%= house.tip %></small>
-                <% } %> <% } else { %>
+                <% } else { %>
                 <small class="text-danger">Arrendado</small>
                 <% } %>
               </div>
@@ -107,12 +104,9 @@
                     >Ver mais</a
                   >
                 </div>
-                <% if (house.available) { %> <% if (Date.now() - house.date <
-                1000 * 60 * 60 * 24 * 5) { %>
-                <small class="text-info">Recente</small>
-                <%} else { %>
+                <% if (house.available) { %>
                 <small class="text-secondary"><%= house.tip %></small>
-                <% } %> <% } else { %>
+                <% } else { %>
                 <small class="text-danger">Arrendado</small>
                 <% } %>
               </div>
@@ -164,12 +158,9 @@
                     >Ver mais</a
                   >
                 </div>
-                <% if (house.available) { %> <% if (Date.now() - house.date <
-                1000 * 60 * 60 * 24 * 5) { %>
-                <small class="text-info">Recente</small>
-                <%} else { %>
+                <% if (house.available) { %>
                 <small class="text-secondary"><%= house.tip %></small>
-                <% } %> <% } else { %>
+                <% } else { %>
                 <small class="text-danger">Arrendado</small>
                 <% } %>
               </div>

@@ -146,16 +146,6 @@
   background-color: rgb(200, 215, 215);
 }
 
-.homepage-button {
-  color: white;
-  background-color: rgb(27, 48, 73);
-}
-
-.homepage-button:hover {
-  color: black;
-  background-color: rgb(94, 197, 199);
-}
-
 .homepage-logo {
   width: 220px;
 }

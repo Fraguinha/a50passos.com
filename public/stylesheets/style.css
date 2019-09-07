@@ -4,6 +4,7 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
   background-image: url("../images/misc/porto.jpg");
+  border-radius: 0 !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

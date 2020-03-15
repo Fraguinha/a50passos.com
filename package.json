@@ -12,18 +12,18 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "dotenv": "^8.0.0",
-    "ejs": "^2.6.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
-    "express-session": "^1.16.2",
-    "mongoose": "^5.6.6",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.8.13",
     "multer": "^1.4.2",
-    "passport": "^0.4.0",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
-    "nodemon": "^1.19.1"
+    "eslint": "^6.8.0",
+    "nodemon": "^1.19.4"
   }
 }

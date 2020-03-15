@@ -13,9 +13,7 @@
               <img src="<%= house.photo1 %>" width="100%" height="225" />
               <% if (Date.now() - house.date < 1000 * 60 * 60 * 24 * 5) { %>
               <div class="banner-style-catalog-new">
-                <h1
-                  class="text-center text-white badge badge-info badge-style-catalog-new"
-                >
+                <h1 class="text-center text-white badge badge-info badge-style-catalog-new">
                   <strong>Novo</strong>
                 </h1>
               </div>
@@ -25,9 +23,7 @@
             <a href="/house/<%= house.id %>">
               <img src="<%= house.photo1 %>" width="100%" height="225" />
               <div class="banner-style-catalog">
-                <h1
-                  class="text-center text-white badge badge-danger badge-style-catalog"
-                >
+                <h1 class="text-center text-white badge badge-danger badge-style-catalog">
                   <strong>Já Foi!</strong>
                 </h1>
               </div>
@@ -36,19 +32,11 @@
             <div class="card-body">
               <p class="card-text">
                 <%= house.title %>
-                <img
-                  class="img-fluid float-right"
-                  width="40px"
-                  src="../../images/logo/50passos.png"
-                />
+                <img class="img-fluid float-right" width="40px" src="../../images/logo/50passos.png" />
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a
-                    href="/house/<%= house.id %>"
-                    class="btn btn-sm btn-outline-blue"
-                    >Ver mais</a
-                  >
+                  <a href="/house/<%= house.id %>" class="btn btn-sm btn-outline-blue">Ver mais</a>
                 </div>
                 <% if (house.available) { %>
                 <small class="text-secondary"><%= house.tip %></small>
@@ -67,9 +55,7 @@
               <img src="<%= house.photo1 %>" width="100%" height="225" />
               <% if (Date.now() - house.date < 1000 * 60 * 60 * 24 * 5) { %>
               <div class="banner-style-catalog-new">
-                <h1
-                  class="text-center text-white badge badge-info badge-style-catalog-new"
-                >
+                <h1 class="text-center text-white badge badge-info badge-style-catalog-new">
                   <strong>Novo</strong>
                 </h1>
               </div>
@@ -79,9 +65,7 @@
             <a href="/house/<%= house.id %>">
               <img src="<%= house.photo1 %>" width="100%" height="225" />
               <div class="banner-style-catalog">
-                <h1
-                  class="text-center text-white badge badge-danger badge-style-catalog"
-                >
+                <h1 class="text-center text-white badge badge-danger badge-style-catalog">
                   <strong>Já Foi!</strong>
                 </h1>
               </div>
@@ -90,19 +74,11 @@
             <div class="card-body">
               <p class="card-text">
                 <%= house.title %>
-                <img
-                  class="img-fluid float-right"
-                  width="40px"
-                  src="../../images/logo/50passos.png"
-                />
+                <img class="img-fluid float-right" width="40px" src="../../images/logo/50passos.png" />
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a
-                    href="/house/<%= house.id %>"
-                    class="btn btn-sm btn-outline-blue"
-                    >Ver mais</a
-                  >
+                  <a href="/house/<%= house.id %>" class="btn btn-sm btn-outline-blue">Ver mais</a>
                 </div>
                 <% if (house.available) { %>
                 <small class="text-secondary"><%= house.tip %></small>
@@ -121,9 +97,7 @@
               <img src="<%= house.photo1 %>" width="100%" height="225" />
               <% if (Date.now() - house.date < 1000 * 60 * 60 * 24 * 5) { %>
               <div class="banner-style-catalog-new">
-                <h1
-                  class="text-center text-white badge badge-info badge-style-catalog-new"
-                >
+                <h1 class="text-center text-white badge badge-info badge-style-catalog-new">
                   <strong>Novo</strong>
                 </h1>
               </div>
@@ -133,9 +107,7 @@
             <a href="/house/<%= house.id %>">
               <img src="<%= house.photo1 %>" width="100%" height="225" />
               <div class="banner-style-catalog">
-                <h1
-                  class="text-center text-white badge badge-danger badge-style-catalog"
-                >
+                <h1 class="text-center text-white badge badge-danger badge-style-catalog">
                   <strong>Já Foi!</strong>
                 </h1>
               </div>
@@ -144,19 +116,11 @@
             <div class="card-body">
               <p class="card-text">
                 <%= house.title %>
-                <img
-                  class="img-fluid float-right"
-                  width="40px"
-                  src="../../images/logo/50passos.png"
-                />
+                <img class="img-fluid float-right" width="40px" src="../../images/logo/50passos.png" />
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a
-                    href="/house/<%= house.id %>"
-                    class="btn btn-sm btn-outline-blue"
-                    >Ver mais</a
-                  >
+                  <a href="/house/<%= house.id %>" class="btn btn-sm btn-outline-blue">Ver mais</a>
                 </div>
                 <% if (house.available) { %>
                 <small class="text-secondary"><%= house.tip %></small>
@@ -172,7 +136,7 @@
     </div>
   </div>
   <div class="container">
-    <% if (pages > 0) { %>
+    <% if (pages > 1) { %>
     <ul class="pagination justify-content-center text-center">
       <% if (current == 0) { %>
       <li class="page-item disabled"><a class="page-link">Inicio</a></li>
@@ -183,7 +147,7 @@
       <% } %> <% let j = (Number(current) > 5 ? Number(current) - 4 : 1) %> <%
       if (j !== 1) { %>
       <li class="page-item disabled"><a class="page-link">...</a></li>
-      <% } %> <% for (; j <= (Number(current) + 4) && j <= pages; j++) { %> <%
+      <% } %> <% for (; j <= (Number(current) + 5) && j <= pages; j++) { %> <%
       if (j - 1 == current) { %>
       <li class="page-item active">
         <a class="page-link text-white"><%= j %></a>
@@ -192,7 +156,7 @@
       <li class="page-item">
         <a class="page-link" href="<%= url %>/<%= j - 1 %>"><%= j %></a>
       </li>
-      <% } %> <% if (j == Number(current) + 4 && j < pages) { %>
+      <% } %> <% if (j == Number(current) + 5 && j < pages) { %>
       <li class="page-item disabled"><a class="page-link">...</a></li>
       <% } %> <% } %> <% if (current == pages - 1) { %>
       <li class="page-item disabled"><a class="page-link">Fim</a></li>

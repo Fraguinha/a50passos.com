@@ -34,6 +34,7 @@ const startup = () => {
   mongoose
     .connect(database, {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
       useFindAndModify: false,
       useCreateIndex: true
     })

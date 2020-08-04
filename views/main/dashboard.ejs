@@ -11,12 +11,7 @@
       <div class="row">
         <div class="col-md-3">
           <hr />
-          <form
-            class="form-control-file"
-            action="/dashboard/addPhoto1"
-            method="POST"
-            enctype="multipart/form-data"
-          >
+          <form class="form-control-file" action="/dashboard/addPhoto1" method="POST" enctype="multipart/form-data">
             <h2 class="text-center">Upload foto 1</h2>
             <hr />
             <input type="file" name="photo1" multiple required />
@@ -32,12 +27,7 @@
         </div>
         <div class="col-md-3">
           <hr />
-          <form
-            class="form-control-file"
-            action="/dashboard/addPhoto2"
-            method="POST"
-            enctype="multipart/form-data"
-          >
+          <form class="form-control-file" action="/dashboard/addPhoto2" method="POST" enctype="multipart/form-data">
             <h2 class="text-center">Upload foto 2</h2>
             <hr />
             <input type="file" name="photo2" multiple required />
@@ -53,12 +43,7 @@
         </div>
         <div class="col-md-3">
           <hr />
-          <form
-            class="form-control-file"
-            action="/dashboard/addPhoto3"
-            method="POST"
-            enctype="multipart/form-data"
-          >
+          <form class="form-control-file" action="/dashboard/addPhoto3" method="POST" enctype="multipart/form-data">
             <h2 class="text-center">Upload foto 3</h2>
             <hr />
             <input type="file" name="photo3" multiple required />
@@ -74,12 +59,7 @@
         </div>
         <div class="col-md-3">
           <hr />
-          <form
-            class="form-control-file"
-            action="/dashboard/addPhoto4"
-            method="POST"
-            enctype="multipart/form-data"
-          >
+          <form class="form-control-file" action="/dashboard/addPhoto4" method="POST" enctype="multipart/form-data">
             <h2 class="text-center">Upload foto 4</h2>
             <hr />
             <input type="file" name="photo4" multiple required />
@@ -96,9 +76,7 @@
       </div>
       <div class="row">
         <form class="form-style" action="/dashboard/clearImages" method="POST">
-          <small class="form-text text-muted text-center"
-            >Limpa todas as imagens uploaded</small
-          >
+          <small class="form-text text-muted text-center">Limpa todas as imagens uploaded</small>
           <button class="btn btn-lg btn-warning btn-block" type="submit">
             Clear
           </button>
@@ -116,140 +94,64 @@
             <hr />
             <div class="form-group">
               <label for="id">ID</label>
-              <input
-                name="id"
-                type="text"
-                class="form-control"
-                placeholder="ID a adicionar (optional)"
-              />
-              <small class="form-text text-muted"
-                >Disponivel apenas para a conveniência do utilizador</small
-              >
+              <input name="id" type="text" class="form-control" placeholder="ID a adicionar (optional)" />
+              <small class="form-text text-muted">Disponivel apenas para a conveniência do utilizador</small>
             </div>
             <hr />
             <div class="form-group">
               <label for="title">Titulo *</label>
-              <input
-                name="title"
-                type="text"
-                class="form-control"
-                placeholder="Titulo"
-                required
-              />
+              <input name="title" type="text" class="form-control" placeholder="Titulo" required />
             </div>
             <div class="form-group">
               <label for="address">Morada *</label>
-              <input
-                name="address"
-                type="text"
-                class="form-control"
-                placeholder="Morada"
-                required
-              />
+              <input name="address" type="text" class="form-control" placeholder="Morada" required />
             </div>
             <div class="form-group">
               <label for="description">Descrição</label>
-              <textarea
-                name="description"
-                type="text"
-                class="form-control"
-                placeholder="Descrição"
-              ></textarea>
+              <textarea name="description" type="text" class="form-control" placeholder="Descrição"></textarea>
             </div>
             <div class="form-group">
               <label for="tip">Tooltip</label>
-              <input
-                name="tip"
-                type="text"
-                class="form-control"
-                placeholder="Tooltip"
-              />
+              <input name="tip" type="text" class="form-control" placeholder="Tooltip" />
             </div>
             <div class="form-group">
               <label for="wc">WC *</label>
-              <input
-                name="wc"
-                type="number"
-                min="1"
-                class="form-control"
-                placeholder="Nr"
-                required
-              />
+              <input name="wc" type="number" min="1" class="form-control" placeholder="Nr" required />
             </div>
             <div class="form-group">
               <label for="type">Tipo *</label>
-              <input
-                name="type"
-                type="number"
-                min="1"
-                class="form-control"
-                placeholder="Tipo"
-                required
-              />
-              <small class="form-text text-muted"
-                >1 - Quarto<br />2 - Apartamento</small
-              >
+              <input name="type" type="number" min="1" class="form-control" placeholder="Tipo" required />
+              <small class="form-text text-muted">1 - Quarto<br />2 - Apartamento</small>
             </div>
             <small class="form-text text-muted">* Campos obrigatórios</small>
             <hr />
             <div class="form-group form-check">
-              <input
-                id="suite"
-                name="suite"
-                type="checkbox"
-                class="form-check-input"
-              />
+              <input id="suite" name="suite" type="checkbox" class="form-check-input" />
               <label class="form-check-label" for="suite">Suite</label>
             </div>
             <div class="form-group form-check">
-              <input
-                id="elevator"
-                name="elevator"
-                type="checkbox"
-                class="form-check-input"
-              />
+              <input id="elevator" name="elevator" type="checkbox" class="form-check-input" />
               <label class="form-check-label" for="elevator">Elevador</label>
             </div>
             <div class="form-group form-check">
-              <input
-                id="dinningroom"
-                name="dinningroom"
-                type="checkbox"
-                class="form-check-input"
-              />
-              <label class="form-check-label" for="dinningroom"
-                >Sala de jantar</label
-              >
+              <input id="dinningroom" name="dinningroom" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="dinningroom">Sala de jantar</label>
             </div>
             <div class="form-group form-check">
-              <input
-                id="balcony"
-                name="balcony"
-                type="checkbox"
-                class="form-check-input"
-              />
+              <input id="balcony" name="balcony" type="checkbox" class="form-check-input" />
               <label class="form-check-label" for="balcony">Varanda</label>
             </div>
             <div class="form-group form-check">
-              <input
-                id="gardin"
-                name="gardin"
-                type="checkbox"
-                class="form-check-input"
-              />
+              <input id="gardin" name="gardin" type="checkbox" class="form-check-input" />
               <label class="form-check-label" for="gardin">Jardim</label>
             </div>
-            <small class="form-text text-muted"
-              >Selecione os que se aplicam</small
-            >
+            <small class="form-text text-muted">Selecione os que se aplicam</small>
             <hr />
             <button class="btn btn-lg btn-primary btn-block" type="submit">
               Adicionar casa
             </button>
-            <small class="form-text text-muted text-center"
-              >A casa apenas será adicionada se tiverem sido adicionadas 4
-              fotos</small
-            >
+            <small class="form-text text-muted text-center">A casa apenas será adicionada se tiverem sido adicionadas 4
+              fotos</small>
           </form>
         </div>
         <div class="col-md-4">
@@ -258,19 +160,11 @@
             <hr />
             <div class="form-group">
               <label for="id">ID *</label>
-              <input
-                name="id"
-                type="text"
-                class="form-control"
-                placeholder="ID a toggle"
-                required
-              />
+              <input name="id" type="text" class="form-control" placeholder="ID a toggle" required />
               <small class="form-text text-muted">* Campo obrigatório</small>
             </div>
             <hr />
-            <small class="form-text text-muted text-center"
-              >Muda entre disponivel e indisponivel</small
-            >
+            <small class="form-text text-muted text-center">Muda entre disponivel e indisponivel</small>
             <button class="btn btn-lg btn-primary btn-block" type="submit">
               Toggle casa
             </button>
@@ -281,20 +175,11 @@
             <hr />
             <div class="form-group">
               <label for="number">Numero *</label>
-              <input
-                name="number"
-                type="number"
-                min="1"
-                class="form-control"
-                placeholder="Novo numero"
-                required
-              />
+              <input name="number" type="number" min="1" class="form-control" placeholder="Novo numero" required />
               <small class="form-text text-muted">* Campo obrigatório</small>
             </div>
             <hr />
-            <small class="form-text text-muted text-center"
-              >Altera o numero de quartos controlados</small
-            >
+            <small class="form-text text-muted text-center">Altera o numero de quartos controlados</small>
             <button class="btn btn-lg btn-primary btn-block" type="submit">
               Alterar numero
             </button>
@@ -305,25 +190,15 @@
             <hr />
             <div class="form-group">
               <label for="id">ID *</label>
-              <input
-                name="id"
-                type="text"
-                class="form-control"
-                placeholder="ID a remover"
-                required
-              />
+              <input name="id" type="text" class="form-control" placeholder="ID a remover" required />
               <small class="form-text text-muted">* Campo obrigatório</small>
             </div>
             <hr />
-            <small class="form-text text-muted text-center"
-              >Elimina a casa permanentemente</small
-            >
+            <small class="form-text text-muted text-center">Elimina a casa permanentemente</small>
             <button class="btn btn-lg btn-warning btn-block" type="submit">
               Remover casa
             </button>
-            <small class="form-text text-muted text-center"
-              >(terá que ser recriada se necessário)</small
-            >
+            <small class="form-text text-muted text-center">(terá que ser recriada se necessário)</small>
           </form>
         </div>
         <div class="col-md-4">
@@ -337,158 +212,73 @@
             <hr />
             <div class="form-group">
               <label for="id">ID *</label>
-              <input
-                name="id"
-                type="text"
-                class="form-control"
-                placeholder="ID a editar"
-              />
+              <input name="id" type="text" class="form-control" placeholder="ID a editar" />
               <small class="form-text text-muted">* Campo obrigatório</small>
             </div>
             <hr />
             <div class="form-group">
               <label for="title">Titulo</label>
-              <input
-                name="title"
-                type="text"
-                class="form-control"
-                placeholder="Titulo (optional)"
-              />
+              <input name="title" type="text" class="form-control" placeholder="Titulo (optional)" />
             </div>
             <div class="form-group">
               <label for="address">Morada</label>
-              <input
-                name="address"
-                type="text"
-                class="form-control"
-                placeholder="Morada (optional)"
-              />
+              <input name="address" type="text" class="form-control" placeholder="Morada (optional)" />
             </div>
             <div class="form-group">
               <label for="description">Descrição</label>
-              <textarea
-                name="description"
-                type="text"
-                class="form-control"
-                placeholder="Descrição (optional)"
-              ></textarea>
+              <textarea name="description" type="text" class="form-control"
+                placeholder="Descrição (optional)"></textarea>
             </div>
             <div class="form-group">
               <label for="tip">Tooltip</label>
-              <input
-                name="tip"
-                type="text"
-                class="form-control"
-                placeholder="Tooltip (optional)"
-              />
+              <input name="tip" type="text" class="form-control" placeholder="Tooltip (optional)" />
             </div>
             <div class="form-group">
               <label for="wc">WC</label>
-              <input
-                name="wc"
-                type="number"
-                min="1"
-                class="form-control"
-                placeholder="Nr (optional)"
-              />
+              <input name="wc" type="number" min="1" class="form-control" placeholder="Nr (optional)" />
             </div>
-            <small class="form-text text-muted"
-              >Todos estes campos são opcionais, apenas os que alterar serão
-              actualizados</small
-            >
+            <small class="form-text text-muted">Todos estes campos são opcionais, apenas os que alterar serão
+              actualizados</small>
             <hr />
             <div class="form-group form-check">
-              <input
-                id="suite"
-                name="suite"
-                type="checkbox"
-                class="form-check-input"
-              />
-              <label class="form-check-label" for="suite"
-                >Suite<small class="text-muted text-center">
-                  (Opcional)</small
-                ></label
-              >
+              <input id="suite" name="suite" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="suite">Suite<small class="text-muted text-center">
+                  (Opcional)</small></label>
             </div>
             <div class="form-group form-check">
-              <input
-                id="elevator"
-                name="elevator"
-                type="checkbox"
-                class="form-check-input"
-              />
-              <label class="form-check-label" for="elevator"
-                >Elevador<small class="text-muted text-center">
-                  (Opcional)</small
-                ></label
-              >
+              <input id="elevator" name="elevator" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="elevator">Elevador<small class="text-muted text-center">
+                  (Opcional)</small></label>
             </div>
             <div class="form-group form-check">
-              <input
-                id="dinningroom"
-                name="dinningroom"
-                type="checkbox"
-                class="form-check-input"
-              />
-              <label class="form-check-label" for="dinningroom"
-                >Sala de jantar<small class="text-muted text-center">
-                  (Opcional)</small
-                ></label
-              >
+              <input id="dinningroom" name="dinningroom" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="dinningroom">Sala de jantar<small class="text-muted text-center">
+                  (Opcional)</small></label>
             </div>
             <div class="form-group form-check">
-              <input
-                id="balcony"
-                name="balcony"
-                type="checkbox"
-                class="form-check-input"
-              />
-              <label class="form-check-label" for="balcony"
-                >Varanda<small class="text-muted text-center">
-                  (Opcional)</small
-                ></label
-              >
+              <input id="balcony" name="balcony" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="balcony">Varanda<small class="text-muted text-center">
+                  (Opcional)</small></label>
             </div>
             <div class="form-group form-check">
-              <input
-                id="gardin"
-                name="gardin"
-                type="checkbox"
-                class="form-check-input"
-              />
-              <label class="form-check-label" for="gardin"
-                >Jardim<small class="text-muted text-center">
-                  (Opcional)</small
-                ></label
-              >
+              <input id="gardin" name="gardin" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="gardin">Jardim<small class="text-muted text-center">
+                  (Opcional)</small></label>
             </div>
-            <small class="form-text text-muted"
-              >Selecione os que se aplicam</small
-            >
+            <small class="form-text text-muted">Selecione os que se aplicam</small>
             <hr />
             <div class="form-group form-check">
-              <input
-                id="checkbox"
-                name="checkbox"
-                type="checkbox"
-                class="form-check-input"
-              />
-              <label class="form-check-label" for="checkbox"
-                >Actualizar checkboxes?</label
-              >
-              <small class="form-text text-muted"
-                >Se estiver selecionado, a casa será actualizada com os valores
-                das checkboxes em cima</small
-              >
+              <input id="checkbox" name="checkbox" type="checkbox" class="form-check-input" />
+              <label class="form-check-label" for="checkbox">Actualizar checkboxes?</label>
+              <small class="form-text text-muted">Se estiver selecionado, a casa será actualizada com os valores
+                das checkboxes em cima</small>
             </div>
             <hr />
             <button class="btn btn-lg btn-primary btn-block" type="submit">
               Editar casa
             </button>
-            <small class="form-text text-muted text-center"
-              >A casa será actualizada com os novos parametros e fotos
-              especificados</small
-            >
+            <small class="form-text text-muted text-center">A casa será actualizada com os novos parametros e fotos
+              especificados</small>
           </form>
         </div>
       </div>

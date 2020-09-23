@@ -136,6 +136,8 @@
     </div>
   </div>
   <% if (pages > 1) { %>
+  <% current = Number(current) %>
+  <% pagination = Number(pagination) %>
   <div class="container">
     <ul class="pagination justify-content-center text-center">
       <% if (current == 0) { %>
@@ -145,11 +147,14 @@
         <a class="page-link" href="<%= url %>/0">Inicio</a>
       </li>
       <% } %>
-      <% let j = (Number(current) > 2 ? Number(current) - 1 : 1) %>
+      <% let j = (current > 2 ? current - 1 : 1) %>
+      <% let revindex = pages - current %>
+      <% if (revindex < 3 && j - 3 + revindex > 0) j = j - 3 + revindex %>
       <% if (j > 1) { %>
       <li class="page-item disabled"><a class="page-link">...</a></li>
       <% } %>
-      <% for (; j <= (Number(current) + 3) && j <= pages; j++) { %>
+      <% let counter = 0 %>
+      <% for (; (j <= (current + 3) || counter < pagination) && j <= pages; j++) { %>
       <% if (j - 1 == current) { %>
       <li class="page-item active">
         <a class="page-link text-white"><%= j %></a>
@@ -159,9 +164,10 @@
         <a class="page-link" href="<%= url %>/<%= j - 1 %>"><%= j %></a>
       </li>
       <% } %>
-      <% if (j == Number(current) + 3 && j < pages) { %>
-      <li class="page-item disabled"><a class="page-link">...</a></li>
+      <% counter += 1 %>
       <% } %>
+      <% if (j <= pages) { %>
+      <li class="page-item disabled"><a class="page-link">...</a></li>
       <% } %>
       <% if (current == pages - 1) { %>
       <li class="page-item disabled"><a class="page-link">Fim</a></li>

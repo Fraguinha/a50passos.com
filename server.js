@@ -1,11 +1,12 @@
 // Requires
 const express = require("express");
 const bodyParser = require("body-parser");
-const dotenv = require("dotenv");
 const fs = require("fs");
 
 // Dotenv config
-dotenv.config();
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
 
 // Modules
 const passport = require("./library/setup/passport");
@@ -47,5 +48,5 @@ app.get("/*", (req, res) => {
 });
 
 // Start server
-const port = process.env.PORT || 8080;
-app.listen(port, console.log(`Started listening on port ${port}`));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Started listening on port ${port}`));

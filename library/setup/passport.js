@@ -45,7 +45,7 @@ const setup = passport => {
 
 const configure = app => {
   // Cookie session
-  app.use(cookieSession({ secret: process.env.SESSION_SECRET }));
+  app.use(cookieSession({ secret: secret }));
   // Passport
   setup(passport);
   app.use(passport.initialize());

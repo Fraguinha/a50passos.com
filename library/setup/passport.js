@@ -1,7 +1,7 @@
 // Requires
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const session = require("express-session");
+const cookieSession = require("cookie-session");
 const bcrypt = require("bcryptjs");
 
 // Models
@@ -44,8 +44,8 @@ const setup = passport => {
 };
 
 const configure = app => {
-  // Express session
-  app.use(session({ secret: secret, resave: true, saveUninitialized: true }));
+  // Cookie session
+  app.use(cookieSession({ secret: process.env.SESSION_SECRET }));
   // Passport
   setup(passport);
   app.use(passport.initialize());

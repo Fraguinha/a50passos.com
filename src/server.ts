@@ -34,8 +34,8 @@ app.use(bodyParser.json());
 passport.configure(app, SECRET);
 
 // Filesystem
-if (!fs.existsSync("./dist/public/uploads/")) {
-  fs.mkdirSync("./dist/public/uploads/");
+if (!fs.existsSync("./public/uploads/")) {
+  fs.mkdirSync("./public/uploads/");
 }
 
 // Database

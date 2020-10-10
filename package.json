@@ -7,7 +7,8 @@
     "start": "NODE_ENV=production APPNAME=$APPNAME PORT=$PORT SESSION_SECRET=$SESSION_SECRET DATABASE=\"$DATABASE\" node dist/server.js",
     "build": "tsc; cp -r src/views dist; cp -r src/public dist",
     "clean": "rm -rf dist",
-    "dev": "nodemon dist/server.js"
+    "dev": "nodemon dist/server.js",
+    "tsc": "tsc"
   },
   "keywords": [],
   "author": "João Fraga",

@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import express from 'express';
 import fs from 'fs';
+import path from "path";
 import database from "./lib/setup/database";
 import passport from "./lib/setup/passport";
 import viewengine from "./lib/setup/viewengine";
@@ -34,8 +35,8 @@ app.use(bodyParser.json());
 passport.configure(app, SECRET);
 
 // Filesystem
-if (!fs.existsSync("./public/uploads/")) {
-  fs.mkdirSync("./public/uploads/");
+if (!fs.existsSync(path.join(__dirname, "/public/uploads/"))) {
+  fs.mkdirSync(path.join(__dirname, "/public/uploads/"));
 }
 
 // Database

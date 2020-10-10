@@ -61,6 +61,6 @@ typings/
 .next
 
 # project
-public/uploads/
-public/images/
+src/public/uploads/
+src/public/images/
 dist

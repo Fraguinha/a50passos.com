@@ -1,4 +1,6 @@
-<% if (data) { %> <%- include("../partials/_header.ejs") %>
+<% if (data) { %>
+
+<%- include("../partials/_header.ejs") %>
 
 <main role="main">
   <div class="bg-light">
@@ -186,5 +188,10 @@
   </div>
 </main>
 
-<%- include("../partials/_footer.ejs") %> <% if (data.available) { %> <%-
-include("../partials/_toast.ejs") %> <% } %> <% } %>
+<%- include("../partials/_footer.ejs") %>
+
+<% if (data.available) { %>
+<%- include("../partials/_toast.ejs") %>
+<% } %>
+
+<% } %>

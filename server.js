@@ -43,8 +43,10 @@ app.use("/login", require("./routes/login"));
 app.use("/dashboard", require("./routes/dashboard"));
 
 app.get("/*", (req, res) => {
-  res.write("Page not found.");
-  res.status(404).end();
+  res.render("main/error.ejs", {
+    error: 404,
+    description: "A página solicitada não foi encontrada."
+  });
 });
 
 // Start server

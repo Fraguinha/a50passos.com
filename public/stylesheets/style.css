@@ -1,3 +1,7 @@
+.error-page {
+  min-height: 100vh;
+}
+
 .jumbotron {
   margin-top: 0;
   margin-bottom: 0;
@@ -83,8 +87,8 @@
 }
 
 .link-style-light:hover {
-  color: rgb(27, 48, 73);
-  text-decoration: none;
+  color: rgb(43, 146, 148);
+  text-decoration: underline;
 }
 
 .link-style-dark {

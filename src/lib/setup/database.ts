@@ -24,7 +24,7 @@ const setupDefaultAdmin = () => {
   });
 };
 
-const startup = (appname: string, database: string) => {
+const startup = (database: string) => {
   mongoose
     .connect(database, {
       useNewUrlParser: true,

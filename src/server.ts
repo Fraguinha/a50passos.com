@@ -40,7 +40,7 @@ if (!fs.existsSync(path.join(__dirname, "/public/uploads/"))) {
 }
 
 // Database
-database.startup(APPNAME, DATABASE);
+database.startup(DATABASE);
 
 // Views
 viewengine.configure(app);

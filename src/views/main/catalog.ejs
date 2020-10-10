@@ -4,7 +4,9 @@
   <div class="container">
     <% let i = 0 %>
     <div class="album py-5 bg-light">
-      <% data.forEach((house) => { %> <% if (i % 3 == 0 ) { %> <% i++ %>
+      <% data.forEach((house) => { %>
+      <% if (i % 3==0 ) { %>
+      <% i++ %>
       <div class="row">
         <div class="col-md-4">
           <div class="card mb-4 shadow">
@@ -47,7 +49,8 @@
             </div>
           </div>
         </div>
-        <% } else if (i % 3 == 1 ) { %> <% i++ %>
+        <% } else if (i % 3 == 1 ) { %>
+        <% i++ %>
         <div class="col-md-4">
           <div class="card mb-4 shadow">
             <% if (house.available) { %>
@@ -89,7 +92,8 @@
             </div>
           </div>
         </div>
-        <% } else if (i % 3 == 2 ) { %> <% i++ %>
+        <% } else if (i % 3 == 2 ) { %>
+        <% i++ %>
         <div class="col-md-4">
           <div class="card mb-4 shadow">
             <% if (house.available) { %>
@@ -132,7 +136,8 @@
           </div>
         </div>
       </div>
-      <% } %> <% }) %>
+      <% } %>
+      <% }) %>
     </div>
   </div>
   <% if (pages > 1) { %>

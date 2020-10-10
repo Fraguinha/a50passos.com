@@ -1,7 +1,7 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+import Meta from "../models/meta-model";
 
-const Meta = require("../models/meta-model");
+const router = express.Router();
 
 // Show homepage
 router.get("/", async (req, res) => {
@@ -11,4 +11,4 @@ router.get("/", async (req, res) => {
   });
 });
 
-module.exports = router;
+export = router;

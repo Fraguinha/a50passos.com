@@ -1,6 +1,7 @@
-const express = require("express");
+import express from "express";
+import House from "../models/house-model";
+
 const router = express.Router();
-const House = require("../models/house-model");
 
 // Show catalog
 router.get("/:page", async (req, res) => {
@@ -69,4 +70,4 @@ router.get("/apartments/:page", async (req, res) => {
   }
 });
 
-module.exports = router;
+export = router;

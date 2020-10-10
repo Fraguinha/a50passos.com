@@ -1,13 +1,7 @@
 // Requires
-const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
-
-// Models
-const User = require("../../models/user-model");
-
-// Env variables
-const appname = process.env.APPNAME || "app";
-const database = process.env.DATABASE || `mongodb://localhost/${appname}`;
+import bcrypt from "bcryptjs";
+import mongoose from "mongoose";
+import User from "../../models/user-model";
 
 // Functions
 const setupDefaultAdmin = () => {
@@ -18,10 +12,10 @@ const setupDefaultAdmin = () => {
         email: "admin@admin",
         password: "admin"
       });
-      bcrypt.genSalt(10, (err, salt) => {
-        if (err) throw err;
-        bcrypt.hash(defaultAdmin.password, salt, (err, hash) => {
-          if (err) throw err;
+      bcrypt.genSalt(10, (err2, salt) => {
+        if (err2) throw err2;
+        bcrypt.hash(defaultAdmin.password, salt, (err3, hash) => {
+          if (err3) throw err3;
           defaultAdmin.password = hash;
           defaultAdmin.save();
         });
@@ -30,7 +24,7 @@ const setupDefaultAdmin = () => {
   });
 };
 
-const startup = () => {
+const startup = (appname: string, database: string) => {
   mongoose
     .connect(database, {
       useNewUrlParser: true,
@@ -46,4 +40,4 @@ const startup = () => {
   });
 };
 
-module.exports = { startup: startup };
+export = { startup };

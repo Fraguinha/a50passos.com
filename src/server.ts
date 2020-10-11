@@ -54,8 +54,8 @@ app.use("/login", login);
 app.use("/dashboard", dashboard);
 
 // Not found
-app.get("/*", (req, res) => {
-  res.render("main/error.ejs", {
+app.use((req, res) => {
+  res.status(404).render("main/error.ejs", {
     error: 404,
     description: "A página solicitada não foi encontrada."
   });

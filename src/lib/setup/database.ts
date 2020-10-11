@@ -4,24 +4,7 @@ import mongoose from "mongoose";
 import User from "../../models/user-model";
 
 // Functions
-const setupDefaultAdmin = () => {
-  User.find((err, res) => {
-    if (res.length === 0) {
-      const defaultAdmin = new User({
-        email: "admin@admin",
-        password: "admin"
-      });
-      bcrypt.genSalt(10, (err2, salt) => {
-        bcrypt.hash(defaultAdmin.password, salt, (err3, hash) => {
-          defaultAdmin.password = hash;
-          defaultAdmin.save();
-        });
-      });
-    }
-  });
-};
-
-const startup = (database: string) => {
+const start = (database: string) => {
   mongoose
     .connect(database, {
       useNewUrlParser: true,
@@ -31,13 +14,26 @@ const startup = (database: string) => {
     })
     .catch(err => {
       console.error(err);
-      startup(database);
+      start(database);
     });
   const db = mongoose.connection;
   db.on("open", () => {
     console.log("Connected to database");
-    setupDefaultAdmin();
+    User.find((err, res) => {
+      if (res.length === 0) {
+        const defaultAdmin = new User({
+          email: "admin@admin",
+          password: "admin"
+        });
+        bcrypt.genSalt(10, (err2, salt) => {
+          bcrypt.hash(defaultAdmin.password, salt, (err3, hash) => {
+            defaultAdmin.password = hash;
+            defaultAdmin.save();
+          });
+        });
+      }
+    });
   });
 };
 
-export = { startup };
+export = { start };

@@ -7,7 +7,10 @@ import LocalStrategy from "passport-local";
 import User from "../../models/user-model";
 
 // Functions
-const setup = () => {
+const configure = (app: Express, secret: string) => {
+  // Cookie session
+  app.use(cookieSession({ secret }));
+  // Passport
   passport.use(
     new LocalStrategy.Strategy({ usernameField: "email" }, (email, password, done) => {
       // Match user
@@ -36,13 +39,7 @@ const setup = () => {
       done(err, user);
     });
   });
-};
 
-const configure = (app: Express, secret: string) => {
-  // Cookie session
-  app.use(cookieSession({ secret }));
-  // Passport
-  setup();
   app.use(passport.initialize());
   app.use(passport.session());
 };

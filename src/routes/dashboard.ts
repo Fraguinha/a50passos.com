@@ -2,10 +2,9 @@ import express from "express";
 import fs from "fs";
 import multer from "multer";
 import path from "path";
-import ensureAuthentication from "../lib/authentication";
+import ensureAuthentication from "../lib/middleware";
 import House from "../models/house-model";
 import Meta from "../models/meta-model";
-
 
 const router = express.Router();
 

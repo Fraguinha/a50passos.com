@@ -24,6 +24,14 @@ const APPNAME = process.env.APPNAME || "app";
 const SECRET = process.env.SESSION_SECRET || "secret";
 const DATABASE = process.env.DATABASE || `mongodb://localhost/${APPNAME}`;
 
+// Filesystem
+if (!fs.existsSync(path.join(__dirname, "/public/uploads/"))) {
+  fs.mkdirSync(path.join(__dirname, "/public/uploads/"));
+}
+
+// Database
+database.startup(DATABASE);
+
 // Application
 const app = express();
 
@@ -33,14 +41,6 @@ app.use(bodyParser.json());
 
 // Passport config
 passport.configure(app, SECRET);
-
-// Filesystem
-if (!fs.existsSync(path.join(__dirname, "/public/uploads/"))) {
-  fs.mkdirSync(path.join(__dirname, "/public/uploads/"));
-}
-
-// Database
-database.startup(DATABASE);
 
 // Views
 viewengine.configure(app);

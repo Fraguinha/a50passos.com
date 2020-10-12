@@ -1,5 +1,6 @@
 // Requires
 import bcrypt from "bcryptjs";
+import dotenv from "dotenv";
 import mongoose from "mongoose";
 import User from "../../models/user-model";
 
@@ -14,6 +15,7 @@ const start = (database: string) => {
     })
     .catch(err => {
       console.error(err);
+      dotenv.config();
       start(database);
     });
   const db = mongoose.connection;

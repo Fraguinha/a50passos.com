@@ -1,6 +1,5 @@
 // Requires
 import bcrypt from "bcryptjs";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
 import User from "../../models/user-model";
 
@@ -14,9 +13,7 @@ const start = (database: string) => {
       useCreateIndex: true
     })
     .catch(err => {
-      console.error(err);
-      dotenv.config();
-      start(database);
+      process.exit(1);
     });
   const db = mongoose.connection;
   db.on("open", () => {

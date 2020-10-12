@@ -4,20 +4,20 @@
   <div class="container">
     <% let i = 0 %>
     <div class="album py-5 bg-light">
-    <% data.forEach((house) => { %>
+      <% data.forEach((house) => { %>
       <% if (i % 3==0 ) { %>
-        <% i++ %>
-        <div class="row">
+      <% i++ %>
+      <div class="row">
         <%- include("../partials/_card.ejs", { house }) %>
-      <% } else if (i % 3 == 1 ) { %>
-        <% i++ %>
-        <%- include("../partials/_card.ejs", { house }) %>
-      <% } else if (i % 3 == 2 ) { %>
+        <% } else if (i % 3 == 1 ) { %>
         <% i++ %>
         <%- include("../partials/_card.ejs", { house }) %>
-        </div>
+        <% } else if (i % 3 == 2 ) { %>
+        <% i++ %>
+        <%- include("../partials/_card.ejs", { house }) %>
+      </div>
       <% } %>
-    <% }) %>
+      <% }) %>
     </div>
   </div>
   <%- include("../partials/_pagination.ejs", { current, pages }) %>

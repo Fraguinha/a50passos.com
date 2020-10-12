@@ -7,7 +7,6 @@ const router = express.Router();
 router.get("/:page", async (req, res) => {
   try {
     const numberItems = 9;
-    const paginationNumber = 5;
     const page = Number(req.params.page);
     const houses = await House.find()
       .sort({ date: -1 })
@@ -17,7 +16,6 @@ router.get("/:page", async (req, res) => {
     res.render("main/catalog.ejs", {
       data: houses,
       current: page,
-      pagination: paginationNumber,
       pages: Math.ceil(count / numberItems),
       url: "/catalog"
     });

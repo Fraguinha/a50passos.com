@@ -18,14 +18,14 @@ const configure = (app: Express, secret: string) => {
         // Match user
         User.findOne({ email }).then((user) => {
           if (!user) {
-            return done(null, false);
+            return done(null, null);
           }
           // Match password
           bcrypt.compare(password, user.password, (err, isMatch) => {
             if (isMatch) {
               return done(null, user);
             } else {
-              return done(null, false);
+              return done(null, null);
             }
           });
         });

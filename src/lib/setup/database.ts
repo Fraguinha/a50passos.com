@@ -1,7 +1,7 @@
 // Requires
-import bcrypt from "bcryptjs";
-import mongoose from "mongoose";
-import User from "../../models/user-model";
+import bcrypt from 'bcryptjs';
+import mongoose from 'mongoose';
+import User from '../../models/user-model';
 
 // Functions
 const start = (database: string) => {
@@ -10,19 +10,19 @@ const start = (database: string) => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
-      useCreateIndex: true
+      useCreateIndex: true,
     })
-    .catch(err => {
+    .catch((err) => {
       process.exit(1);
     });
   const db = mongoose.connection;
-  db.on("open", () => {
-    console.log("Connected to database");
+  db.on('open', () => {
+    console.log('Connected to database');
     User.find((err, res) => {
       if (res.length === 0) {
         const defaultAdmin = new User({
-          email: "admin@admin",
-          password: "admin"
+          email: 'admin@admin',
+          password: 'admin',
         });
         bcrypt.genSalt(10, (err2, salt) => {
           bcrypt.hash(defaultAdmin.password, salt, (err3, hash) => {

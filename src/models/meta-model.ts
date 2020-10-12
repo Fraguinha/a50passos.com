@@ -1,14 +1,14 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const metaSchema = new mongoose.Schema({
   managed: {
     type: Number,
-    required: true
-  }
+    required: true,
+  },
 });
 
 interface MetaDoc extends mongoose.Document {
-  managed: number
+  managed: number;
 }
 
-export = mongoose.model<MetaDoc>("Meta", metaSchema);
+export = mongoose.model<MetaDoc>('Meta', metaSchema);

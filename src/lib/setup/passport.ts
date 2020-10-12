@@ -1,10 +1,10 @@
 // Requires
-import bcrypt from "bcryptjs";
-import cookieSession from "cookie-session";
-import { Express } from "express";
-import passport from "passport";
-import LocalStrategy from "passport-local";
-import User from "../../models/user-model";
+import bcrypt from 'bcryptjs';
+import cookieSession from 'cookie-session';
+import { Express } from 'express';
+import passport from 'passport';
+import LocalStrategy from 'passport-local';
+import User from '../../models/user-model';
 
 // Functions
 const configure = (app: Express, secret: string) => {
@@ -12,22 +12,25 @@ const configure = (app: Express, secret: string) => {
   app.use(cookieSession({ secret }));
   // Passport
   passport.use(
-    new LocalStrategy.Strategy({ usernameField: "email" }, (email, password, done) => {
-      // Match user
-      User.findOne({ email }).then(user => {
-        if (!user) {
-          return done(null, false);
-        }
-        // Match password
-        bcrypt.compare(password, user.password, (err, isMatch) => {
-          if (isMatch) {
-            return done(null, user);
-          } else {
+    new LocalStrategy.Strategy(
+      { usernameField: 'email' },
+      (email, password, done) => {
+        // Match user
+        User.findOne({ email }).then((user) => {
+          if (!user) {
             return done(null, false);
           }
+          // Match password
+          bcrypt.compare(password, user.password, (err, isMatch) => {
+            if (isMatch) {
+              return done(null, user);
+            } else {
+              return done(null, false);
+            }
+          });
         });
-      });
-    })
+      }
+    )
   );
 
   passport.serializeUser((user: any, done) => {

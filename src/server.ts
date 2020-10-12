@@ -2,21 +2,21 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import bodyparser from './lib/setup/bodyparser';
-import database from "./lib/setup/database";
+import database from './lib/setup/database';
 import filesystem from './lib/setup/filesystem';
-import passport from "./lib/setup/passport";
+import passport from './lib/setup/passport';
 import routes from './lib/setup/routes';
-import viewengine from "./lib/setup/viewengine";
+import viewengine from './lib/setup/viewengine';
 
 // Dotenv config
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== 'production') {
   dotenv.config();
 }
 
 // Environment variables
 const PORT = process.env.PORT || 3000;
-const APPNAME = process.env.APPNAME || "app";
-const SECRET = process.env.SESSION_SECRET || "secret";
+const APPNAME = process.env.APPNAME || 'app';
+const SECRET = process.env.SESSION_SECRET || 'secret';
 const DATABASE = process.env.DATABASE || `mongodb://localhost/${APPNAME}`;
 
 // Application

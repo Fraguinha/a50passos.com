@@ -9,9 +9,7 @@ import routes from './lib/setup/routes';
 import viewengine from './lib/setup/viewengine';
 
 // Dotenv config
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config();
-}
+dotenv.config();
 
 // Environment variables
 const PORT = process.env.PORT || 3000;

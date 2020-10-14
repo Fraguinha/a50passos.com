@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production APPNAME=$APPNAME PORT=$PORT SESSION_SECRET=$SESSION_SECRET DATABASE=\"$DATABASE\" node dist/server.js",
+    "start": "node dist/server.js",
     "build": "tsc; cp -r src/views dist; cp -r src/public dist",
     "clean": "rm -rf dist",
     "dev": "nodemon --watch 'src/**' --ext 'ts,ejs,css,json' --exec 'npm run build; node dist/server.js'"

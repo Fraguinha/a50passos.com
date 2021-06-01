@@ -33,7 +33,11 @@
           <a href="/house/<%= house.id %>" class="btn btn-sm btn-outline-blue">Ver mais</a>
         </div>
         <% if (house.available) { %>
-        <small class="text-secondary"><%= house.tip %></small>
+          <% if (house.tip.length <= 30) { %>
+            <small class="text-secondary"><%= house.tip %></small>
+          <% } else { %>
+            <small class="text-secondary"><%= house.tip.substring(0, 30) + "..." %></small>
+          <% } %>
         <% } else { %>
         <small class="text-danger">Arrendado</small>
         <% } %>

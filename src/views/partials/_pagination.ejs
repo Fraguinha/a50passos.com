@@ -39,11 +39,9 @@
             <a class="page-link text-white"><%= i %></a>
           </li>
         <% } else { %>
-          <% if (i > 0) { %>
           <li class="page-item">
             <a class="page-link" href="<%= url %>/<%= i - 1 %>"><%= i %></a>
           </li>
-          <% } %>
         <% } %>
         <% counter += 1 %>
       <% } %>

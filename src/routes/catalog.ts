@@ -3,9 +3,11 @@ import House from '../models/house-model';
 
 const router = express.Router();
 
+const numberItems = 9;
+const paginationNumber = 3;
+
 // Show catalog
 router.get('/:page', async (req, res) => {
-  const numberItems = 9;
   const page = Number(req.params.page);
   const houses = await House.find()
     .sort({ date: -1 })
@@ -17,6 +19,7 @@ router.get('/:page', async (req, res) => {
     res.render('main/catalog.ejs', {
       data: houses,
       current: page,
+      pagination: paginationNumber,
       pages,
       url: '/catalog',
     });
@@ -29,8 +32,6 @@ router.get('/:page', async (req, res) => {
 });
 
 router.get('/rooms/:page', async (req, res) => {
-  const numberItems = 9;
-  const paginationNumber = 5;
   const page = Number(req.params.page);
   const houses = await House.find({ type: 1 })
     .sort({ date: -1 })
@@ -55,8 +56,6 @@ router.get('/rooms/:page', async (req, res) => {
 });
 
 router.get('/apartments/:page', async (req, res) => {
-  const numberItems = 9;
-  const paginationNumber = 5;
   const page = Number(req.params.page);
   const houses = await House.find({ type: 2 })
     .sort({ date: -1 })

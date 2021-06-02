@@ -4,7 +4,7 @@ import House from '../models/house-model';
 const router = express.Router();
 
 const numberItems = 9;
-const paginationNumber = 3;
+const paginationNumber = 5;
 
 // Show catalog
 router.get('/:page', async (req, res) => {

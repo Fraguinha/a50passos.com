@@ -1,3 +1,3 @@
-# A50Passos.com
+# a50passos.com
 
 https://www.a50passos.com

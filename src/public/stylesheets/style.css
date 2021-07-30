@@ -215,31 +215,3 @@
   background-color: rgb(27, 48, 73);
   color: white;
 }
-
-/* Landscape phone */
-@media (min-width: 576px) {
-  .logo {
-    width: 220px;
-  }
-}
-
-/* ⁄⁄Tablets */
-@media (min-width: 768px) {
-  .logo {
-    width: 220px;
-  }
-}
-
-/* Desktops */
-@media (min-width: 992px) {
-  .logo {
-    width: 220px;
-  }
-}
-
-/* ⁄Large Desktops */
-@media (min-width: 1200px) {
-  .logo {
-    width: 220px;
-  }
-}

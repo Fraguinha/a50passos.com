@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow: /login 
 
 Sitemap: https://www.a50passos.com/sitemap.xml

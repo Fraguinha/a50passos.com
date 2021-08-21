@@ -33,11 +33,11 @@ const configure = (app: Express, secret: string) => {
     )
   );
 
-  passport.serializeUser((user: any, done: any) => {
+  passport.serializeUser((user: any, done) => {
     done(null, user.id);
   });
 
-  passport.deserializeUser((id: any, done: any) => {
+  passport.deserializeUser((id: any, done) => {
     User.findById(id, (err: any, user: any) => {
       done(err, user);
     });

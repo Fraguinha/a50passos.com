@@ -22,7 +22,10 @@ const base = path.resolve(__dirname, '..');
 
 // Show dashboard
 router.get('/', ensureAuthentication, (req, res) => {
-  res.render('main/dashboard.ejs');
+  res.render('main/dashboard.ejs', {
+    title: 'Dashboard de Administração',
+    description: '',
+  });
 });
 
 // Dashboard addPhotos

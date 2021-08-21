@@ -11,6 +11,8 @@ router.get('/:id', async (req, res) => {
   );
   if (house != null) {
     res.render('main/house.ejs', {
+      title: house.title,
+      description: house.description,
       data: house,
     });
   } else {

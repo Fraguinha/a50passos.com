@@ -5,7 +5,10 @@ const router = express.Router();
 
 // Show login
 router.get('/', (req, res) => {
-  res.render('main/login.ejs');
+  res.render('main/login.ejs', {
+    title: 'Página de Login',
+    description: ''
+  });
 });
 
 // Handle login

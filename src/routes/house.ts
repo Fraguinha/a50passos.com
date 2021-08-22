@@ -17,8 +17,9 @@ router.get('/:id', async (req, res) => {
     });
   } else {
     res.status(404).render('main/error.ejs', {
-      error: 404,
+      title: '404 - Página não encontrada',
       description: 'A página solicitada não foi encontrada.',
+      error: 404,
     });
   }
 });

@@ -15,7 +15,7 @@ router.get('/:page', async (req, res) => {
     .limit(numberItems);
   const count = await House.countDocuments();
   const pages = Math.ceil(count / numberItems);
-  if (page < pages) {
+  if (page <= pages) {
     res.render('main/catalog.ejs', {
       title: 'Catálogo de Quartos e Apartamentos no Porto',
       description: 'Consulte a nossa lista de quartos e apartamentos. Descubra um quarto ou apartamento a 50 passos de qualquer universidade.',
@@ -42,7 +42,7 @@ router.get('/rooms/:page', async (req, res) => {
     .limit(numberItems);
   const count = await House.countDocuments({ type: 1 });
   const pages = Math.ceil(count / numberItems);
-  if (page < pages) {
+  if (page <= pages) {
     res.render('main/catalog.ejs', {
       title: 'Catálogo de Quartos no Porto',
       description: 'Consulte a nossa lista de quartos. Descubra um quarto a 50 passos de qualquer universidade.',
@@ -69,7 +69,7 @@ router.get('/apartments/:page', async (req, res) => {
     .limit(numberItems);
   const count = await House.countDocuments({ type: 2 });
   const pages = Math.ceil(count / numberItems);
-  if (page < pages) {
+  if (page <= pages) {
     res.render('main/catalog.ejs', {
       title: 'Catálogo de Apartamentos no Porto',
       description: 'Consulte a nossa lista de apartamentos. Descubra um apartamento a 50 passos de qualquer universidade.',

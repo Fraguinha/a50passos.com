@@ -12,8 +12,9 @@ router.get('/:page', async (req, res) => {
   const houses = await House.find()
     .sort({ date: -1 })
     .skip(numberItems * page)
-    .limit(numberItems);
-  const count = await House.countDocuments();
+    .limit(numberItems)
+    .exec();
+  const count = await House.countDocuments().exec();
   const pages = Math.ceil(count / numberItems);
   if (page <= pages) {
     res.render('main/catalog.ejs', {
@@ -39,8 +40,9 @@ router.get('/rooms/:page', async (req, res) => {
   const houses = await House.find({ type: 1 })
     .sort({ date: -1 })
     .skip(numberItems * page)
-    .limit(numberItems);
-  const count = await House.countDocuments({ type: 1 });
+    .limit(numberItems)
+    .exec();
+  const count = await House.countDocuments({ type: 1 }).exec();
   const pages = Math.ceil(count / numberItems);
   if (page <= pages) {
     res.render('main/catalog.ejs', {
@@ -66,8 +68,9 @@ router.get('/apartments/:page', async (req, res) => {
   const houses = await House.find({ type: 2 })
     .sort({ date: -1 })
     .skip(numberItems * page)
-    .limit(numberItems);
-  const count = await House.countDocuments({ type: 2 });
+    .limit(numberItems)
+    .exec();
+  const count = await House.countDocuments({ type: 2 }).exec();
   const pages = Math.ceil(count / numberItems);
   if (page <= pages) {
     res.render('main/catalog.ejs', {

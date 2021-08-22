@@ -140,16 +140,16 @@ router.post('/addHouse', ensureAuthentication, async (req, res) => {
 
 // Dashboard toggleHouse
 router.post('/toggleHouse', ensureAuthentication, async (req, res) => {
-  const house = await House.findOne({ id: req.body.id });
+  const house = await House.findOne({ id: req.body.id }).exec();
   if (house != null) {
     if (house.available) {
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { available: false },
         { upsert: true }
       );
     } else {
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { available: true, date: Date.now() },
         { upsert: true }
@@ -162,9 +162,9 @@ router.post('/toggleHouse', ensureAuthentication, async (req, res) => {
 
 // Dashboard setNumer
 router.post('/setNumber', ensureAuthentication, async (req, res) => {
-  const meta = await Meta.findOne();
+  const meta = await Meta.findOne().exec();
   if (meta != null) {
-    await Meta.findOneAndUpdate(
+    Meta.findOneAndUpdate(
       {},
       { managed: req.body.number },
       { upsert: true }
@@ -176,7 +176,7 @@ router.post('/setNumber', ensureAuthentication, async (req, res) => {
 
 // Dashboard removeHouse
 router.post('/removeHouse', ensureAuthentication, async (req, res) => {
-  await House.deleteOne({ id: req.body.id });
+  House.deleteOne({ id: req.body.id });
   fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo1.jpg');
   fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo2.jpg');
   fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo3.jpg');
@@ -187,65 +187,65 @@ router.post('/removeHouse', ensureAuthentication, async (req, res) => {
 
 // Dashboard editHouse
 router.post('/editHouse', ensureAuthentication, async (req, res) => {
-  const house = await House.findOne();
+  const house = await House.findOne().exec();
   if (house != null) {
     if (req.body.title) {
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { title: req.body.title },
         { upsert: true }
       );
     }
     if (req.body.address) {
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { address: req.body.address },
         { upsert: true }
       );
     }
     if (req.body.description) {
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { description: req.body.description },
         { upsert: true }
       );
     }
     if (req.body.tip) {
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { tip: req.body.tip },
         { upsert: true }
       );
     }
     if (req.body.wc) {
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { wc: req.body.wc },
         { upsert: true }
       );
     }
     if (req.body.checkbox) {
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { suite: !!req.body.suite },
         { upsert: true }
       );
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { elevator: !!req.body.elevator },
         { upsert: true }
       );
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { dinningroom: !!req.body.dinningroom },
         { upsert: true }
       );
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { balcony: !!req.body.balcony },
         { upsert: true }
       );
-      await House.findOneAndUpdate(
+      House.findOneAndUpdate(
         { id: req.body.id },
         { gardin: !!req.body.gardin },
         { upsert: true }

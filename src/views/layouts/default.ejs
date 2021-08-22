@@ -28,20 +28,6 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
-    <!-- Animate on Scroll -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <!-- Theme -->
-    <link href="/stylesheets/style.css" rel="stylesheet" />
-    <!-- Google -->
-    <meta
-      name="google-site-verification"
-      content="f-5HmzXq_TiMh_d5u54tbYcZGaX8raH-bYmXadEvV10"
-    />
-  </head>
-
-  <body class="bg-light">
-    <%- body %>
-    <!-- Bootstrap -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -57,7 +43,15 @@
         $('.toast').toast('show');
       });
     </script>
+    <!-- Animate on Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- Theme -->
+    <link href="/stylesheets/style.css" rel="stylesheet" />
     <!-- Google -->
+    <meta
+      name="google-site-verification"
+      content="f-5HmzXq_TiMh_d5u54tbYcZGaX8raH-bYmXadEvV10"
+    />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-155353636-1"
@@ -70,5 +64,8 @@
       gtag('js', new Date());
       gtag('config', 'UA-155353636-1');
     </script>
+  </head>
+  <body class="bg-light">
+    <%- body %>
   </body>
 </html>

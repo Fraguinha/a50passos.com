@@ -8,7 +8,6 @@ import login from '../../routes/login';
 // Functions
 const configure = (app: Express) => {
   app.use('/', index);
-
   app.use('/catalog', catalog);
   app.use('/house', house);
   app.use('/login', login);

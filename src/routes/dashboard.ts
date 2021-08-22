@@ -164,11 +164,7 @@ router.post('/toggleHouse', ensureAuthentication, async (req, res) => {
 router.post('/setNumber', ensureAuthentication, async (req, res) => {
   const meta = await Meta.findOne().exec();
   if (meta != null) {
-    Meta.findOneAndUpdate(
-      {},
-      { managed: req.body.number },
-      { upsert: true }
-    );
+    Meta.findOneAndUpdate({}, { managed: req.body.number }, { upsert: true });
     await meta.save();
   }
   res.redirect('/dashboard');

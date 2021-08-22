@@ -12,20 +12,20 @@ const start = (database: string) => {
       useFindAndModify: false,
       useCreateIndex: true,
     })
-    .catch((err) => {
+    .catch((_) => {
       process.exit(1);
     });
   const db = mongoose.connection;
   db.on('open', () => {
     console.log('Connected to database');
-    User.find((err, res) => {
+    User.find((_, res) => {
       if (res.length === 0) {
         const defaultAdmin = new User({
           email: 'admin@admin',
           password: 'admin',
         });
-        bcrypt.genSalt(10, (err2, salt) => {
-          bcrypt.hash(defaultAdmin.password, salt, (err3, hash) => {
+        bcrypt.genSalt(10, (_, salt) => {
+          bcrypt.hash(defaultAdmin.password, salt, (_, hash) => {
             defaultAdmin.password = hash;
             defaultAdmin.save();
           });

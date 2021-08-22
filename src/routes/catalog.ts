@@ -19,7 +19,8 @@ router.get('/:page', async (req, res) => {
   if (page <= pages) {
     res.render('main/catalog.ejs', {
       title: 'Catálogo de Quartos e Apartamentos no Porto',
-      description: 'Consulte a nossa lista de quartos e apartamentos. Descubra um quarto ou apartamento a 50 passos de qualquer universidade.',
+      description:
+        'Consulte a nossa lista de quartos e apartamentos. Descubra um quarto ou apartamento a 50 passos de qualquer universidade.',
       data: houses,
       current: page,
       pagination: paginationNumber,
@@ -47,7 +48,8 @@ router.get('/rooms/:page', async (req, res) => {
   if (page <= pages) {
     res.render('main/catalog.ejs', {
       title: 'Catálogo de Quartos no Porto',
-      description: 'Consulte a nossa lista de quartos. Descubra um quarto a 50 passos de qualquer universidade.',
+      description:
+        'Consulte a nossa lista de quartos. Descubra um quarto a 50 passos de qualquer universidade.',
       data: houses,
       current: page,
       pagination: paginationNumber,
@@ -75,7 +77,8 @@ router.get('/apartments/:page', async (req, res) => {
   if (page <= pages) {
     res.render('main/catalog.ejs', {
       title: 'Catálogo de Apartamentos no Porto',
-      description: 'Consulte a nossa lista de apartamentos. Descubra um apartamento a 50 passos de qualquer universidade.',
+      description:
+        'Consulte a nossa lista de apartamentos. Descubra um apartamento a 50 passos de qualquer universidade.',
       data: houses,
       current: page,
       pagination: paginationNumber,

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -13,12 +13,12 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-});
+})
 
 interface UserDoc extends mongoose.Document {
-  email: string;
-  password: string;
-  date: Date;
+  email: string
+  password: string
+  date: Date
 }
 
-export = mongoose.model<UserDoc>('User', userSchema);
+export = mongoose.model<UserDoc>('User', userSchema)

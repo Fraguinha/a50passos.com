@@ -1,5 +1,5 @@
 // Requires
-import { Request, Response } from 'express';
+import { Request, Response } from 'express'
 
 // Functions
 const ensureAuthentication = (
@@ -8,9 +8,9 @@ const ensureAuthentication = (
   next: () => void
 ) => {
   if (req.isAuthenticated()) {
-    return next();
+    return next()
   }
-  res.redirect('/login');
-};
+  res.redirect('/login')
+}
 
-export = ensureAuthentication;
+export = ensureAuthentication

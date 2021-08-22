@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const houseSchema = new mongoose.Schema({
   id: {
@@ -73,27 +73,27 @@ const houseSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-});
+})
 
 interface HouseDoc extends mongoose.Document {
-  id: string;
-  type: number;
-  tip: string;
-  title: string;
-  address: string;
-  description: string;
-  wc: number;
-  available: boolean;
-  suite: boolean;
-  elevator: boolean;
-  dinningroom: boolean;
-  balcony: boolean;
-  gardin: boolean;
-  photo1: string;
-  photo2: string;
-  photo3: string;
-  photo4: string;
-  date: number;
+  id: string
+  type: number
+  tip: string
+  title: string
+  address: string
+  description: string
+  wc: number
+  available: boolean
+  suite: boolean
+  elevator: boolean
+  dinningroom: boolean
+  balcony: boolean
+  gardin: boolean
+  photo1: string
+  photo2: string
+  photo3: string
+  photo4: string
+  date: number
 }
 
-export = mongoose.model<HouseDoc>('House', houseSchema);
+export = mongoose.model<HouseDoc>('House', houseSchema)

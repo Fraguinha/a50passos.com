@@ -1,8 +1,6 @@
-<% if (pages > 1) { %>
-<% current = Number(current) %>
-<% pages = Number(pages) %>
-<% pagination = Number(pagination) %>
-<% offset = Math.floor(pagination / 2) %>
+<% if (pages > 1) { %> <% current = Number(current) %> <% pages = Number(pages)
+%> <% pagination = Number(pagination) %> <% offset = Math.floor(pagination / 2)
+%>
 <div class="container">
   <ul class="pagination justify-content-center text-center">
     <% if (current == 0) { %>
@@ -17,8 +15,7 @@
         <span aria-hidden="true"><i class="bi bi-chevron-bar-left"></i></span>
       </a>
     </li>
-    <% } %>
-    <% if (current > 0) { %>
+    <% } %> <% if (current > 0) { %>
     <li class="page-item">
       <a class="page-link" href="<%= url %>/<%= current - 1 %>">
         <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
@@ -30,23 +27,17 @@
         <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
       </a>
     </li>
-    <% } %>
-    <% counter = 0 %>
-    <% for (i = current - offset - (current + offset - pages >= 0 ? current + offset - pages : -1); i <= pages && counter < pagination; i++) { %>
-      <% if (i > 0) { %>
-        <% if (i - 1 == current) { %>
-          <li class="page-item active">
-            <a class="page-link text-white"><%= i %></a>
-          </li>
-        <% } else { %>
-          <li class="page-item">
-            <a class="page-link" href="<%= url %>/<%= i - 1 %>"><%= i %></a>
-          </li>
-        <% } %>
-        <% counter += 1 %>
-      <% } %>
-    <% } %>
-    <% if (current < pages - 1) { %>
+    <% } %> <% counter = 0 %> <% for (i = current - offset - (current + offset -
+    pages >= 0 ? current + offset - pages : -1); i <= pages && counter <
+    pagination; i++) { %> <% if (i > 0) { %> <% if (i - 1 == current) { %>
+    <li class="page-item active">
+      <a class="page-link text-white"><%= i %></a>
+    </li>
+    <% } else { %>
+    <li class="page-item">
+      <a class="page-link" href="<%= url %>/<%= i - 1 %>"><%= i %></a>
+    </li>
+    <% } %> <% counter += 1 %> <% } %> <% } %> <% if (current < pages - 1) { %>
     <li class="page-item">
       <a class="page-link" href="<%= url %>/<%= current + 1 %>">
         <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
@@ -58,8 +49,7 @@
         <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
       </a>
     </li>
-    <% } %>
-    <% if (current == pages - 1) { %>
+    <% } %> <% if (current == pages - 1) { %>
     <li class="page-item disabled">
       <a class="page-link">
         <span aria-hidden="true"><i class="bi bi-chevron-bar-right"></i></span>

@@ -1,205 +1,227 @@
-<% if (data) { %>
-
-<%- include("../partials/_header.ejs") %>
+<% if (data) { %> <%- include("../partials/_header.ejs") %>
 
 <main role="main">
   <div class="bg-light">
     <div id="myCarousel" class="carousel slide shadow" data-ride="carousel">
-      <ol class="carousel-indicators ">
+      <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
-      <% if (data.available) { %>
       <div class="carousel-inner">
         <div class="carousel-item active text-center">
-          <a href="/images/<%= data.id %>/photo1.jpg"><img class="img-fluid img-center" src="<%= data.photo1 %>"
-              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'" max-width="100%"
-              height="auto" /></a>
+          <a href="/image/<%= data.id %>/1"
+            ><img
+              class="img-fluid img-center"
+              src="<%= data.photo1 %>"
+              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
+              max-width="100%"
+              height="auto"
+          /></a>
+          <% if (!data.available) { %>
+          <div class="carousel-caption">
+            <div class="banner-style-house">
+              <h1
+                class="
+                  text-center text-white
+                  badge badge-danger badge-style-house
+                "
+              >
+                Já Foi!
+              </h1>
+            </div>
+          </div>
+          <% } %>
         </div>
         <div class="carousel-item text-center">
-          <a href="/images/<%= data.id %>/photo2.jpg"><img class="img-fluid img-center" src="<%= data.photo2 %>"
-              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'" max-width="100%"
-              height="auto" /></a>
+          <a href="/image/<%= data.id %>/2"
+            ><img
+              class="img-fluid img-center"
+              src="<%= data.photo2 %>"
+              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
+              max-width="100%"
+              height="auto"
+          /></a>
+          <% if (!data.available) { %>
+          <div class="carousel-caption">
+            <div class="banner-style-house">
+              <h1
+                class="
+                  text-center text-white
+                  badge badge-danger badge-style-house
+                "
+              >
+                Já Foi!
+              </h1>
+            </div>
+          </div>
+          <% } %>
         </div>
         <div class="carousel-item text-center">
-          <a href="/images/<%= data.id %>/photo3.jpg"><img class="img-fluid img-center" src="<%= data.photo3 %>"
-              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'" max-width="100%"
-              height="auto" /></a>
+          <a href="/image/<%= data.id %>/3"
+            ><img
+              class="img-fluid img-center"
+              src="<%= data.photo3 %>"
+              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
+              max-width="100%"
+              height="auto"
+          /></a>
+          <% if (!data.available) { %>
+          <div class="carousel-caption">
+            <div class="banner-style-house">
+              <h1
+                class="
+                  text-center text-white
+                  badge badge-danger badge-style-house
+                "
+              >
+                Já Foi!
+              </h1>
+            </div>
+          </div>
+          <% } %>
         </div>
         <div class="carousel-item text-center">
-          <a href="/images/<%= data.id %>/photo4.jpg"><img class="img-fluid img-center" src="<%= data.photo4 %>"
-              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'" max-width="100%"
-              height="auto" /></a>
+          <a href="/image/<%= data.id %>/4"
+            ><img
+              class="img-fluid img-center"
+              src="<%= data.photo4 %>"
+              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
+              max-width="100%"
+              height="auto"
+          /></a>
+          <% if (!data.available) { %>
+          <div class="carousel-caption">
+            <div class="banner-style-house">
+              <h1
+                class="
+                  text-center text-white
+                  badge badge-danger badge-style-house
+                "
+              >
+                Já Foi!
+              </h1>
+            </div>
+          </div>
+          <% } %>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <a
+        class="carousel-control-prev"
+        href="#myCarousel"
+        role="button"
+        data-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <a
+        class="carousel-control-next"
+        href="#myCarousel"
+        role="button"
+        data-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <% } else { %>
-    <div class="carousel-inner">
-      <div class="carousel-item active text-center">
-        <a href="/images/<%= data.id %>/photo1.jpg"><img class="img-fluid img-center" src="<%= data.photo1 %>"
-            onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'" max-width="100%"
-            height="auto" /></a>
-        <div class="carousel-caption">
-          <div class="banner-style-house">
-            <h1 class="text-center text-white badge badge-danger badge-style-house">
-              Já Foi!
-            </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <hr />
+          <% if (data.available) { %>
+          <h1>
+            <small class="badge badge-success float-right">Disponível</small>
+            <%= data.title %>
+          </h1>
+          <% } else { %>
+          <h1>
+            <small class="badge badge-danger float-right">Arrendado</small>
+            <%= data.title %>
+          </h1>
+          <% } %>
+          <h2 class="text-muted"><%= data.address %></h2>
+          <hr />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 my-4">
+          <h3 class="text-center pb-4">Descrição</h3>
+          <p><%= data.description %></p>
+          <h4 class="text-center pt-4">Informação adicional</h4>
+          <table class="table table-bordered table-striped">
+            <tbody>
+              <tr>
+                <td>Casas de banho</td>
+                <td><%= data.wc %></td>
+              </tr>
+              <tr>
+                <td>Suite</td>
+                <% if (data.suite) { %>
+                <td>Sim</td>
+                <% } else { %>
+                <td>Não</td>
+                <% } %>
+              </tr>
+              <tr>
+                <td>Elevador</td>
+                <% if (data.elevator) { %>
+                <td>Sim</td>
+                <% } else { %>
+                <td>Não</td>
+                <% } %>
+              </tr>
+              <tr>
+                <td>Sala de jantar</td>
+                <% if (data.dinningroom) { %>
+                <td>Sim</td>
+                <% } else { %>
+                <td>Não</td>
+                <% } %>
+              </tr>
+              <tr>
+                <td>Varanda</td>
+                <% if (data.balcony) { %>
+                <td>Sim</td>
+                <% } else { %>
+                <td>Não</td>
+                <% } %>
+              </tr>
+              <tr>
+                <td>Terraço</td>
+                <% if (data.gardin) { %>
+                <td>Sim</td>
+                <% } else { %>
+                <td>Não</td>
+                <% } %>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-7 my-4">
+          <h3 class="text-center pb-4">Localização</h3>
+          <div class="embed-responsive embed-responsive-4by3">
+            <iframe
+              title="Localização"
+              class="embed-responsive-item"
+              style="border: 0"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqjz4i7Y9I0CW2QWNmshmA7JFseTzzkgg&q=<%= data.address %>&zoom=16"
+              allowfullscreen
+            >
+            </iframe>
           </div>
         </div>
       </div>
-      <div class="carousel-item text-center">
-        <a href="/images/<%= data.id %>/photo2.jpg"><img class="img-fluid img-center" src="<%= data.photo2 %>"
-            onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'" max-width="100%"
-            height="auto" /></a>
-        <div class="carousel-caption">
-          <div class="banner-style-house">
-            <h1 class="text-center text-white badge badge-danger badge-style-house">
-              Já Foi!
-            </h1>
-          </div>
+      <div class="row">
+        <div class="col my-4">
+          <h4 class="text-center pt-4">Referencia</h4>
+          <p class="text-center"><%= data.id %></p>
         </div>
-      </div>
-      <div class="carousel-item text-center">
-        <a href="/images/<%= data.id %>/photo3.jpg"><img class="img-fluid img-center" src="<%= data.photo3 %>"
-            onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'" max-width="100%"
-            height="auto" /></a>
-        <div class="carousel-caption">
-          <div class="banner-style-house">
-            <h1 class="text-center text-white badge badge-danger badge-style-house">
-              Já Foi!
-            </h1>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item text-center">
-        <a href="/images/<%= data.id %>/photo4.jpg"><img class="img-fluid img-center" src="<%= data.photo4 %>"
-            onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'" max-width="100%"
-            height="auto" /></a>
-        <div class="carousel-caption">
-          <div class="banner-style-house">
-            <h1 class="text-center text-white badge badge-danger badge-style-house">
-              Já Foi!
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  <% } %>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <hr />
-        <% if (data.available) { %>
-        <h1>
-          <small class="badge badge-success float-right">Disponível</small>
-          <%= data.title %>
-        </h1>
-        <% } else { %>
-        <h1>
-          <small class="badge badge-danger float-right">Arrendado</small>
-          <%= data.title %>
-        </h1>
-        <% } %>
-        <h2 class="text-muted"><%= data.address %></h2>
-        <hr />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-5 my-4">
-        <h3 class="text-center pb-4">Descrição</h3>
-        <p><%= data.description %></p>
-        <h4 class="text-center pt-4">Informação adicional</h4>
-        <table class="table table-bordered table-striped">
-          <tbody>
-            <tr>
-              <td>Casas de banho</td>
-              <td><%= data.wc %></td>
-            </tr>
-            <tr>
-              <td>Suite</td>
-              <% if (data.suite) { %>
-              <td>Sim</td>
-              <% } else { %>
-              <td>Não</td>
-              <% } %>
-            </tr>
-            <tr>
-              <td>Elevador</td>
-              <% if (data.elevator) { %>
-              <td>Sim</td>
-              <% } else { %>
-              <td>Não</td>
-              <% } %>
-            </tr>
-            <tr>
-              <td>Sala de jantar</td>
-              <% if (data.dinningroom) { %>
-              <td>Sim</td>
-              <% } else { %>
-              <td>Não</td>
-              <% } %>
-            </tr>
-            <tr>
-              <td>Varanda</td>
-              <% if (data.balcony) { %>
-              <td>Sim</td>
-              <% } else { %>
-              <td>Não</td>
-              <% } %>
-            </tr>
-            <tr>
-              <td>Terraço</td>
-              <% if (data.gardin) { %>
-              <td>Sim</td>
-              <% } else { %>
-              <td>Não</td>
-              <% } %>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-md-7 my-4">
-        <h3 class="text-center pb-4">Localização</h3>
-        <div class="embed-responsive embed-responsive-4by3">
-          <iframe class="embed-responsive-item" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCqjz4i7Y9I0CW2QWNmshmA7JFseTzzkgg&q=<%= data.address %>&zoom=16"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col my-4">
-        <h4 class="text-center pt-4">Referencia</h4>
-        <p class="text-center"><%= data.id %></p>
       </div>
     </div>
   </div>
 </main>
 
-<%- include("../partials/_footer.ejs") %>
-
-<% if (data.available) { %>
-<%- include("../partials/_toast.ejs") %>
-<% } %>
-
-<% } %>
+<%- include("../partials/_footer.ejs") %> <% if (data.available) { %> <%-
+include("../partials/_toast.ejs") %> <% } %> <% } %>

@@ -2,6 +2,7 @@ import { Express } from 'express';
 import catalog from '../../routes/catalog';
 import dashboard from '../../routes/dashboard';
 import house from '../../routes/house';
+import image from '../../routes/image';
 import index from '../../routes/index';
 import login from '../../routes/login';
 
@@ -10,6 +11,7 @@ const configure = (app: Express) => {
   app.use('/', index);
   app.use('/catalog', catalog);
   app.use('/house', house);
+  app.use('/image', image);
   app.use('/login', login);
   app.use('/dashboard', dashboard);
 

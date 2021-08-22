@@ -1,28 +1,33 @@
-import express from 'express';
-import passport from 'passport';
+import express from 'express'
+import passport from 'passport'
 
-const router = express.Router();
+const router = express.Router()
 
 // Show login
 router.get('/', (req, res) => {
-  res.render('main/login.ejs', {
-    title: 'Página de Login',
-    description: '',
-  });
-});
+  if (req.isAuthenticated()) {
+    res.status(200).redirect('/')
+  } else {
+    res.render('main/login.ejs', {
+      title: 'Página de Login',
+      description: '',
+      authenticated: req.isAuthenticated(),
+    })
+  }
+})
 
 // Handle login
 router.post('/', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/dashboard',
+    successRedirect: '/',
     failureRedirect: '/login',
-  })(req, res, next);
-});
+  })(req, res, next)
+})
 
 // Logout
 router.post('/logout', (req, res) => {
-  req.logout();
-  res.redirect('/');
-});
+  req.logout()
+  res.redirect('/')
+})
 
-export = router;
+export = router

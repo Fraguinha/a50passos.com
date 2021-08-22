@@ -1,0 +1,97 @@
+<div class="row">
+  <div class="col-md-3">
+    <br />
+    <form
+      class="form-control-file"
+      action="/dashboard/addPhoto1"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <h2 class="text-center">foto 1</h2>
+      <hr />
+      <input type="file" name="photos" multiple required />
+      <hr />
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Upload foto
+      </button>
+      <br />
+      <div class="background-white">
+        <img src="uploads/photo1.jpg" height="200" width="100%" />
+      </div>
+    </form>
+  </div>
+  <div class="col-md-3">
+    <br />
+    <form
+      class="form-control-file"
+      action="/dashboard/addPhoto2"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <h2 class="text-center">foto 2</h2>
+      <hr />
+      <input type="file" name="photo2" multiple required />
+      <hr />
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Upload foto
+      </button>
+      <hr />
+      <div class="background-white">
+        <img src="uploads/photo2.jpg" height="200" width="100%" />
+      </div>
+    </form>
+  </div>
+  <div class="col-md-3">
+    <br />
+    <form
+      class="form-control-file"
+      action="/dashboard/addPhoto3"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <h2 class="text-center">foto 3</h2>
+      <hr />
+      <input type="file" name="photo3" multiple required />
+      <hr />
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Upload foto
+      </button>
+      <hr />
+      <div class="background-white">
+        <img src="uploads/photo3.jpg" height="200" width="100%" />
+      </div>
+    </form>
+  </div>
+  <div class="col-md-3">
+    <br />
+    <form
+      class="form-control-file"
+      action="/dashboard/addPhoto4"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <h2 class="text-center">foto 4</h2>
+      <hr />
+      <input type="file" name="photo4" multiple required />
+      <hr />
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Upload foto
+      </button>
+      <hr />
+      <div class="background-white">
+        <img src="uploads/photo4.jpg" height="200" width="100%" />
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <form class="form-style" action="/dashboard/clearImages" method="POST">
+    <small class="form-text text-muted text-center"
+      >Limpa todas as imagens uploaded</small
+    >
+    <button class="btn btn-lg btn-warning btn-block" type="submit">
+      Clear
+    </button>
+  </form>
+</div>

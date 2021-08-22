@@ -129,16 +129,92 @@
       <div class="row">
         <div class="col-md-12">
           <hr />
-          <% if (data.available) { %>
-          <h1>
-            <small class="badge badge-success float-right">Disponível</small>
-            <%= data.title %>
-          </h1>
-          <% } else { %>
-          <h1>
-            <small class="badge badge-danger float-right">Arrendado</small>
-            <%= data.title %>
-          </h1>
+          <% if (data.available) { %> <% if (authenticated) { %>
+          <form action="/dashboard/toggleHouse" method="POST">
+            <input type="hidden" name="id" value="<%= data.id %>" />
+            <button
+              type="button"
+              class="btn btn-secondary mx-1 float-right"
+              data-toggle="modal"
+              data-target="#toggleModal"
+            >
+              <i class="bi bi-toggle2-off"></i>
+            </button>
+            <div class="modal fade" id="toggleModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Alterar disponibilidade
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                      Alterar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <% } %>
+          <h2>
+            <span class="badge badge-success float-right">Disponível</span>
+          </h2>
+          <h1><%= data.title %></h1>
+          <% } else { %> <% if (authenticated) { %>
+          <form action="/dashboard/toggleHouse" method="POST">
+            <input type="hidden" name="id" value="<%= data.id %>" />
+            <button
+              type="button"
+              class="btn btn-secondary mx-1 float-right"
+              data-toggle="modal"
+              data-target="#toggleModal"
+            >
+              <i class="bi bi-toggle2-on"></i>
+            </button>
+            <div class="modal fade" id="toggleModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Alterar disponibilidade
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                      Alterar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <% } %>
+          <h2>
+            <span class="badge badge-danger float-right">Arrendado</span>
+          </h2>
+          <h1><%= data.title %></h1>
           <% } %>
           <h2 class="text-muted"><%= data.address %></h2>
           <hr />
@@ -215,6 +291,50 @@
       <div class="row">
         <div class="col my-4">
           <h4 class="text-center pt-4">Referencia</h4>
+          <% if (authenticated) { %>
+          <form
+            class="text-center"
+            action="/dashboard/removeHouse"
+            method="POST"
+          >
+            <input type="hidden" name="id" value="<%= data.id %>" />
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-target="#deleteModal"
+              >
+                <i class="bi bi-trash-fill"></i>
+              </button>
+            </div>
+            <div class="modal fade" id="deleteModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Tem a certeza que pretende apagar?
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">Esta acção é irreversível!</div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                    <button type="submit" class="btn btn-danger">Apagar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <% } %>
           <p class="text-center"><%= data.id %></p>
         </div>
       </div>

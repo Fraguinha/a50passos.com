@@ -252,34 +252,34 @@ router.post('/editHouse', ensureAuthentication, async (req, res) => {
         { upsert: true }
       ).exec()
     }
-    if (fs.existsSync(base + '/public/uploads/photo1.jpg')) {
-      fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo1.jpg')
-      fs.renameSync(
-        base + '/public/uploads/photo1.jpg',
-        base + '/public/images/' + req.body.id + '/photo1.jpg'
-      )
-    }
-    if (fs.existsSync(base + '/public/uploads/photo2.jpg')) {
-      fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo2.jpg')
-      fs.renameSync(
-        base + '/public/uploads/photo2.jpg',
-        base + '/public/images/' + req.body.id + '/photo2.jpg'
-      )
-    }
-    if (fs.existsSync(base + '/public/uploads/photo3.jpg')) {
-      fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo3.jpg')
-      fs.renameSync(
-        base + '/public/uploads/photo3.jpg',
-        base + '/public/images/' + req.body.id + '/photo3.jpg'
-      )
-    }
-    if (fs.existsSync(base + '/public/uploads/photo4.jpg')) {
-      fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo4.jpg')
-      fs.renameSync(
-        base + '/public/uploads/photo4.jpg',
-        base + '/public/images/' + req.body.id + '/photo4.jpg'
-      )
-    }
+    // if (fs.existsSync(base + '/public/uploads/photo1.jpg')) {
+    //   fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo1.jpg')
+    //   fs.renameSync(
+    //     base + '/public/uploads/photo1.jpg',
+    //     base + '/public/images/' + req.body.id + '/photo1.jpg'
+    //   )
+    // }
+    // if (fs.existsSync(base + '/public/uploads/photo2.jpg')) {
+    //   fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo2.jpg')
+    //   fs.renameSync(
+    //     base + '/public/uploads/photo2.jpg',
+    //     base + '/public/images/' + req.body.id + '/photo2.jpg'
+    //   )
+    // }
+    // if (fs.existsSync(base + '/public/uploads/photo3.jpg')) {
+    //   fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo3.jpg')
+    //   fs.renameSync(
+    //     base + '/public/uploads/photo3.jpg',
+    //     base + '/public/images/' + req.body.id + '/photo3.jpg'
+    //   )
+    // }
+    // if (fs.existsSync(base + '/public/uploads/photo4.jpg')) {
+    //   fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo4.jpg')
+    //   fs.renameSync(
+    //     base + '/public/uploads/photo4.jpg',
+    //     base + '/public/images/' + req.body.id + '/photo4.jpg'
+    //   )
+    // }
     await house.save()
   }
   res.redirect('/house/' + req.body.id)

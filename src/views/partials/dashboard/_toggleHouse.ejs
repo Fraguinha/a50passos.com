@@ -1,0 +1,35 @@
+<form action="/dashboard/toggleHouse" method="POST">
+  <input type="hidden" name="id" value="<%= data.id %>" />
+  <button
+    type="button"
+    class="btn btn-secondary mx-1 float-right"
+    data-toggle="modal"
+    data-target="#toggleModal"
+  >
+    <% if (data.available) { %>
+    <i class="bi bi-toggle2-off"></i>
+    <% } else { %>
+    <i class="bi bi-toggle2-on"></i>
+    <% } %>
+  </button>
+  <div class="modal fade" id="toggleModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Alterar disponibilidade
+          </h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Fechar
+          </button>
+          <button type="submit" class="btn btn-primary">Alterar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

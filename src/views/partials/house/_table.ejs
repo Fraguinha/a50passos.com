@@ -1,0 +1,48 @@
+<table class="table table-bordered table-striped">
+  <tbody>
+    <tr>
+      <td>Casas de banho</td>
+      <td><%= data.wc %></td>
+    </tr>
+    <tr>
+      <td>Suite</td>
+      <% if (data.suite) { %>
+      <td>Sim</td>
+      <% } else { %>
+      <td>Não</td>
+      <% } %>
+    </tr>
+    <tr>
+      <td>Elevador</td>
+      <% if (data.elevator) { %>
+      <td>Sim</td>
+      <% } else { %>
+      <td>Não</td>
+      <% } %>
+    </tr>
+    <tr>
+      <td>Sala de jantar</td>
+      <% if (data.dinningroom) { %>
+      <td>Sim</td>
+      <% } else { %>
+      <td>Não</td>
+      <% } %>
+    </tr>
+    <tr>
+      <td>Varanda</td>
+      <% if (data.balcony) { %>
+      <td>Sim</td>
+      <% } else { %>
+      <td>Não</td>
+      <% } %>
+    </tr>
+    <tr>
+      <td>Terraço</td>
+      <% if (data.gardin) { %>
+      <td>Sim</td>
+      <% } else { %>
+      <td>Não</td>
+      <% } %>
+    </tr>
+  </tbody>
+</table>

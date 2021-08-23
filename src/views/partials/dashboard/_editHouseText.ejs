@@ -1,20 +1,9 @@
-<form action="/dashboard/editHouse" method="POST">
-  <input type="hidden" name="id" value="<%= data.id %>" />
-  <% if (center) { %>
-  <div class="text-center">
-    <% } %>
-    <button
-      type="button"
-      class="btn btn-secondary mx-1 <% if (!center) { %>float-left<% } %>"
-      data-toggle="modal"
-      data-target="#edit<%= variable %>"
-    >
-      <i class="bi bi-pencil-square"></i>
-    </button>
-    <% if (center) { %>
-  </div>
-  <% } %>
-  <div class="modal fade" id="edit<%= variable %>" tabindex="-1">
+<input type="hidden" name="id" value="<%= data.id %>" />
+<a class="link-light" data-toggle="modal" data-target="#edit<%= variable %>">
+  <i class="bi bi-pencil-square"></i>
+</a>
+<div class="modal fade" id="edit<%= variable %>" tabindex="-1">
+  <form action="/dashboard/editHouse" method="POST">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -44,5 +33,5 @@
         </div>
       </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>

@@ -17,32 +17,37 @@
           <h2>
             <span class="badge badge-danger float-right">Arrendado</span>
           </h2>
-          <% } %> <% if (authenticated) { %> <%-
-          include("../partials/dashboard/_editHouseText.ejs", {variable:
-          'title', name: 'Título', placeholder: data.title, center: false}) %>
           <% } %>
-          <h1><%= data.title %></h1>
-          <% if (authenticated) { %> <%-
-          include("../partials/dashboard/_editHouseText.ejs", {variable:
-          'address', name: 'Endereço', placeholder: data.address, center:
-          false}) %> <% } %>
-          <h2 class="text-muted"><%= data.address %></h2>
+          <h1>
+            <%= data.title %><% if (authenticated) { %> <%-
+            include("../partials/dashboard/_editHouseText.ejs", {variable:
+            'title', name: 'Título', placeholder: data.title}) %> <% } %>
+          </h1>
+          <h2 class="text-muted">
+            <%= data.address %><% if (authenticated) { %> <%-
+            include("../partials/dashboard/_editHouseText.ejs", {variable:
+            'address', name: 'Endereço', placeholder: data.address}) %> <% } %>
+          </h2>
           <hr />
         </div>
       </div>
       <div class="container">
-        <p class="lead text-muted text-center my-3"><em><%= data.tip %></em></p>
-        <% if (authenticated) { %> <%-
-        include("../partials/dashboard/_editHouseText.ejs", {variable: 'tip',
-        name: 'Tooltip', placeholder: data.tip, center: true}) %> <% } %>
+        <p class="lead text-muted text-center my-3">
+          <em
+            ><%= data.tip %><% if (authenticated) { %> <%-
+            include("../partials/dashboard/_editHouseText.ejs", {variable:
+            'tip', name: 'Tooltip', placeholder: data.tip}) %> <% } %></em
+          >
+        </p>
       </div>
       <div class="row">
         <div class="col-md-5 my-4">
-          <% if (authenticated) { %> <%-
-          include("../partials/dashboard/_editHouseText.ejs", {variable:
-          'description', name: 'Descrição', placeholder: data.description,
-          center: false}) %> <% } %>
-          <h3 class="text-center pb-4">Descrição</h3>
+          <h3 class="text-center pb-4">
+            Descrição<% if (authenticated) { %> <%-
+            include("../partials/dashboard/_editHouseText.ejs", {variable:
+            'description', name: 'Descrição', placeholder: data.description}) %>
+            <% } %>
+          </h3>
           <p><%= data.description %></p>
           <h4 class="text-center pt-4">Informação adicional</h4>
           <%- include("../partials/house/_table.ejs") %> <% if (authenticated) {

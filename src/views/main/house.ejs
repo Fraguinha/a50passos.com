@@ -21,12 +21,14 @@
           <h1>
             <%= data.title %><% if (authenticated) { %> <%-
             include("../partials/dashboard/_editHouseText.ejs", {variable:
-            'title', name: 'Título', placeholder: data.title}) %> <% } %>
+            'title', name: 'Título', placeholder: data.title, long: false}) %>
+            <% } %>
           </h1>
           <h2 class="text-muted">
             <%= data.address %><% if (authenticated) { %> <%-
             include("../partials/dashboard/_editHouseText.ejs", {variable:
-            'address', name: 'Endereço', placeholder: data.address}) %> <% } %>
+            'address', name: 'Endereço', placeholder: data.address, long:
+            false}) %> <% } %>
           </h2>
           <hr />
         </div>
@@ -36,7 +38,8 @@
           <em
             ><%= data.tip %><% if (authenticated) { %> <%-
             include("../partials/dashboard/_editHouseText.ejs", {variable:
-            'tip', name: 'Tooltip', placeholder: data.tip}) %> <% } %></em
+            'tip', name: 'Tooltip', placeholder: data.tip, long: false}) %> <% }
+            %></em
           >
         </p>
       </div>
@@ -45,8 +48,8 @@
           <h3 class="text-center pb-4">
             Descrição<% if (authenticated) { %> <%-
             include("../partials/dashboard/_editHouseText.ejs", {variable:
-            'description', name: 'Descrição', placeholder: data.description}) %>
-            <% } %>
+            'description', name: 'Descrição', placeholder: data.description,
+            long: true}) %> <% } %>
           </h3>
           <p><%= data.description %></p>
           <h4 class="text-center pt-4">Informação adicional</h4>

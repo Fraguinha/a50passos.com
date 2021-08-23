@@ -16,6 +16,15 @@
         </div>
         <div class="modal-body">
           <div class="input-group">
+            <% if (long == true) { %>
+            <textarea
+              class="form-control"
+              type="text"
+              name="<%= variable %>"
+              placeholder="<%= placeholder %>"
+              required
+            ></textarea>
+            <% } else { %>
             <input
               class="form-control"
               type="text"
@@ -23,6 +32,7 @@
               placeholder="<%= placeholder %>"
               required
             />
+            <% } %>
           </div>
         </div>
         <div class="modal-footer">

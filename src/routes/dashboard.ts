@@ -188,7 +188,7 @@ router.post('/removeHouse', ensureAuthentication, async (req, res) => {
 
 // Dashboard editHouse
 router.post('/editHouse', ensureAuthentication, async (req, res) => {
-  const house = await House.findOne().exec()
+  const house = await House.findOne({ id: req.body.id }).exec()
   if (house != null) {
     if (req.body.title) {
       await House.findOneAndUpdate(
@@ -282,7 +282,7 @@ router.post('/editHouse', ensureAuthentication, async (req, res) => {
     }
     await house.save()
   }
-  res.redirect('/dashboard')
+  res.redirect('/house/' + req.body.id)
 })
 
 export = router

@@ -171,7 +171,6 @@
           <h2>
             <span class="badge badge-success float-right">Disponível</span>
           </h2>
-          <h1><%= data.title %></h1>
           <% } else { %> <% if (authenticated) { %>
           <form action="/dashboard/toggleHouse" method="POST">
             <input type="hidden" name="id" value="<%= data.id %>" />
@@ -214,14 +213,216 @@
           <h2>
             <span class="badge badge-danger float-right">Arrendado</span>
           </h2>
+          <% } %> <% if (authenticated) { %>
+          <form action="/dashboard/editHouse" method="POST">
+            <input type="hidden" name="id" value="<%= data.id %>" />
+            <button
+              type="button"
+              class="btn btn-secondary mx-1 float-left"
+              data-toggle="modal"
+              data-target="#editTitleModal"
+            >
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <div class="modal fade" id="editTitleModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Alterar Título
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="input-group">
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="title"
+                        placeholder="<%= data.title %>"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                      Alterar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <% } %>
           <h1><%= data.title %></h1>
+          <% if (authenticated) { %>
+          <form action="/dashboard/editHouse" method="POST">
+            <input type="hidden" name="id" value="<%= data.id %>" />
+            <button
+              type="button"
+              class="btn btn-secondary mx-1 float-left"
+              data-toggle="modal"
+              data-target="#editAddressModal"
+            >
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <div class="modal fade" id="editAddressModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Alterar Endereço
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="input-group">
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="address"
+                        placeholder="<%= data.address %>"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                      Alterar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
           <% } %>
           <h2 class="text-muted"><%= data.address %></h2>
           <hr />
         </div>
       </div>
+      <div class="container">
+        <p class="lead text-muted text-center my-3"><em><%= data.tip %></em></p>
+        <% if (authenticated) { %>
+        <form action="/dashboard/editHouse" method="POST">
+          <input type="hidden" name="id" value="<%= data.id %>" />
+          <div class="text-center">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-toggle="modal"
+              data-target="#editTipModal"
+            >
+              <i class="bi bi-pencil-square"></i>
+            </button>
+          </div>
+          <div class="modal fade" id="editTipModal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Alterar Tooltip
+                  </h5>
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="input-group">
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="tip"
+                      placeholder="<%= data.tip %>"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Fechar
+                  </button>
+                  <button type="submit" class="btn btn-success">Alterar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <% } %>
+      </div>
       <div class="row">
         <div class="col-md-5 my-4">
+          <% if (authenticated) { %>
+          <form action="/dashboard/editHouse" method="POST">
+            <input type="hidden" name="id" value="<%= data.id %>" />
+            <button
+              type="button"
+              class="btn btn-secondary mx-1 float-left"
+              data-toggle="modal"
+              data-target="#editDescriptionModal"
+            >
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <div class="modal fade" id="editDescriptionModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Alterar Descrição
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="input-group">
+                      <textarea
+                        class="form-control"
+                        type="text"
+                        name="description"
+                        placeholder="<%= data.description %>"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                      Alterar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <% } %>
           <h3 class="text-center pb-4">Descrição</h3>
           <p><%= data.description %></p>
           <h4 class="text-center pt-4">Informação adicional</h4>
@@ -273,6 +474,151 @@
               </tr>
             </tbody>
           </table>
+          <% if (authenticated) { %>
+          <form action="/dashboard/editHouse" method="POST">
+            <input type="hidden" name="id" value="<%= data.id %>" />
+            <input type="hidden" name="checkbox" value="true" />
+            <button
+              type="button"
+              class="btn btn-secondary mx-1 float-right"
+              data-toggle="modal"
+              data-target="#editInformationModal"
+            >
+              <i class="bi bi-table"></i>
+            </button>
+            <div class="modal fade" id="editInformationModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Alterar Informação
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group form-check">
+                      <input
+                        id="suite"
+                        name="suite"
+                        type="checkbox"
+                        class="form-check-input"
+                      />
+                      <label class="form-check-label" for="suite"
+                        >Suite<small class="text-muted text-center"></small
+                      ></label>
+                    </div>
+                    <div class="form-group form-check">
+                      <input
+                        id="elevator"
+                        name="elevator"
+                        type="checkbox"
+                        class="form-check-input"
+                      />
+                      <label class="form-check-label" for="elevator"
+                        >Elevador<small class="text-muted text-center"></small
+                      ></label>
+                    </div>
+                    <div class="form-group form-check">
+                      <input
+                        id="dinningroom"
+                        name="dinningroom"
+                        type="checkbox"
+                        class="form-check-input"
+                      />
+                      <label class="form-check-label" for="dinningroom"
+                        >Sala de jantar<small class="text-muted text-center">
+                        </small
+                      ></label>
+                    </div>
+                    <div class="form-group form-check">
+                      <input
+                        id="balcony"
+                        name="balcony"
+                        type="checkbox"
+                        class="form-check-input"
+                      />
+                      <label class="form-check-label" for="balcony"
+                        >Varanda<small class="text-muted text-center"></small
+                      ></label>
+                    </div>
+                    <div class="form-group form-check">
+                      <input
+                        id="gardin"
+                        name="gardin"
+                        type="checkbox"
+                        class="form-check-input"
+                      />
+                      <label class="form-check-label" for="gardin"
+                        >Terraço<small class="text-muted text-center"></small
+                      ></label>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                      Alterar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <form action="/dashboard/editHouse" method="POST">
+            <input type="hidden" name="id" value="<%= data.id %>" />
+            <button
+              type="button"
+              class="btn btn-secondary mx-1 float-right"
+              data-toggle="modal"
+              data-target="#editWCModal"
+            >
+              <i class="bi bi-badge-wc-fill"></i>
+            </button>
+            <div class="modal fade" id="editWCModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Alterar Nº WC
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="input-group">
+                      <input
+                        class="form-control"
+                        type="number"
+                        name="wc"
+                        placeholder="<%= data.wc %>"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Fechar
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                      Alterar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <% } %>
         </div>
         <div class="col-md-7 my-4">
           <h3 class="text-center pb-4">Localização</h3>
@@ -292,11 +638,7 @@
         <div class="col my-4">
           <h4 class="text-center pt-4">Referencia</h4>
           <% if (authenticated) { %>
-          <form
-            class="text-center"
-            action="/dashboard/removeHouse"
-            method="POST"
-          >
+          <form action="/dashboard/removeHouse" method="POST">
             <input type="hidden" name="id" value="<%= data.id %>" />
             <div class="text-center">
               <button

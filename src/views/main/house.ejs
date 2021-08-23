@@ -35,12 +35,10 @@
       </div>
       <div class="container">
         <p class="lead text-muted text-center my-3">
-          <em
-            ><%= data.tip %><% if (authenticated) { %> <%-
-            include("../partials/dashboard/_editHouseText.ejs", {variable:
-            'tip', name: 'Tooltip', placeholder: data.tip, long: false}) %> <% }
-            %></em
-          >
+          <em><%= data.tip %></em>
+          <% if (authenticated) { %> <%-
+          include("../partials/dashboard/_editHouseText.ejs", {variable: 'tip',
+          name: 'Tooltip', placeholder: data.tip, long: false}) %> <% } %>
         </p>
       </div>
       <div class="row">

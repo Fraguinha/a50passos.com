@@ -5,30 +5,7 @@
     <div class="container">
       <%- include("../partials/dashboard/_photos.ejs") %>
       <hr />
-      <div class="row">
-        <div class="col">
-          <button
-            class="btn btn-success btn-block"
-            data-toggle="modal"
-            data-target="#modalAddHouse"
-          >
-            Adicionar Casa
-          </button>
-          <%- include("../partials/dashboard/_addHouse.ejs") %>
-        </div>
-        <div class="col">
-          <button
-            class="btn btn-success float-right btn-block"
-            data-toggle="modal"
-            data-target="#modalEditHouse"
-          >
-            Editar Casa
-          </button>
-          <%- include("../partials/dashboard/_editHouse.ejs") %>
-          <hr />
-        </div>
-      </div>
-      <hr />
+      <%- include("../partials/dashboard/_addHouse.ejs") %>
     </div>
   </div>
 </main>

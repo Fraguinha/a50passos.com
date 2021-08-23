@@ -373,17 +373,21 @@
       </div>
       <div class="row">
         <div class="col-md-5 my-4">
+          <h3 class="text-center pb-4">Descrição</h3>
+          <p><%= data.description %></p>
           <% if (authenticated) { %>
           <form action="/dashboard/editHouse" method="POST">
             <input type="hidden" name="id" value="<%= data.id %>" />
-            <button
-              type="button"
-              class="btn btn-secondary mx-1 float-left"
-              data-toggle="modal"
-              data-target="#editDescriptionModal"
-            >
-              <i class="bi bi-pencil-square"></i>
-            </button>
+            <div class="float-right">
+              <button
+                type="button"
+                class="btn btn-secondary mx-1 float-left"
+                data-toggle="modal"
+                data-target="#editDescriptionModal"
+              >
+                <i class="bi bi-pencil-square"></i>
+              </button>
+            </div>
             <div class="modal fade" id="editDescriptionModal" tabindex="-1">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -423,8 +427,6 @@
             </div>
           </form>
           <% } %>
-          <h3 class="text-center pb-4">Descrição</h3>
-          <p><%= data.description %></p>
           <h4 class="text-center pt-4">Informação adicional</h4>
           <table class="table table-bordered table-striped">
             <tbody>

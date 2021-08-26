@@ -3,9 +3,6 @@ import bcrypt from 'bcryptjs'
 import mongoose from 'mongoose'
 import User from '../../models/user-model'
 
-// Bugfix
-global.TextEncoder = require('util').TextEncoder
-
 // Functions
 const start = (database: string) => {
   mongoose.connect(database).catch((_) => {

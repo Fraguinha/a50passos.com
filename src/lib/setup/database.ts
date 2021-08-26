@@ -7,7 +7,6 @@ import User from '../../models/user-model'
 const start = (database: string) => {
   mongoose
     .connect(database, {
-      useUnifiedTopology: true,
       useFindAndModify: false,
       useCreateIndex: true,
     })

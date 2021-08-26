@@ -5,14 +5,9 @@ import User from '../../models/user-model'
 
 // Functions
 const start = (database: string) => {
-  mongoose
-    .connect(database, {
-      useFindAndModify: false,
-      useCreateIndex: true,
-    })
-    .catch((_) => {
-      process.exit(1)
-    })
+  mongoose.connect(database).catch((_) => {
+    process.exit(1)
+  })
   const db = mongoose.connection
   db.on('open', () => {
     console.log('Connected to database')

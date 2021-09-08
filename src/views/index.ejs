@@ -4,17 +4,19 @@
     <div class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">
-          Bem vindos ao Porto!<br \ />Bem vindos ao Polo Universitário!
+          Bem vindos ao Porto!<br />Bem vindos ao Polo Universitário!
         </h1>
         <div class="btn-group my-5">
-          <a href="/catalog/rooms/0" class="btn shadow-lg btn-info rounded"
-            >Quartos</a
-          >
+          <a
+            href="/catalog/rooms/0"
+            class="btn shadow-lg btn-info rounded"
+          >Quartos</a>
         </div>
         <div class="btn-group my-5">
-          <a href="/catalog/apartments/0" class="btn shadow-lg btn-info rounded"
-            >Apartamentos</a
-          >
+          <a
+            href="/catalog/apartments/0"
+            class="btn shadow-lg btn-info rounded"
+          >Apartamentos</a>
         </div>
         <p class="lead">
           <strong>
@@ -34,12 +36,22 @@
       <% if (authenticated) { %>
       <div class="container">
         <div class="btn-group">
-          <form action="/dashboard" method="GET">
-            <button class="btn btn-success mx-1" type="submit">
+          <form
+            action="/dashboard"
+            method="GET"
+          >
+            <button
+              class="btn btn-success mx-1"
+              type="submit"
+            >
               <i class="bi bi-house-fill"></i>
             </button>
           </form>
-          <form class="text-center" action="/dashboard/setNumber" method="POST">
+          <form
+            class="text-center"
+            action="/dashboard/setNumber"
+            method="POST"
+          >
             <div class="text-center">
               <button
                 type="button"
@@ -50,14 +62,25 @@
                 <i class="bi bi-pencil-square"></i>
               </button>
             </div>
-            <div class="modal fade" id="editModal" tabindex="-1">
+            <div
+              class="modal fade"
+              id="editModal"
+              tabindex="-1"
+            >
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
+                    <h5
+                      class="modal-title"
+                      id="exampleModalLabel"
+                    >
                       Alterar Nº de quartos geridos
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                    >
                       <span>&times;</span>
                     </button>
                   </div>
@@ -79,7 +102,10 @@
                     >
                       Fechar
                     </button>
-                    <button type="submit" class="btn btn-primary">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                    >
                       Alterar
                     </button>
                   </div>
@@ -102,10 +128,12 @@
         <a
           class="link-style-light"
           href="mailto:geral@a50passos.pt?subject=Arrendamento"
-          >geral@a50passos.pt</a
-        >
+        >geral@a50passos.pt</a>
         |
-        <a class="link-style-light" href="tel:912333314">912333314</a>
+        <a
+          class="link-style-light"
+          href="tel:912333314"
+        >912333314</a>
       </p>
       <br />
     </div>
@@ -155,16 +183,14 @@
       data-aos-duration="750"
     >
       <div class="row">
-        <div
-          class="
+        <div class="
             col-md-5
             background-white
             rounded
             shadow
             offset-md-7
             text-right
-          "
-        >
+          ">
           <h2 class="homepage-header py-4">Limpeza</h2>
           <p class="lead text-muted">
             <em>Serviços de limpeza das áreas comuns incluída</em>
@@ -203,16 +229,14 @@
       data-aos-duration="750"
     >
       <div class="row">
-        <div
-          class="
+        <div class="
             col-md-5
             background-white
             rounded
             shadow
             offset-md-6
             text-right
-          "
-        >
+          ">
           <h2 class="homepage-header py-4">Duvidas?</h2>
           <p class="lead text-muted"><em>Estamos aqui para ajudar</em></p>
           <p>
@@ -242,7 +266,7 @@
                 target="_blank"
                 rel="noreferrer noopener"
                 class="btn btn-sm btn-outline-info"
-                >Saber mais
+              >Saber mais
               </a>
             </div>
           </div>

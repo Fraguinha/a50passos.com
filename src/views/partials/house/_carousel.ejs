@@ -1,26 +1,40 @@
-<div id="myCarousel" class="carousel slide shadow" data-ride="carousel">
+<div
+  id="myCarousel"
+  class="carousel slide shadow"
+  data-ride="carousel"
+>
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li
+      data-target="#myCarousel"
+      data-slide-to="0"
+      class="active"
+    ></li>
+    <li
+      data-target="#myCarousel"
+      data-slide-to="1"
+    ></li>
+    <li
+      data-target="#myCarousel"
+      data-slide-to="2"
+    ></li>
+    <li
+      data-target="#myCarousel"
+      data-slide-to="3"
+    ></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active text-center">
-      <a href="/image/<%= data.id %>/1"
-        ><img
+      <a href="/image/<%= data.id %>/1"><img
           class="img-fluid img-center"
           src="<%= data.photo1 %>"
           onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
           max-width="100%"
           height="auto"
-      /></a>
+        /></a>
       <% if (!data.available) { %>
       <div class="carousel-caption">
         <div class="banner-style-house">
-          <h1
-            class="text-center text-white badge badge-danger badge-style-house"
-          >
+          <h1 class="text-center text-white badge badge-danger badge-style-house">
             Já Foi!
           </h1>
         </div>
@@ -28,20 +42,17 @@
       <% } %>
     </div>
     <div class="carousel-item text-center">
-      <a href="/image/<%= data.id %>/2"
-        ><img
+      <a href="/image/<%= data.id %>/2"><img
           class="img-fluid img-center"
           src="<%= data.photo2 %>"
           onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
           max-width="100%"
           height="auto"
-      /></a>
+        /></a>
       <% if (!data.available) { %>
       <div class="carousel-caption">
         <div class="banner-style-house">
-          <h1
-            class="text-center text-white badge badge-danger badge-style-house"
-          >
+          <h1 class="text-center text-white badge badge-danger badge-style-house">
             Já Foi!
           </h1>
         </div>
@@ -49,20 +60,17 @@
       <% } %>
     </div>
     <div class="carousel-item text-center">
-      <a href="/image/<%= data.id %>/3"
-        ><img
+      <a href="/image/<%= data.id %>/3"><img
           class="img-fluid img-center"
           src="<%= data.photo3 %>"
           onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
           max-width="100%"
           height="auto"
-      /></a>
+        /></a>
       <% if (!data.available) { %>
       <div class="carousel-caption">
         <div class="banner-style-house">
-          <h1
-            class="text-center text-white badge badge-danger badge-style-house"
-          >
+          <h1 class="text-center text-white badge badge-danger badge-style-house">
             Já Foi!
           </h1>
         </div>
@@ -70,20 +78,17 @@
       <% } %>
     </div>
     <div class="carousel-item text-center">
-      <a href="/image/<%= data.id %>/4"
-        ><img
+      <a href="/image/<%= data.id %>/4"><img
           class="img-fluid img-center"
           src="<%= data.photo4 %>"
           onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
           max-width="100%"
           height="auto"
-      /></a>
+        /></a>
       <% if (!data.available) { %>
       <div class="carousel-caption">
         <div class="banner-style-house">
-          <h1
-            class="text-center text-white badge badge-danger badge-style-house"
-          >
+          <h1 class="text-center text-white badge badge-danger badge-style-house">
             Já Foi!
           </h1>
         </div>
@@ -97,7 +102,10 @@
     role="button"
     data-slide="prev"
   >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span
+      class="carousel-control-prev-icon"
+      aria-hidden="true"
+    ></span>
     <span class="sr-only">Previous</span>
   </a>
   <a
@@ -106,7 +114,10 @@
     role="button"
     data-slide="next"
   >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span
+      class="carousel-control-next-icon"
+      aria-hidden="true"
+    ></span>
     <span class="sr-only">Next</span>
   </a>
 </div>

@@ -13,20 +13,16 @@
     </li>
     <% } else { %>
     <li class="page-item">
-      <a
-        class="page-link"
-        href="<%= url %>/0"
-      >
+      <a class="page-link"
+         href="<%= url %>/0">
         <span aria-hidden="true"><i class="bi bi-chevron-bar-left"></i></span>
       </a>
     </li>
     <% } %>
     <% if (current > 0) { %>
     <li class="page-item">
-      <a
-        class="page-link"
-        href="<%= url %>/<%= current - 1 %>"
-      >
+      <a class="page-link"
+         href="<%= url %>/<%= current - 1 %>">
         <span aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
       </a>
     </li>
@@ -46,10 +42,8 @@
     </li>
     <% } else { %>
     <li class="page-item">
-      <a
-        class="page-link"
-        href="<%= url %>/<%= i - 1 %>"
-      ><%= i %></a>
+      <a class="page-link"
+         href="<%= url %>/<%= i - 1 %>"><%= i %></a>
     </li>
     <% } %>
     <% counter += 1 %>
@@ -57,10 +51,8 @@
     <% } %>
     <% if (current < pages - 1) { %>
     <li class="page-item">
-      <a
-        class="page-link"
-        href="<%= url %>/<%= current + 1 %>"
-      >
+      <a class="page-link"
+         href="<%= url %>/<%= current + 1 %>">
         <span aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
       </a>
     </li>
@@ -79,10 +71,8 @@
     </li>
     <% } else { %>
     <li class="page-item">
-      <a
-        class="page-link"
-        href="<%= url %>/<%= pages - 1 %>"
-      >
+      <a class="page-link"
+         href="<%= url %>/<%= pages - 1 %>">
         <span aria-hidden="true"><i class="bi bi-chevron-bar-right"></i></span>
       </a>
     </li>

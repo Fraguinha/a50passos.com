@@ -6,48 +6,34 @@
       nav-style-background-bar
       justify-content-between
     ">
-    <a
-      href="/"
-      class="navbar-brand"
-    >a50passos</a>
+    <a href="/"
+       class="navbar-brand">a50passos</a>
     <% if (authenticated) { %>
     <ul class="navbar-nav mr-auto">
       <div class="btn-group">
         <li class="nav-item mx-1">
-          <form
-            action="/login/logout"
-            method="POST"
-          >
-            <button
-              class="btn btn-danger"
-              type="submit"
-            >Logout</button>
+          <form action="/login/logout"
+                method="POST">
+            <button class="btn btn-danger"
+                    type="submit">Logout</button>
           </form>
         </li>
       </div>
     </ul>
     <% } %>
     <div class="nav-item dropdown">
-      <a
-        class="nav-link dropdown-toggle navbar-link-style"
-        href="#"
-        id="navbarDropdownMenuLink"
-        data-toggle="dropdown"
-      >Catálogo</a>
+      <a class="nav-link dropdown-toggle navbar-link-style"
+         href="#"
+         id="navbarDropdownMenuLink"
+         data-toggle="dropdown">Catálogo</a>
       <div class="dropdown-menu dropdown-menu-right">
-        <a
-          class="dropdown-item navbar-dropdown-style"
-          href="/catalog/apartments/0"
-        >Apartamentos</a>
-        <a
-          class="dropdown-item navbar-dropdown-style"
-          href="/catalog/rooms/0"
-        >Quartos</a>
+        <a class="dropdown-item navbar-dropdown-style"
+           href="/catalog/apartments/0">Apartamentos</a>
+        <a class="dropdown-item navbar-dropdown-style"
+           href="/catalog/rooms/0">Quartos</a>
         <div class="dropdown-divider"></div>
-        <a
-          class="dropdown-item navbar-dropdown-style"
-          href="/catalog/0"
-        >Todos</a>
+        <a class="dropdown-item navbar-dropdown-style"
+           href="/catalog/0">Todos</a>
       </div>
     </div>
   </nav>

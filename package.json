@@ -36,7 +36,7 @@
     "@types/node": "^17.0.38",
     "@types/passport": "^1.0.8",
     "@types/passport-local": "^1.0.34",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.1",
     "nodemon": "^2.0.16",
     "prettier": "^2.6.2"
   }

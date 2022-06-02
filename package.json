@@ -34,7 +34,7 @@
     "@types/mongoose": "^5.11.97",
     "@types/multer": "^1.4.7",
     "@types/node": "^17.0.38",
-    "@types/passport": "^1.0.6",
+    "@types/passport": "^1.0.8",
     "@types/passport-local": "^1.0.34",
     "dotenv": "^10.0.0",
     "nodemon": "^2.0.16",

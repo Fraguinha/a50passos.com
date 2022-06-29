@@ -1,0 +1,46 @@
+<form action="/dashboard/editHouse"
+      method="POST">
+  <input type="hidden"
+         name="id"
+         value="<%= data.id %>">
+  <button type="button"
+          class="btn btn-primary mx-1 float-right"
+          data-toggle="modal"
+          data-target="#editWCModal">
+    <i class="bi bi-badge-wc-fill"></i>
+  </button>
+  <div class="modal fade"
+       id="editWCModal"
+       tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"
+              id="exampleModalLabel">Alterar Nº WC</h5>
+          <button type="button"
+                  class="close"
+                  data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+            <input class="form-control"
+                   type="number"
+                   name="wc"
+                   placeholder="<%= data.wc %>">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal">
+            Fechar
+          </button>
+          <button type="submit"
+                  class="btn btn-success">Alterar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

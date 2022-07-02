@@ -1,101 +1,41 @@
 <div class="row">
-  <div class="col-md-3">
-    <br>
-    <form class="form-control-file"
-          action="/dashboard/addPhoto1"
-          method="POST"
-          enctype="multipart/form-data">
-      <h2 class="text-center">foto 1</h2>
-      <hr>
-      <input type="file"
-             name="photo1"
-             required>
-      <hr>
-      <button class="btn btn-lg btn-primary btn-block"
+  <form class="form-control-file"
+        action="/dashboard/addPhotos"
+        method="POST"
+        enctype="multipart/form-data">
+    <hr>
+    <input type="file"
+           name="photos"
+           multiple
+           required>
+    <hr>
+    <div class="text-center">
+      <button class="btn btn-lg btn-primary"
               type="submit">
-        Upload foto
+        Upload fotos
       </button>
-      <hr>
-      <div class="background-white">
-        <img src="uploads/photo1.jpg"
-             height="200"
-             width="100%">
-      </div>
-    </form>
-  </div>
-  <div class="col-md-3">
-    <br>
-    <form class="form-control-file"
-          action="/dashboard/addPhoto2"
-          method="POST"
-          enctype="multipart/form-data">
-      <h2 class="text-center">foto 2</h2>
-      <hr>
-      <input type="file"
-             name="photo2"
-             required>
-      <hr>
-      <button class="btn btn-lg btn-primary btn-block"
-              type="submit">
-        Upload foto
-      </button>
-      <hr>
-      <div class="background-white">
-        <img src="uploads/photo2.jpg"
-             height="200"
-             width="100%">
-      </div>
-    </form>
-  </div>
-  <div class="col-md-3">
-    <br>
-    <form class="form-control-file"
-          action="/dashboard/addPhoto3"
-          method="POST"
-          enctype="multipart/form-data">
-      <h2 class="text-center">foto 3</h2>
-      <hr>
-      <input type="file"
-             name="photo3"
-             required>
-      <hr>
-      <button class="btn btn-lg btn-primary btn-block"
-              type="submit">
-        Upload foto
-      </button>
-      <hr>
-      <div class="background-white">
-        <img src="uploads/photo3.jpg"
-             height="200"
-             width="100%">
-      </div>
-    </form>
-  </div>
-  <div class="col-md-3">
-    <br>
-    <form class="form-control-file"
-          action="/dashboard/addPhoto4"
-          method="POST"
-          enctype="multipart/form-data">
-      <h2 class="text-center">foto 4</h2>
-      <hr>
-      <input type="file"
-             name="photo4"
-             required>
-      <hr>
-      <button class="btn btn-lg btn-primary btn-block"
-              type="submit">
-        Upload foto
-      </button>
-      <hr>
-      <div class="background-white">
-        <img src="uploads/photo4.jpg"
-             height="200"
-             width="100%">
-      </div>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>
+
+<% for (var i = 0; i < num_photos / 4; i++) { %>
+<div class="row">
+  <% for (var j = 1; j <= 4; j++) { %>
+  <% if (i * 4 + j <= num_photos) { %>
+  <br>
+  <div class="col-md-3 mt-4">
+    <div class="background-white">
+      <img src="uploads/photo<%= i * 4 + j %>.jpg"
+           height="200"
+           width="100%">
+    </div>
+  </div>
+  <% } %>
+  <% } %>
+</div>
+<% } %>
+
+<hr>
 
 <div class="row">
   <form class="form-style"

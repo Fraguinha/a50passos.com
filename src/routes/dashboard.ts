@@ -8,17 +8,21 @@ import Meta from '../models/meta-model'
 
 const router = express.Router()
 
-const storage = multer.diskStorage({
-  destination: (req, file, callback) => {
-    callback(null, path.join(__dirname, '/../public/uploads'))
-  },
-  filename: (req, file, callback) => {
-    callback(null, file.fieldname + '.jpg')
-  },
-})
-const upload = multer({ storage })
-
 const base = path.resolve(__dirname, '..')
+
+let num_photos = fs.readdirSync(path.join(base, '/public/uploads')).length
+
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, callback) => {
+      callback(null, path.join(__dirname, '/../public/uploads'))
+    },
+    filename: (req, file, callback) => {
+      callback(null, 'photo' + (num_photos + 1) + '.jpg')
+      num_photos += 1
+    },
+  })
+})
 
 // Show dashboard
 router.get('/', ensureAuthentication, (req, res) => {
@@ -26,6 +30,7 @@ router.get('/', ensureAuthentication, (req, res) => {
     title: 'Dashboard de Administração',
     description: '',
     authenticated: req.isAuthenticated(),
+    num_photos: num_photos
   })
 })
 
@@ -34,71 +39,30 @@ router.post('/', ensureAuthentication, (req, res) => {
     title: 'Dashboard de Administração',
     description: '',
     authenticated: req.isAuthenticated(),
+    num_photos: num_photos
   })
 })
 
 // Dashboard addPhotos
-router.post(
-  '/addPhoto1',
-  ensureAuthentication,
-  upload.single('photo1'),
-  async (req, res) => {
-    res.status(201).redirect('/dashboard')
-  }
-)
-
-router.post(
-  '/addPhoto2',
-  ensureAuthentication,
-  upload.single('photo2'),
-  async (req, res) => {
-    res.status(201).redirect('/dashboard')
-  }
-)
-
-router.post(
-  '/addPhoto3',
-  ensureAuthentication,
-  upload.single('photo3'),
-  async (req, res) => {
-    res.status(201).redirect('/dashboard')
-  }
-)
-
-router.post(
-  '/addPhoto4',
-  ensureAuthentication,
-  upload.single('photo4'),
-  async (req, res) => {
-    res.status(201).redirect('/dashboard')
-  }
+router.post('/addPhotos', ensureAuthentication, upload.any(), async (req, res) => {
+  res.status(201).redirect('/dashboard')
+}
 )
 
 // Dashboard clearImages
 router.post('/clearImages', ensureAuthentication, async (req, res) => {
-  if (fs.existsSync(base + '/public/uploads/photo1.jpg')) {
-    fs.unlinkSync(base + '/public/uploads/photo1.jpg')
-  }
-  if (fs.existsSync(base + '/public/uploads/photo2.jpg')) {
-    fs.unlinkSync(base + '/public/uploads/photo2.jpg')
-  }
-  if (fs.existsSync(base + '/public/uploads/photo3.jpg')) {
-    fs.unlinkSync(base + '/public/uploads/photo3.jpg')
-  }
-  if (fs.existsSync(base + '/public/uploads/photo4.jpg')) {
-    fs.unlinkSync(base + '/public/uploads/photo4.jpg')
-  }
-  res.redirect('/dashboard')
+  fs.readdir(path.join(base, '/public/uploads'), (err, files) => {
+    for (const file of files) {
+      fs.unlinkSync(path.join(base, '/public/uploads', file))
+    }
+    num_photos = fs.readdirSync(path.join(base, '/public/uploads')).length
+    res.redirect('/dashboard')
+  })
 })
 
 // Dashboard addHouse
 router.post('/addHouse', ensureAuthentication, async (req, res) => {
-  if (
-    fs.existsSync(base + '/public/uploads/photo1.jpg') &&
-    fs.existsSync(base + '/public/uploads/photo2.jpg') &&
-    fs.existsSync(base + '/public/uploads/photo3.jpg') &&
-    fs.existsSync(base + '/public/uploads/photo4.jpg')
-  ) {
+  if (num_photos >= 1) {
     let id = req.body.id
     if (!id) {
       id = Date.now()
@@ -118,29 +82,15 @@ router.post('/addHouse', ensureAuthentication, async (req, res) => {
       dinningroom: !!req.body.dinningroom,
       balcony: !!req.body.balcony,
       gardin: !!req.body.gardin,
-      photo1: '/images/' + id + '/photo1.jpg',
-      photo2: '/images/' + id + '/photo2.jpg',
-      photo3: '/images/' + id + '/photo3.jpg',
-      photo4: '/images/' + id + '/photo4.jpg',
+      photos: num_photos,
     })
-    fs.mkdirSync(base + '/public/images/' + id)
-    fs.renameSync(
-      base + '/public/uploads/photo1.jpg',
-      base + '/public/images/' + id + '/photo1.jpg'
-    )
-    fs.renameSync(
-      base + '/public/uploads/photo2.jpg',
-      base + '/public/images/' + id + '/photo2.jpg'
-    )
-    fs.renameSync(
-      base + '/public/uploads/photo3.jpg',
-      base + '/public/images/' + id + '/photo3.jpg'
-    )
-    fs.renameSync(
-      base + '/public/uploads/photo4.jpg',
-      base + '/public/images/' + id + '/photo4.jpg'
-    )
+    fs.mkdirSync(path.join(base, '/public/images/', id))
+    const files = fs.readdirSync(path.join(base, '/public/uploads'))
+    for (const file of files) {
+      fs.renameSync(path.join(base, '/public/uploads', file), path.join(base, '/public/images/', id, file))
+    }
     await house.save()
+    num_photos = fs.readdirSync(path.join(base, '/public/uploads')).length
     res.redirect('/dashboard')
   } else {
     res.redirect('/dashboard')
@@ -186,11 +136,11 @@ router.post('/setNumber', ensureAuthentication, async (req, res) => {
 // Dashboard removeHouse
 router.post('/removeHouse', ensureAuthentication, async (req, res) => {
   await House.deleteOne({ id: req.body.id }).exec()
-  fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo1.jpg')
-  fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo2.jpg')
-  fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo3.jpg')
-  fs.unlinkSync(base + '/public/images/' + req.body.id + '/photo4.jpg')
-  fs.rmdirSync(base + '/public/images/' + req.body.id)
+  const files = fs.readdirSync(path.join(base, '/public/images', req.body.id))
+  for (const file of files) {
+    fs.unlinkSync(path.join(base, '/public/images/', req.body.id, file))
+  }
+  fs.rmdirSync(path.join(base, '/public/images/', req.body.id))
   res.redirect('/')
 })
 

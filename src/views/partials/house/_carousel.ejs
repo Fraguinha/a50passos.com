@@ -5,17 +5,15 @@
     <li data-target="#myCarousel"
         data-slide-to="0"
         class="active"></li>
+    <% for(var i = 1; i < data.photos; i++) { %>
     <li data-target="#myCarousel"
-        data-slide-to="1"></li>
-    <li data-target="#myCarousel"
-        data-slide-to="2"></li>
-    <li data-target="#myCarousel"
-        data-slide-to="3"></li>
+        data-slide-to="<%= i %>"></li>
+    <% } %>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active text-center">
       <a href="/image/<%= data.id %>/1"><img class="img-fluid img-center"
-             src="<%= data.photo1 %>"
+             src="/images/<%= data.id %>/photo1.jpg %>"
              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
              max-width="100%"
              height="auto"></a>
@@ -29,9 +27,10 @@
       </div>
       <% } %>
     </div>
+    <% for(var i = 2; i <= data.photos; i++) { %>
     <div class="carousel-item text-center">
       <a href="/image/<%= data.id %>/2"><img class="img-fluid img-center"
-             src="<%= data.photo2 %>"
+             src="/images/<%= data.id %>/photo<%= i %>.jpg"
              onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
              max-width="100%"
              height="auto"></a>
@@ -45,38 +44,7 @@
       </div>
       <% } %>
     </div>
-    <div class="carousel-item text-center">
-      <a href="/image/<%= data.id %>/3"><img class="img-fluid img-center"
-             src="<%= data.photo3 %>"
-             onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
-             max-width="100%"
-             height="auto"></a>
-      <% if (!data.available) { %>
-      <div class="carousel-caption">
-        <div class="banner-style-house">
-          <h1 class="text-center text-white badge badge-danger badge-style-house">
-            Já Foi!
-          </h1>
-        </div>
-      </div>
-      <% } %>
-    </div>
-    <div class="carousel-item text-center">
-      <a href="/image/<%= data.id %>/4"><img class="img-fluid img-center"
-             src="<%= data.photo4 %>"
-             onerror="this.style='visibility:hidden; min-height: 75vh; background-color:whitesmoke'"
-             max-width="100%"
-             height="auto"></a>
-      <% if (!data.available) { %>
-      <div class="carousel-caption">
-        <div class="banner-style-house">
-          <h1 class="text-center text-white badge badge-danger badge-style-house">
-            Já Foi!
-          </h1>
-        </div>
-      </div>
-      <% } %>
-    </div>
+    <% } %>
   </div>
   <a class="carousel-control-prev"
      href="#myCarousel"

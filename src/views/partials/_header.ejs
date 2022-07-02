@@ -9,17 +9,19 @@
     <a href="/"
        class="navbar-brand">a50passos</a>
     <% if (authenticated) { %>
-    <ul class="navbar-nav mr-auto">
-      <div class="btn-group">
-        <li class="nav-item mx-1">
-          <form action="/login/logout"
-                method="POST">
-            <button class="btn btn-danger"
-                    type="submit">Logout</button>
-          </form>
-        </li>
-      </div>
-    </ul>
+    <div class="nav-item">
+      <ul class="navbar-nav mr-auto">
+        <div class="btn-group">
+          <li class="nav-item mx-1">
+            <form action="/login/logout"
+                  method="POST">
+              <button class="btn btn-danger"
+                      type="submit">Logout</button>
+            </form>
+          </li>
+        </div>
+      </ul>
+    </div>
     <% } %>
     <div class="nav-item dropdown">
       <a class="nav-link dropdown-toggle navbar-link-style"

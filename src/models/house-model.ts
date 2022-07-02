@@ -53,20 +53,8 @@ const houseSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  photo1: {
-    type: String,
-    required: true,
-  },
-  photo2: {
-    type: String,
-    required: true,
-  },
-  photo3: {
-    type: String,
-    required: true,
-  },
-  photo4: {
-    type: String,
+  photos: {
+    type: Number,
     required: true,
   },
   date: {
@@ -89,10 +77,7 @@ interface HouseDoc extends mongoose.Document {
   dinningroom: boolean
   balcony: boolean
   gardin: boolean
-  photo1: string
-  photo2: string
-  photo3: string
-  photo4: string
+  photos: number
   date: number
 }
 

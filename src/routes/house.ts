@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/:id', async (req, res) => {
   const house = await House.findOne(
     { id: req.params.id },
-    'id title address description tip wc available suite elevator dinningroom balcony gardin photo1 photo2 photo3 photo4'
+    'id title address description tip wc available suite elevator dinningroom balcony gardin photos'
   ).exec()
   if (house != null) {
     res.render('main/house.ejs', {

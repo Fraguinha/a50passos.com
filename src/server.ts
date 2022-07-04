@@ -1,6 +1,7 @@
 // Imports
 import dotenv from 'dotenv'
 import express from 'express'
+import compression from './lib/setup/compression'
 import database from './lib/setup/database'
 import filesystem from './lib/setup/filesystem'
 import parsing from './lib/setup/parsing'
@@ -20,16 +21,19 @@ const DATABASE = process.env.DATABASE || `mongodb://localhost/${APPNAME}`
 // Application
 const app = express()
 
-// Database
-database.start(DATABASE)
-
 // Filesystem
 filesystem.configure()
 
-// BodyParser config
+// Database
+database.start(DATABASE)
+
+// Parsing
 parsing.configure(app)
 
-// Passport config
+// Compression
+compression.configure(app)
+
+// Passport
 passport.configure(app, SECRET)
 
 // Views

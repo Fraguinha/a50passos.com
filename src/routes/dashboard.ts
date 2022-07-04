@@ -2,7 +2,7 @@ import express from 'express'
 import fs from 'fs'
 import multer from 'multer'
 import path from 'path'
-import ensureAuthentication from '../lib/middleware'
+import ensureAuthentication from '../lib/authentication'
 import House from '../models/house-model'
 import Meta from '../models/meta-model'
 

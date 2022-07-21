@@ -22,13 +22,13 @@
           <h1>
             <%= data.title %>
             <% if (authenticated) { %>
-            <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'title', name: 'Título',placeholder: data.title, long: false}) %>
+            <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'title', name: 'Título', placeholder: data.title, long: false, limit: true}) %>
             <% } %>
           </h1>
           <h2 class="text-muted">
             <%= data.address %>
             <% if (authenticated) { %>
-            <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'address', name: 'Endereço', placeholder: data.address, long: false}) %>
+            <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'address', name: 'Endereço', placeholder: data.address, long: false, limit: false}) %>
             <% } %>
           </h2>
           <hr>
@@ -38,7 +38,7 @@
         <p class="lead text-muted text-center my-3">
           <em><%= data.tip %></em>
           <% if (authenticated) { %>
-          <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'tip', name: 'Tooltip', placeholder: data.tip, long: false}) %>
+          <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'tip', name: 'Tooltip', placeholder: data.tip, long: false, limit: true}) %>
           <% } %>
         </p>
       </div>

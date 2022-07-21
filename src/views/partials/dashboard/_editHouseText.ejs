@@ -37,6 +37,9 @@
                    type="text"
                    name="<%= variable %>"
                    placeholder="<%= placeholder %>"
+                   <% if (limit == true) { %>
+                   maxlength="30"
+                   <% } %>
                    autocomplete="off"
                    required>
             <% } %>

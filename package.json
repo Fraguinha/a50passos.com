@@ -11,7 +11,7 @@
     "dist": "npm run views; npm run public",
     "deploy": "npm run build; npm run dist",
     "clean": "rm -rf dist",
-    "dev": "nodemon --watch 'src/**' --ext 'ts,ejs,json' --exec 'npm run build; npm run views; node dist/server.js'"
+    "dev": "npm run deploy; nodemon --watch 'src/**' --ext 'ts,ejs,json' --exec 'npm run build; npm run views; node dist/server.js'"
   },
   "keywords": [],
   "author": "João Fraga",
@@ -25,7 +25,7 @@
     "express-ejs-layouts": "^2.5.1",
     "mongoose": "^7.1.0",
     "multer": "^1.4.4-lts.1",
-    "passport": "^0.6.0",
+    "passport": "0.5.0",
     "passport-local": "^1.0.0",
     "typescript": "^5.0.4"
   },

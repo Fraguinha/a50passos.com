@@ -18,14 +18,14 @@ const configure = (app: Express, secret: string) => {
         // Match user
         User.findOne({ email }).then((user) => {
           if (!user) {
-            return done(null, null)
+            return done(null, undefined)
           }
           // Match password
           bcrypt.compare(password, user.password, (err, isMatch) => {
             if (isMatch) {
               return done(null, user)
             } else {
-              return done(null, null)
+              return done(null, undefined)
             }
           })
         })
@@ -38,8 +38,8 @@ const configure = (app: Express, secret: string) => {
   })
 
   passport.deserializeUser((id: any, done) => {
-    User.findById(id, (err: any, user: any) => {
-      done(err, user)
+    User.findById(id).then((user) => {
+      done(null, user)
     })
   })
 

@@ -4,7 +4,8 @@ import mongoose from 'mongoose'
 // Functions
 const start = (database: string) => {
   mongoose.set('strictQuery', false)
-  mongoose.connect(database).catch((_) => {
+  mongoose.connect(database).catch((err) => {
+    console.error(err)
     process.exit(1)
   })
   const db = mongoose.connection

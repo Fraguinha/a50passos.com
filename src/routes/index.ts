@@ -1,5 +1,5 @@
 import express from 'express'
-import Meta from '../models/meta-model'
+import Meta from '../models/meta-model.js'
 
 const router = express.Router()
 
@@ -15,4 +15,4 @@ router.get('/', async (req, res) => {
   })
 })
 
-export = router
+export default router

@@ -13,4 +13,4 @@ const ensureAuthentication = (
   res.redirect('/login')
 }
 
-export = ensureAuthentication
+export default ensureAuthentication

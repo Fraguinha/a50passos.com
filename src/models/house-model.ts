@@ -81,4 +81,4 @@ interface HouseDoc extends mongoose.Document {
   date: number
 }
 
-export = mongoose.model<HouseDoc>('House', houseSchema)
+export default mongoose.model<HouseDoc>('House', houseSchema)

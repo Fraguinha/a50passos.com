@@ -6,4 +6,4 @@ const configure = (app: Express) => {
   app.use(compression())
 }
 
-export = { configure }
+export default { configure }

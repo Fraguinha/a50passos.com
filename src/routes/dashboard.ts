@@ -2,27 +2,17 @@ import express from 'express'
 import fs from 'fs'
 import multer from 'multer'
 import path from 'path'
-import ensureAuthentication from '../lib/authentication'
-import House from '../models/house-model'
-import Meta from '../models/meta-model'
+import ensureAuthentication from '../lib/authentication.js'
+import House from '../models/house-model.js'
+import Meta from '../models/meta-model.js'
 
 const router = express.Router()
 
-const base = path.resolve(__dirname, '..')
+const base = path.resolve('dist')
 
 let num_photos = fs.readdirSync(path.join(base, '/public/uploads')).length
 
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: (req, file, callback) => {
-      callback(null, path.join(__dirname, '/../public/uploads'))
-    },
-    filename: (req, file, callback) => {
-      callback(null, 'photo' + (num_photos + 1) + '.jpg')
-      num_photos += 1
-    },
-  })
-})
+const upload = multer({ dest: path.join(base, '/public/uploads') })
 
 // Show dashboard
 router.get('/', ensureAuthentication, (req, res) => {
@@ -44,14 +34,13 @@ router.post('/', ensureAuthentication, (req, res) => {
 })
 
 // Dashboard addPhotos
-router.post('/addPhotos', ensureAuthentication, upload.any(), async (req, res) => {
+router.post('/addPhotos', ensureAuthentication, upload.any(), async (_req, res) => {
   res.status(201).redirect('/dashboard')
-}
-)
+})
 
 // Dashboard clearImages
-router.post('/clearImages', ensureAuthentication, async (req, res) => {
-  fs.readdir(path.join(base, '/public/uploads'), (err, files) => {
+router.post('/clearImages', ensureAuthentication, async (_req, res) => {
+  fs.readdir(path.join(base, '/public/uploads'), (_err, files) => {
     for (const file of files) {
       fs.unlinkSync(path.join(base, '/public/uploads', file))
     }
@@ -215,4 +204,4 @@ router.post('/editHouse', ensureAuthentication, async (req, res) => {
   res.redirect('/house/' + req.body.id)
 })
 
-export = router
+export default router

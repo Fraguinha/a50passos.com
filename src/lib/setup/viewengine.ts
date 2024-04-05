@@ -5,11 +5,12 @@ import path from 'path'
 
 // Functions
 const configure = (app: Express) => {
+  const base = path.resolve('dist');
   app.use(expressLayouts)
-  app.use(express.static(path.join(__dirname, '/../../public')))
-  app.set('views', path.join(__dirname, '/../../views'))
+  app.use(express.static(path.join(base, '/public')))
+  app.set('views', path.join(base, '/views'))
   app.set('layout', 'layouts/default')
   app.set('view engine', 'ejs')
 }
 
-export = { configure }
+export default { configure }

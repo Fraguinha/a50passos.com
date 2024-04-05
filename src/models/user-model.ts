@@ -21,4 +21,4 @@ interface UserDoc extends mongoose.Document {
   date: Date
 }
 
-export = mongoose.model<UserDoc>('User', userSchema)
+export default mongoose.model<UserDoc>('User', userSchema)

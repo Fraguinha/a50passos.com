@@ -26,8 +26,8 @@ router.post('/', (req, res, next) => {
 
 // Logout
 router.post('/logout', (req, res) => {
-  req.logout((err) => { })
+  req.logout((_err) => { })
   res.redirect('/')
 })
 
-export = router
+export default router

@@ -1,5 +1,5 @@
 import express from 'express'
-import House from '../models/house-model'
+import House from '../models/house-model.js'
 
 const router = express.Router()
 
@@ -97,4 +97,4 @@ router.get('/apartments/:page', async (req, res) => {
   }
 })
 
-export = router
+export default router

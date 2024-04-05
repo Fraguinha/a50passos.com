@@ -1,5 +1,5 @@
 import express from 'express'
-import House from '../models/house-model'
+import House from '../models/house-model.js'
 
 const router = express.Router()
 
@@ -25,4 +25,4 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-export = router
+export default router

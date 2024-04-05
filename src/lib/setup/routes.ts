@@ -1,10 +1,10 @@
 import { Express } from 'express'
-import catalog from '../../routes/catalog'
-import dashboard from '../../routes/dashboard'
-import house from '../../routes/house'
-import image from '../../routes/image'
-import index from '../../routes/index'
-import login from '../../routes/login'
+import catalog from '../../routes/catalog.js'
+import dashboard from '../../routes/dashboard.js'
+import house from '../../routes/house.js'
+import image from '../../routes/image.js'
+import index from '../../routes/index.js'
+import login from '../../routes/login.js'
 
 // Functions
 const configure = (app: Express) => {
@@ -16,7 +16,7 @@ const configure = (app: Express) => {
   app.use('/dashboard', dashboard)
 
   // Not found
-  app.use((req, res) => {
+  app.use((_req, res) => {
     res.status(404).render('main/error.ejs', {
       title: '404 - Página não encontrada',
       description: 'A página solicitada não foi encontrada.',
@@ -25,4 +25,4 @@ const configure = (app: Express) => {
   })
 }
 
-export = { configure }
+export default { configure }

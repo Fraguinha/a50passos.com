@@ -13,4 +13,4 @@ router.get('/:id/:number', async (req, res) => {
   })
 })
 
-export = router
+export default router

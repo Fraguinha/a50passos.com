@@ -6,4 +6,4 @@ const configure = (app: Express) => {
   app.use(express.json())
 }
 
-export = { configure }
+export default { configure }

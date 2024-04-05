@@ -1,13 +1,13 @@
 // Imports
 import dotenv from 'dotenv'
 import express from 'express'
-import compression from './lib/setup/compression'
-import database from './lib/setup/database'
-import filesystem from './lib/setup/filesystem'
-import parsing from './lib/setup/parsing'
-import passport from './lib/setup/passport'
-import routes from './lib/setup/routes'
-import viewengine from './lib/setup/viewengine'
+import compression from './lib/setup/compression.js'
+import database from './lib/setup/database.js'
+import filesystem from './lib/setup/filesystem.js'
+import parser from './lib/setup/parser.js'
+import authentication from './lib/setup/authentication.js'
+import routes from './lib/setup/routes.js'
+import viewengine from './lib/setup/viewengine.js'
 
 // Dotenv config
 dotenv.config()
@@ -28,13 +28,13 @@ filesystem.configure()
 database.start(DATABASE)
 
 // Parsing
-parsing.configure(app)
+parser.configure(app)
 
 // Compression
 compression.configure(app)
 
-// Passport
-passport.configure(app, SECRET)
+// Authentication
+authentication.configure(app, SECRET)
 
 // Views
 viewengine.configure(app)

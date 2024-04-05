@@ -11,4 +11,4 @@ interface MetaDoc extends mongoose.Document {
   managed: number
 }
 
-export = mongoose.model<MetaDoc>('Meta', metaSchema)
+export default mongoose.model<MetaDoc>('Meta', metaSchema)

@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 // Functions
 const start = (database: string) => {
   mongoose.set('strictQuery', false)
-  mongoose.connect(database).catch((err) => {
+  mongoose.connect(database).catch((err: any) => {
     console.error(err)
     process.exit(1)
   })
@@ -14,4 +14,4 @@ const start = (database: string) => {
   })
 }
 
-export = { start }
+export default { start }

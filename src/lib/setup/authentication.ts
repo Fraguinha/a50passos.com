@@ -1,27 +1,33 @@
 // Requires
 import bcrypt from 'bcryptjs'
-import cookieSession from 'cookie-session'
+import session from 'express-session'
 import { Express } from 'express'
 import passport from 'passport'
 import LocalStrategy from 'passport-local'
-import User from '../../models/user-model'
+import User from '../../models/user-model.js'
 
 // Functions
 const configure = (app: Express, secret: string) => {
-  // Cookie session
-  app.use(cookieSession({ secret }))
+  // Session
+  app.set('trust proxy', 1)
+  app.use(session({
+    secret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  }))
   // Passport
   passport.use(
     new LocalStrategy.Strategy(
       { usernameField: 'email' },
       (email, password, done) => {
         // Match user
-        User.findOne({ email }).then((user) => {
+        User.findOne({ email }).then((user: any) => {
           if (!user) {
             return done(null, undefined)
           }
           // Match password
-          bcrypt.compare(password, user.password, (err, isMatch) => {
+          bcrypt.compare(password, user.password, (_err, isMatch) => {
             if (isMatch) {
               return done(null, user)
             } else {
@@ -38,7 +44,7 @@ const configure = (app: Express, secret: string) => {
   })
 
   passport.deserializeUser((id: any, done) => {
-    User.findById(id).then((user) => {
+    User.findById(id).then((user: any) => {
       done(null, user)
     })
   })
@@ -47,4 +53,4 @@ const configure = (app: Express, secret: string) => {
   app.use(passport.session())
 }
 
-export = { configure }
+export default { configure }

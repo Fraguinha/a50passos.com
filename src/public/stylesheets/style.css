@@ -1,0 +1,217 @@
+.error-page {
+  min-height: 100vh;
+}
+
+.jumbotron {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-radius: 0;
+  background-image: url('../images/misc/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  max-width: 50rem;
+}
+
+.jumbotron-heading {
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 350;
+}
+
+.jumbotron p {
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.carousel {
+  background-color: rgba(192, 192, 192, 0.25);
+}
+
+.carousel-item {
+  height: auto;
+}
+
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
+}
+
+.toast {
+  position: fixed;
+  min-width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  margin-bottom: 0 !important;
+}
+
+.background-white {
+  background-color: white;
+}
+
+.navbar-link-style {
+  color: white;
+}
+
+.navbar-link-style:hover {
+  color: rgb(94, 197, 199);
+}
+
+.nav-style-background {
+  background-color: rgb(37, 58, 83);
+}
+
+.nav-style-background-bar {
+  background-color: rgb(27, 48, 73);
+}
+
+.dropdown-style {
+  background-color: rgb(27, 48, 73);
+}
+
+.navbar-dropdown-style:hover {
+  color: white;
+  background-color: rgb(27, 48, 73);
+}
+
+.link-style-light {
+  color: rgb(94, 197, 199);
+}
+
+.link-style-light:hover {
+  color: rgb(43, 146, 148);
+  text-decoration: underline;
+}
+
+.link-style-dark {
+  color: white;
+}
+
+.link-style-dark:hover {
+  color: rgb(94, 197, 199);
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: 300ms;
+}
+
+.banner-style-catalog {
+  position: absolute;
+  width: 100%;
+  top: 58%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-style-catalog-new {
+  position: absolute;
+  top: 10%;
+  left: 13%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-style-house {
+  position: absolute;
+  width: 75%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+
+.badge-style-catalog {
+  width: 96%;
+  font-size: 2rem;
+}
+
+.badge-style-catalog-new {
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+.badge-style-house {
+  width: 100%;
+  font-size: 3rem;
+}
+
+.form-style {
+  max-width: 330px;
+  margin: auto;
+}
+
+.homepage-main {
+  background-color: rgb(200, 215, 215);
+}
+
+.homepage-logo {
+  width: 220px;
+}
+
+.homepage-video {
+  background-color: rgb(27, 48, 73);
+}
+
+.homepage-strip {
+  color: white;
+  background-color: rgb(27, 48, 73);
+}
+
+.homepage-strip-em {
+  color: rgb(94, 197, 199);
+}
+
+.homepage-strip-link {
+  color: rgb(94, 197, 199);
+}
+
+.homepage-strip-link:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.homepage-header {
+  color: rgb(27, 48, 73);
+}
+
+.homepage-partnerships {
+  color: white;
+  background-color: rgb(27, 48, 73);
+}
+
+.homepage-partnerships-link {
+  color: white;
+}
+
+.homepage-partnerships-link:hover {
+  color: rgb(94, 197, 199);
+  text-decoration: none;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: rgb(27, 48, 73) !important;
+}
+.pagination > li.active > a {
+  border: 1px solid rgb(27, 48, 73) !important;
+  background: rgb(27, 48, 73) !important;
+  color: white !important;
+}
+
+.btn-outline-blue {
+  border: 1px solid rgb(27, 48, 73);
+  color: rgb(27, 48, 73);
+}
+
+.btn-outline-blue:hover {
+  background-color: rgb(27, 48, 73);
+  color: white;
+}

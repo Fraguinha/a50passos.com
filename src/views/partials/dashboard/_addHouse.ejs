@@ -1,0 +1,115 @@
+<form action="/dashboard/addHouse"
+      method="POST">
+  <div class="form-group">
+    <label for="id">ID *</label>
+    <input name="id"
+           type="text"
+           class="form-control"
+           placeholder="Referência"
+           autocomplete="off"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="title">Titulo *</label>
+    <input name="title"
+           type="text"
+           class="form-control"
+           placeholder="Titulo (max 30 char)"
+           maxlength="30"
+           autocomplete="off"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="address">Morada *</label>
+    <input name="address"
+           type="text"
+           class="form-control"
+           placeholder="Morada"
+           autocomplete="off"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="description">Descrição</label>
+    <textarea name="description"
+              type="text"
+              class="form-control"
+              placeholder="Descrição longa do imóvel"
+              required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="tip">Tooltip</label>
+    <input name="tip"
+           type="text"
+           class="form-control"
+           placeholder="Descrição curta do imóvel (max 30 char)"
+           maxlength="30"
+           autocomplete="off">
+  </div>
+  <div class="form-group">
+    <label for="wc">WC *</label>
+    <input name="wc"
+           type="number"
+           min="1"
+           class="form-control"
+           value="1"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="type">Tipo *</label>
+    <select name="type"
+            class="form-control"
+            required>
+      <option value="1">Quarto</option>
+      <option value="2">Apartamento</option>
+    </select>
+  </div>
+  <small class="form-text text-muted">* Campos obrigatórios</small>
+  <hr>
+  <div class="form-group form-check">
+    <input id="suite"
+           name="suite"
+           type="checkbox"
+           class="form-check-input">
+    <label class="form-check-label"
+           for="suite">Suite</label>
+  </div>
+  <div class="form-group form-check">
+    <input id="elevator"
+           name="elevator"
+           type="checkbox"
+           class="form-check-input">
+    <label class="form-check-label"
+           for="elevator">Elevador</label>
+  </div>
+  <div class="form-group form-check">
+    <input id="dinningroom"
+           name="dinningroom"
+           type="checkbox"
+           class="form-check-input">
+    <label class="form-check-label"
+           for="dinningroom">Sala de jantar</label>
+  </div>
+  <div class="form-group form-check">
+    <input id="balcony"
+           name="balcony"
+           type="checkbox"
+           class="form-check-input">
+    <label class="form-check-label"
+           for="balcony">Varanda</label>
+  </div>
+  <div class="form-group form-check">
+    <input id="gardin"
+           name="gardin"
+           type="checkbox"
+           class="form-check-input">
+    <label class="form-check-label"
+           for="gardin">Terraço</label>
+  </div>
+  <small class="form-text text-muted text-center">A casa apenas será criada se existir pelo menos uma foto
+    uploaded</small>
+  <button class="btn btn-lg btn-success btn-block"
+          type="submit">
+    Adicionar Casa
+  </button>
+  <br>
+</form>

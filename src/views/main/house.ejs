@@ -1,0 +1,83 @@
+<%- include("../partials/_header.ejs") %>
+
+<main role="main">
+  <div class="bg-light">
+    <%- include("../partials/house/_carousel.ejs") %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <% if (authenticated) { %>
+          <%- include("../partials/dashboard/_toggleHouse.ejs") %>
+          <% } %>
+          <% if (data.available) { %>
+          <h2>
+            <span class="badge badge-success float-right">Disponível</span>
+          </h2>
+          <% } else { %>
+          <h2>
+            <span class="badge badge-danger float-right">Arrendado</span>
+          </h2>
+          <% } %>
+          <h1>
+            <%= data.title %>
+            <% if (authenticated) { %>
+            <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'title', name: 'Título', placeholder: data.title, long: false, limit: true}) %>
+            <% } %>
+          </h1>
+          <h2 class="text-muted">
+            <%= data.address %>
+            <% if (authenticated) { %>
+            <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'address', name: 'Endereço', placeholder: data.address, long: false, limit: false}) %>
+            <% } %>
+          </h2>
+          <hr>
+        </div>
+      </div>
+      <div class="container">
+        <p class="lead text-muted text-center my-3">
+          <em><%= data.tip %></em>
+          <% if (authenticated) { %>
+          <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'tip', name: 'Tooltip', placeholder: data.tip, long: false, limit: true}) %>
+          <% } %>
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-5 my-4">
+          <h3 class="text-center pb-4">
+            Descrição
+            <% if (authenticated) { %>
+            <%- include("../partials/dashboard/_editHouseText.ejs", {variable: 'description', name: 'Descrição', placeholder: data.description, long: true}) %>
+            <% } %>
+          </h3>
+          <p><%= data.description %></p>
+          <h4 class="text-center pt-4">Informação adicional</h4>
+          <%- include("../partials/house/_table.ejs") %>
+          <% if (authenticated) { %>
+          <%- include("../partials/dashboard/_editHouseCheckbox.ejs") %>
+          <%- include("../partials/dashboard/_editHouseWC.ejs") %>
+          <% } %>
+        </div>
+        <div class="col-md-7 my-4">
+          <h3 class="text-center pb-4">Localização</h3>
+          <%- include("../partials/house/_map.ejs") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col my-4">
+          <h4 class="text-center pt-4">Referencia</h4>
+          <% if (authenticated) { %>
+          <%- include("../partials/dashboard/_removeHouse.ejs") %>
+          <% } %>
+          <p class="text-center"><%= data.id %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include("../partials/_footer.ejs") %>
+
+<% if (data.available) { %>
+<%- include("../partials/house/_toast.ejs") %>
+<% } %>

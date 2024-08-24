@@ -1,0 +1,50 @@
+<div class="row">
+  <form class="form-control-file"
+        action="/dashboard/addPhotos"
+        method="POST"
+        enctype="multipart/form-data">
+    <hr>
+    <input type="file"
+           name="photos"
+           multiple
+           required>
+    <hr>
+    <div class="text-center">
+      <button class="btn btn-lg btn-primary"
+              type="submit">
+        Upload fotos
+      </button>
+    </div>
+  </form>
+</div>
+
+<% for (var i = 0; i < Math.ceil(num_photos / 4); i++) { %>
+<div class="row">
+  <% for (var j = 1; j <= 4; j++) { %>
+  <% if (i * 4 + j <= num_photos) { %>
+  <br>
+  <div class="col-md-3 mt-4">
+    <div class="background-white">
+      <img src="uploads/photo<%= i * 4 + j %>.jpg"
+           height="200"
+           width="100%">
+    </div>
+  </div>
+  <% } %>
+  <% } %>
+</div>
+<% } %>
+
+<hr>
+
+<div class="row">
+  <form class="form-style"
+        action="/dashboard/clearImages"
+        method="POST">
+    <small class="form-text text-muted text-center">Limpa todas as imagens</small>
+    <button class="btn btn-lg btn-warning btn-block"
+            type="submit">
+      Clear
+    </button>
+  </form>
+</div>

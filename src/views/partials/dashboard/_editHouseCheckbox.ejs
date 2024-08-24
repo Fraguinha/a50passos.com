@@ -1,0 +1,84 @@
+<form action="/dashboard/editHouse"
+      method="POST">
+  <input type="hidden"
+         name="id"
+         value="<%= data.id %>">
+  <input type="hidden"
+         name="checkbox"
+         value="true">
+  <button type="button"
+          class="btn btn-primary mx-1 float-right"
+          data-toggle="modal"
+          data-target="#editInformationModal">
+    <i class="bi bi-check2-square"></i>
+  </button>
+  <div class="modal fade"
+       id="editInformationModal"
+       tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"
+              id="exampleModalLabel">Alterar Informação</h5>
+          <button type="button"
+                  class="close"
+                  data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group form-check">
+            <input id="suite"
+                   name="suite"
+                   type="checkbox"
+                   class="form-check-input">
+            <label class="form-check-label"
+                   for="suite">Suite<small class="text-muted text-center"></small></label>
+          </div>
+          <div class="form-group form-check">
+            <input id="elevator"
+                   name="elevator"
+                   type="checkbox"
+                   class="form-check-input">
+            <label class="form-check-label"
+                   for="elevator">Elevador<small class="text-muted text-center"></small></label>
+          </div>
+          <div class="form-group form-check">
+            <input id="dinningroom"
+                   name="dinningroom"
+                   type="checkbox"
+                   class="form-check-input">
+            <label class="form-check-label"
+                   for="dinningroom">Sala de jantar<small class="text-muted text-center">
+              </small></label>
+          </div>
+          <div class="form-group form-check">
+            <input id="balcony"
+                   name="balcony"
+                   type="checkbox"
+                   class="form-check-input">
+            <label class="form-check-label"
+                   for="balcony">Varanda<small class="text-muted text-center"></small></label>
+          </div>
+          <div class="form-group form-check">
+            <input id="gardin"
+                   name="gardin"
+                   type="checkbox"
+                   class="form-check-input">
+            <label class="form-check-label"
+                   for="gardin">Terraço<small class="text-muted text-center"></small></label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal">
+            Fechar
+          </button>
+          <button type="submit"
+                  class="btn btn-success">Alterar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

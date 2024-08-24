@@ -1,0 +1,26 @@
+<%- include("../partials/_header.ejs") %>
+
+<main>
+  <div class="container">
+    <% let i = 0 %>
+    <div class="album py-5 bg-light">
+      <% for (const house of data) { %>
+      <% if (i % 3 == 0 ) { %>
+      <div class="row">
+        <% i++ %>
+        <%- include("../partials/catalog/_card.ejs", { house }) %>
+        <% } else if (i % 3 == 1 ) { %>
+        <% i++ %>
+        <%- include("../partials/catalog/_card.ejs", { house }) %>
+        <% } else if (i % 3 == 2 ) { %>
+        <% i++ %>
+        <%- include("../partials/catalog/_card.ejs", { house }) %>
+      </div>
+      <% } %>
+      <% } %>
+    </div>
+  </div>
+  <%- include("../partials/catalog/_pagination.ejs", { current, pages }) %>
+</main>
+
+<%- include("../partials/_footer.ejs") %>

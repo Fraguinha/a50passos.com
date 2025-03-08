@@ -1,0 +1,25 @@
+replicaCount: 1
+image: k3d-a50passos-registry:10000/fraguinha/a50passos.com:latest
+env:
+  - name: PORT
+    value: "8080"
+  - name: NODE_ENV
+    value: development
+  - name: APPNAME
+    value: a50passos
+  - name: DATABASE
+    valueFrom:
+      secretKeyRef:
+        name: a50passos-secrets
+        key: DATABASE
+  - name: SESSION_SECRET
+    valueFrom:
+      secretKeyRef:
+        name: a50passos-secrets
+        key: SESSION_SECRET
+ingress:
+  className: traefik
+  clusterIssuer: ""
+  hosts:
+    - localhost
+  tls: null

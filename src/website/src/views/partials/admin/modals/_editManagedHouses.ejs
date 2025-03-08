@@ -1,0 +1,50 @@
+<form class="text-center"
+      action="/api/admin/setManaged"
+      method="POST">
+    <div class="text-center">
+        <button type="button"
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#editModal">
+            <i class="bi bi-pencil-square"></i>
+        </button>
+    </div>
+    <div class="modal fade"
+         id="editModal"
+         tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="exampleModalLabel">
+                        Alterar n.º de quartos geridos
+                    </h5>
+                    <button type="button"
+                            class="close"
+                            data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <input class="form-control"
+                               type="number"
+                               name="number"
+                               placeholder="<%= meta.managed %>">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal">
+                        Fechar
+                    </button>
+                    <button type="submit"
+                            class="btn btn-success">
+                        Alterar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

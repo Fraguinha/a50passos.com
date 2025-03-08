@@ -1,0 +1,43 @@
+replicaCount: 3
+image: fraguinha/a50passos.com:latest
+port: 8080
+
+env:
+  - name: PORT
+    value: "8080"
+  - name: NODE_ENV
+    value: production
+  - name: APPNAME
+    value: a50passos
+  - name: DATABASE
+    valueFrom:
+      secretKeyRef:
+        name: a50passos-secrets
+        key: DATABASE
+  - name: SESSION_SECRET
+    valueFrom:
+      secretKeyRef:
+        name: a50passos-secrets
+        key: SESSION_SECRET
+
+resources:
+  requests:
+    cpu: 5m
+    memory: 96Mi
+  limits:
+    memory: 144Mi
+
+service:
+  port: 8080
+
+ingress:
+  className: traefik
+  clusterIssuer: letsencrypt
+  externalDnsTarget: ""
+  hosts:
+    - a50passos.com
+    - www.a50passos.com
+    - a50passos.pt
+    - www.a50passos.pt
+  tls:
+    secretName: a50passos-tls-secret
